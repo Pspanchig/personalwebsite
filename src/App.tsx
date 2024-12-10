@@ -1,15 +1,16 @@
 import './App.css'
-import foto from './assets/mimor.jpg'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MainPage from './Pages/MainPage'
 
 function App() {
 
   return (
-    <main>
-      <h1>Mira mi amor lo logre!!!</h1>
-      <h3>Cree una web en la red profunda!!!</h3>
-      <p>Que el mundo vea nuestra foto :3</p>
-      <img src={foto} alt="mi amor y yo" />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 
