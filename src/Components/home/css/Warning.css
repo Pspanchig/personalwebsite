@@ -55,3 +55,9 @@
     background-color: rgb(231, 231, 231);
     transition: .5s;
  }
+ .WarningSpan p{
+   font-size: clamp(1vh, 1.3vh, 1.3vh);  
+ }
+ .WarningSpan h2{
+   font-size: clamp(2vh, 2vh, 2.5vh);
+ }
