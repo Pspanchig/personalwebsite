@@ -1,5 +1,40 @@
-.Navbar{
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jaro:opsz@6..72&family=Lexend+Deca:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Sigmar+One&display=swap');
+
+.Navbar{    
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 600;
+    font-style: normal;
+          
     color: black;
     width: 100%;
-    background-color: white;    
+    /* background-color: white;     */
+    position: fixed;
+    top: 0;
+    height: clamp(10vh,6vh,10vh);
+    color: white;
+}
+.NavbarContainer{
+    margin-right: 10vh;
+    display: flex;
+    justify-content: end;
+    list-style-type: none;
+}
+.NavbarItem{
+    cursor: pointer;
+    margin: 3vh;
+    margin-inline: 5vh;
+    font-size: clamp(2vh,2vh,2vh);
+}
+
+@media(max-width: 680px){
+    .NavbarItem{
+        margin-inline: 0;
+    }
+    .NavbarContainer{
+        margin-right: 0;
+        justify-content: space-evenly;
+    }
+    .Navbar{
+        /* position: static; */
+    }
 }

@@ -16,3 +16,9 @@ main{
     background: linear-gradient(to bottom, var(--BackgroundColorGradient-1), var(--BackgroundColorGradient-2));
     height: 100vh
 }
+
+@media(max-width: 680px){
+    main{
+       justify-content:end;
+    }    
+}

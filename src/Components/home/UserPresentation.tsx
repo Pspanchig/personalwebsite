@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/General-Main.css'
+import '../Shared/css/General-Main.css'
 
 const UserPresentation: React.FC = () => {
   return (

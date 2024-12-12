@@ -10,7 +10,7 @@ const MainPage: React.FC = () => {
 
   return (
     <main>      
-        <Navbar/>
+        <Navbar />
         <Warning closeBool={close} setCloseBool={setClose}/>
         <UserPresentation/>
     </main>

@@ -13,7 +13,7 @@
 }
 .WarningTitle{
     background-color: white;
-    width: 25%;
+    width: clamp(25%,25%,25%);
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     color: yellow;
@@ -29,6 +29,7 @@
 }
 
 .WarningSpan{
+   text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,4 +61,11 @@
  }
  .WarningSpan h2{
    font-size: clamp(2vh, 2vh, 2.5vh);
+ }
+
+ @media (max-width: 680px){
+      .WarningTitle , .WarningSpan{
+         width: 60%;
+         text-align: center;
+      }
  }

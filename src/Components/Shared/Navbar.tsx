@@ -4,8 +4,11 @@ import './css/Navbar.css'
 const Navbar: React.FC = () => {
   return (
     <nav className='Navbar'>
-        <ul>
-            <li>element 1</li>
+        <ul className='NavbarContainer'>
+            <li className='NavbarItem'>Home</li>
+            <li className='NavbarItem'>Biography</li>
+            <li className='NavbarItem'>Projects</li>
+            <li className='NavbarItem'>Contact</li>
         </ul>
     </nav>
   )

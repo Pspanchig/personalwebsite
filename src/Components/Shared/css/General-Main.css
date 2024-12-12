@@ -1,0 +1,16 @@
+
+.InformationContainer{
+    height: clamp(70vh,70vh,70vh);
+    width: clamp(70%,80%,80%);
+    border: 3px solid white;
+    border-radius: 1em;
+}
+
+@media (max-width: 680px) {
+    .InformationContainer{
+        margin-bottom: 10%;
+        width: clamp(90%,90%,90%);
+        height: clamp(80vh,80vh,80vh);
+        /* background-color: red; */
+    }
+}
