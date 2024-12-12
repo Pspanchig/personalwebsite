@@ -28,11 +28,15 @@
 
 @media(max-width: 680px){
     .NavbarItem{
+        /* width: 25%; */
         margin-inline: 0;
     }
     .NavbarContainer{
+        width: clamp(100%,100%,100%);
         margin-right: 0;
+        padding: 0;
         justify-content: space-evenly;
+        align-items: center;
     }
     .Navbar{
         /* position: static; */
