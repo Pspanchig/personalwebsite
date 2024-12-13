@@ -1,6 +1,6 @@
 
 .InformationContainer{
-    height: clamp(70vh,70vh,70vh);
+    height: clamp(75vh,75vh,75vh);
     width: clamp(70%,80%,80%);
     border: 3px solid white;
     border-radius: 1em;
