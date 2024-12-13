@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/*' element={<NotFound/>}/>
+        <Route path='/NotFound' element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
 
