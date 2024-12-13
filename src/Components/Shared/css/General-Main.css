@@ -1,13 +1,14 @@
 
-.InformationContainer{
+section{
     height: clamp(75vh,75vh,75vh);
     width: clamp(70%,80%,80%);
     border: 3px solid white;
     border-radius: 1em;
+    box-shadow: 1px 1px 0.5em 0.2em  white;
 }
 
 @media (max-width: 680px) {
-    .InformationContainer{
+    section{
         margin-bottom: 10%;
         width: clamp(90%,90%,90%);
         height: clamp(80vh,80vh,80vh);

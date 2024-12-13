@@ -1,0 +1,6 @@
+.Education{
+    height: clamp(85%, 85%, 85%);
+    width: clamp(85%, 85%, 85%);
+    border: 3px solid white;
+    border-radius: 1em;
+}

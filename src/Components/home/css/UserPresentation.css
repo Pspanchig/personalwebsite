@@ -1,0 +1,52 @@
+.DivContainers{
+    display: flex;
+    /* background-color: blue; */
+    width: clamp(100%, 100%, 100%);
+    height: clamp(100%, 100%, 100%);
+    border-radius: 1em;
+}
+.DivsDividerContainers{
+    width: clamp(50%, 50%, 50%);
+    display: flex;
+    flex-direction: column;
+}
+.UpperDiv{
+    height: clamp(30%, 30%, 30%);
+    width: clamp(100%, 100%, 100%);
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ }
+ .UpperDiv h1{
+    font-size: clamp(8vh, 8vh, 8vh);
+    margin-bottom: 0;
+    border-bottom: 1px solid white;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 1000;
+    font-style: normal;
+ }
+ .UpperDiv h3{
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: clamp(4vh, 4vh, 4vh);
+    margin-top: 1vh;
+    border-bottom: 1px solid white;
+ }
+
+
+.LowerDiv{
+    height: clamp(70%, 70%, 70%);
+    width: clamp(100%, 100%, 100%);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#one{
+    /* background-color: red; */
+}
+#two{
+    background-color: purple;
+}
