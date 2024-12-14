@@ -1,0 +1,19 @@
+.AboutMe{
+    height: clamp(85%, 85%, 85%);
+    width: clamp(85%, 85%, 85%);
+    border: 3px solid white;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.AboutTitle{
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    height: clamp(13%, 13%, 13%);
+    width: clamp(100%, 100%, 100%);
+    color: black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

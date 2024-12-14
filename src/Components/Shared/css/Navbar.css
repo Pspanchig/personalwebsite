@@ -12,9 +12,12 @@
     top: 0;
     height: clamp(10vh,6vh,10vh);
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .NavbarContainer{
-    margin-right: 10vh;
+    width: clamp(80%, 80%, 80%);
     display: flex;
     justify-content: end;
     list-style-type: none;

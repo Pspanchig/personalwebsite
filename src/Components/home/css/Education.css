@@ -3,4 +3,80 @@
     width: clamp(85%, 85%, 85%);
     border: 3px solid white;
     border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.EducationTitle{
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    height: clamp(13%, 13%, 13%);
+    width: clamp(100%, 100%, 100%);
+    color: black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.EducationInformation{
+    width: clamp(100%, 100%, 100%);
+    height: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.EducationInformationContainer{
+    height: clamp(87%, 87%, 87%);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scrollbar-width: none;
+}
+.EducationItem{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    
+}
+.EducationItem img{
+    height: clamp(11vh, 11vh, 11vh);
+    width: clamp(12vh, 12vh, 12vh);
+    
+}
+.Text{
+    width: clamp(60%, 60%, 60%);
+}
+.Text h2{
+    font-size: clamp(2.6vh, 2.6vh, 2.6vh);
+}
+.EducationInformation:hover{
+    width: clamp(100%, 100%, 100%);
+    /* padding: 2vh; */
+    transition: 0.5s;
+    background-color: #502C80;
+    padding-block: 4vh;
+}
+.EducationInformation span {
+    display: none;
+    width: clamp(100%, 100%, 100%);
+    text-align: center;
+}
+
+.EducationInformation:hover span {
+    display: block;
+    position: static;
+    transition: 0.5s;
+}
+
+#UcmoEd img{
+    height: clamp(1%, 1%, 1%);
+}
+
+#UcmoEd{
+    border-bottom-left-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
+}
+#UcmoEd:hover{
+    border-bottom-left-radius: 0.6em;
+    border-bottom-right-radius: 0.6em;
 }

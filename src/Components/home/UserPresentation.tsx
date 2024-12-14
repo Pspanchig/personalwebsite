@@ -2,6 +2,7 @@ import React from 'react'
 import '../Shared/css/General-Main.css'
 import './css/UserPresentation.css'
 import Education from './Education'
+import AboutMe from './AboutMe'
 
 const UserPresentation: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const UserPresentation: React.FC = () => {
         </div>      
         <div className='DivsDividerContainers' id='two'>
           <div className='LowerDiv'>
-          <Education/>
+          <AboutMe/>
           </div>
           <div className='UpperDiv'>Social Networks</div>
         </div>      

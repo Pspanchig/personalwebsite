@@ -1,7 +1,7 @@
 
 section{
     height: clamp(75vh,75vh,75vh);
-    width: clamp(70%,80%,80%);
+    width: clamp(80%,80%,80%);
     border: 3px solid white;
     border-radius: 1em;
     box-shadow: 1px 1px 0.5em 0.2em  white;
