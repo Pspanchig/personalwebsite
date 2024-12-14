@@ -14,7 +14,9 @@ main{
     font-style: normal;
     color: white;
     background: linear-gradient(to bottom, var(--BackgroundColorGradient-1), var(--BackgroundColorGradient-2));
+    min-height: 100vh;
     height: 100vh;
+    max-height: 100vh;
     
 }
 

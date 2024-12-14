@@ -11,8 +11,8 @@ const MainPage: React.FC = () => {
   return (
     <main>      
         <Navbar />
-        <Warning closeBool={close} setCloseBool={setClose}/>
         <UserPresentation/>
+        <Warning closeBool={close} setCloseBool={setClose}/>
     </main>
   )
 }

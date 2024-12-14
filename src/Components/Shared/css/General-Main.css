@@ -1,8 +1,12 @@
 
 section{
     
-    height: clamp(75%,75%,75%);
-    width: clamp(80%,80%,80%);
+    min-height: 75%;
+    height: 75%;
+    max-height: 75%;
+    min-width: 80%;
+    width: 80%;
+    max-width: 80%;
     border: 3px solid white;
     border-radius: 1em;
     box-shadow: 1px 1px 0.5em 0.2em  white;
@@ -11,8 +15,12 @@ section{
 @media (max-width: 680px) {
     section{
         margin-bottom: 10%;
-        width: clamp(90%,90%,90%);
-        height: clamp(80vh,80vh,80vh);
+        min-width: 90%;
+        width: 90%;
+        max-width: 90%;
+        min-height: 80vh;
+        height: 80vh;
+        max-height: 80vh;
         /* background-color: red; */
     }
 }
