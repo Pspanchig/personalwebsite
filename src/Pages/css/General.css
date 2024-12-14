@@ -4,7 +4,7 @@
 
 }
 
-main{
+main{    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,8 @@ main{
     font-style: normal;
     color: white;
     background: linear-gradient(to bottom, var(--BackgroundColorGradient-1), var(--BackgroundColorGradient-2));
-    height: 100vh
+    height: 100vh;
+    
 }
 
 @media(max-width: 680px){

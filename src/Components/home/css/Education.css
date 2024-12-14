@@ -1,6 +1,7 @@
-.Education{
-    height: clamp(85%, 85%, 85%);
-    width: clamp(85%, 85%, 85%);
+.Education{    
+    height: auto;
+    max-height: 83%; /* or whatever feels right */
+    width: 85%;
     border: 3px solid white;
     border-radius: 1em;
     display: flex;
@@ -9,7 +10,9 @@
 .EducationTitle{
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
-    height: clamp(13%, 13%, 13%);
+    min-height: 5vh;
+    height: 5vh;
+    max-height: 5vh;
     width: clamp(100%, 100%, 100%);
     color: black;
     background-color: white;
@@ -18,21 +21,28 @@
     justify-content: center;
 }
 .EducationInformation{
-    width: clamp(100%, 100%, 100%);
-    height: 50%;
+    width: clamp(50vh, 100%, 100%);
+    /* height: clamp(50vh, 100%, 100%); */
+    height: 100%;
     cursor: pointer;
     transition: 0.5s;
 }
 .EducationInformationContainer{
-    height: clamp(87%, 87%, 87%);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  /* Instead of clamp(40.5vh, 87%, 87%), try something simpler: */
+  flex-grow: 1;
+  height: auto;
+  max-height: 80vh; /* or so */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  /* If you want items stacked top-to-bottom, consider removing align-items:center, 
+     or using align-items: flex-start so the top doesn’t get clipped. */
+  align-items: flex-start;
+  justify-content: flex-start;
     scrollbar-width: none;
 }
 .EducationItem{
+    flex-grow: 1;
     display: flex;
     justify-content: space-around;
     align-items:center;
@@ -50,7 +60,7 @@
     font-size: clamp(2.6vh, 2.6vh, 2.6vh);
 }
 .EducationInformation:hover{
-    width: clamp(100%, 100%, 100%);
+    width: clamp(1, 100%, 100%);
     /* padding: 2vh; */
     transition: 0.5s;
     background-color: #502C80;
@@ -69,7 +79,7 @@
 }
 
 #UcmoEd img{
-    height: clamp(1%, 1%, 1%);
+    height: 15vh
 }
 
 #UcmoEd{

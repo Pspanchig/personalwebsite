@@ -11,6 +11,7 @@
     flex-direction: column;
 }
 .UpperDiv{
+    flex-grow: 1;
     height: clamp(30%, 30%, 30%);
     width: clamp(100%, 100%, 100%);
     /* background-color: gray; */

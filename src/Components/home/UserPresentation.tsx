@@ -3,6 +3,7 @@ import '../Shared/css/General-Main.css'
 import './css/UserPresentation.css'
 import Education from './Education'
 import AboutMe from './AboutMe'
+import SocialNetworks from './SocialNetworks'
 
 const UserPresentation: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const UserPresentation: React.FC = () => {
         <div className='DivsDividerContainers' id='one'>
           <div className='UpperDiv'>
             <h1>Pablo S. Panchig</h1>
-            <h3>Software☻ Engineer</h3>
+            <h3>Software Engineer ☻</h3>
           </div>
           <div className='LowerDiv'>
             <Education/>
@@ -21,7 +22,10 @@ const UserPresentation: React.FC = () => {
           <div className='LowerDiv'>
           <AboutMe/>
           </div>
-          <div className='UpperDiv'>Social Networks</div>
+          <div className='UpperDiv'>
+          <SocialNetworks/>
+          </div>
+            
         </div>      
       </div>
 
