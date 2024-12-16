@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import './css/Navbar.css'
 import spanish from './imgs/spanish-flag.svg'
 import english from './imgs/uk-flag.svg'
 
 const Navbar: React.FC = () => {
 
-  const [bool, setBool] = useState(false);
-  // const language: string | null = localStorage.setItem('language');
-  function changeLenguage(): void{
-  }
+  // const [bool, setBool] = useState(false);
+  // // const language: string | null = localStorage.setItem('language');
+  // function changeLenguage(): void{
+  // }
 
   return (
     <nav className='Navbar'>
