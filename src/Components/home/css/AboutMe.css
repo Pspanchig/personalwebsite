@@ -30,15 +30,30 @@
     height: 87%;
     max-height: 87%;
     border-radius: 1em;
+    display: flex;
 }
 .AboutMeFocusAreas{
+    /* background-color: red; */
     min-height: 100%;
     height: 100%;
     max-height: 100%;
-    min-width: 70%;
-    width: 70%;
-    max-width: 70%;
-    color: rgb(12, 12, 155);
+    min-width: 65%;
+    width: 65%;
+    max-width: 65%;
+    display: flex;    
+    align-items: center;
+    flex-direction: column;
+}
+.TextFocusAreas{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-y: auto;
+}
+.TextFocusAreas h3{
+    margin-left: 2vh;
 }
 .AboutMeSkills{
     border-right: 1px solid white;
@@ -50,7 +65,8 @@
     width: 35%;
     max-width: 35%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    justify-content: center;    
     align-items: center;
 }
 .SkillPoint{
@@ -118,7 +134,7 @@
     scrollbar-width: none;
     
 }
-.AboutMeSkills h2{
+.AboutMeSkills h2 ,.AboutMeFocusAreas h2{
     margin:0.3em;    
     min-width: 100%;
     width: 100%;
@@ -170,7 +186,13 @@
   .SkillName h3, .ScrollDownSkills {
     font-size: 8px; /* Reduce font size */
   }
-  .AboutMeSkills h2{
+  .AboutMeFocusAreas h3{
+    font-size: 10px;
+  }
+  .TextFocusAreas li{
+    font-size: 8px;
+  }
+  .AboutMeSkills h2 ,.AboutMeFocusAreas h2{
     font-size: 15px;
   }
 }

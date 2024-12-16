@@ -181,7 +181,22 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
         <div className='AboutMeFocusAreas'>
-
+          <h2>
+            Focus Areas
+          </h2>
+          <div className='TextFocusAreas'>
+            <h3>Web developer</h3>
+            <ul>
+              <li>FrontEnd</li>
+              <li>BackEnd</li>
+            </ul>
+            <h3>Software Engineer</h3>
+            <ul>
+              <li>ASP.NET Developer</li>
+              <li>Database designer</li>
+              <li>Software Architect</li>
+            </ul>
+          </div>
         </div>
       </div>  
     </article>
