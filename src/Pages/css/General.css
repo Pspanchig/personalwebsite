@@ -19,6 +19,18 @@ main{
     max-height: 100vh;
     
 }
+h2{
+    font-size: clamp(25px, 25px, 25px);
+}
+h4{
+    font-size: clamp(16.8px, 16.8px, 16.8px);
+}
+h3{
+    font-size: clamp(17px, 17px, 17px);
+}
+p{
+    font-size: clamp(15.5px, 15.5px, 15.5px);
+}
 
 @media(max-width: 680px){
     main{

@@ -10,7 +10,7 @@ const Education: React.FC = () => {
         scrollbar.scrollTo({ top: 0, behavior: 'smooth' });;
       } else{
         scrollbar.scrollTo({ top: scrollbar.scrollHeight, behavior: 'smooth' });;
-
+        
       }
   }
 
