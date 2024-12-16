@@ -1,20 +1,18 @@
 .DivContainers{
     display: flex;
     /* background-color: blue; */
-    width: clamp(100%, 100%, 100%);
-    height: clamp(100%, 100%, 100%);
+    width: 100%;
+    height: 100%;
     border-radius: 1em;
 }
 .DivsDividerContainers{
-    width: clamp(50%, 50%, 50%);
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 .UpperDiv{
-    flex-grow: 1;
-    height: clamp(30%, 30%, 30%);
-    width: clamp(100%, 100%, 100%);
-    /* background-color: gray; */
+    height: 30%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,14 +37,69 @@
 
 
 .LowerDiv{
-    height: clamp(70%, 70%, 70%);
-    width: clamp(100%, 100%, 100%);;
+    height: 70%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#one{
-    /* background-color: red; */
+.ButtonMobileMenu{
+    display: none;
 }
-#two{
+
+@media (max-width: 680px) {
+    .DivsDividerContainers{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .DivsDividerContainers h1{
+        font-size: clamp(40px, 40px, 40px);
+    }
+    .DivsDividerContainers h3{
+        font-size: clamp(20px, 20px, 20px);
+    }
+
+    .DivContainers{
+        flex-direction: column;
+    }
+    #one .LowerDiv{
+        display: none;
+    }
+    #one .UpperDiv{
+        height: 50%;
+    }
+    #two .LowerDiv{
+        display: none;
+    }
+    #two{
+        height: 50%;
+    }
+    #two .UpperDiv{
+        height: 100%;        
+    }
+
+    .ButtonMobileMenu{
+        height: 50%;
+        width: 80%;
+        margin: 1.3vh;
+        background-color: rgba(255, 0, 0, 0);
+        border: 2px solid white;
+        border-radius: 1em;
+        color: white;
+        font-size: clamp(17px, 17px, 17px);
+        display: block;
+    }
+
+    .ButtonMobileContainer{    
+        height: 40%;
+        /* background-color: red; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+
 }

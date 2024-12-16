@@ -19,7 +19,7 @@
 }
 .WarningTitle{
     background-color: white;
-    width: clamp(25%,25%,25%);
+    width: 25%;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     color: yellow;

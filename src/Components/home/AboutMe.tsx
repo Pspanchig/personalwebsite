@@ -44,7 +44,10 @@ const AboutMe: React.FC = () => {
       </div>      
       <div className='AboutMeInInformationContainer'>
         <div className='AboutMeSkills'>
-          <h2>Skills</h2>
+          <div className='SubtitlSkills'>
+            <h2>Skills</h2>
+          </div>
+          
           <div className='SkillsContainer' id='skillContainer'>
             <div className='Skill' id='skill1' onMouseEnter={() => scrollToItem('1')}>
               <div className='SkillName'>
@@ -181,9 +184,9 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
         <div className='AboutMeFocusAreas'>
-          <h2>
-            Focus Areas
-          </h2>
+        <div className='SubtitlSkills'>
+            <h2>Focus Areas</h2>
+          </div>
           <div className='TextFocusAreas'>
             <h3>Web developer</h3>
             <ul>

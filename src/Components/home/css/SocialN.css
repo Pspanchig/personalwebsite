@@ -13,7 +13,7 @@
     margin-bottom: 1vh;
   }
 .SocialNetwork img{
-    width: clamp(5vh, 5vh, 5vh);
+    width: 5vh;
 }
 .SNImgContainer img{
     margin-inline: 1.5vh;
@@ -31,5 +31,17 @@
   }
   .SocialNetwork p{
     font-size: 10px;
+  }
+}
+@media (max-width: 680px) {
+  .SocialNetwork{
+    height: 60%;
+    /* background-color: red; */
+  }
+  .SocialNetwork h2{
+    font-size: 25px;
+  }
+  .SocialNetwork p{
+    font-size: 11px;
   }
 }

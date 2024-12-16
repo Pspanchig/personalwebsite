@@ -14,26 +14,27 @@ main{
     font-style: normal;
     color: white;
     background: linear-gradient(to bottom, var(--BackgroundColorGradient-1), var(--BackgroundColorGradient-2));
-    min-height: 100vh;
     height: 100vh;
-    max-height: 100vh;
+    width: 100vw;
+    position: relative;
     
 }
-h2{
-    font-size: clamp(25px, 25px, 25px);
+h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
-h4{
-    font-size: clamp(16.8px, 16.8px, 16.8px);
+h3 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
-h3{
-    font-size: clamp(17px, 17px, 17px);
+h4 {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
 }
-p{
-    font-size: clamp(15.5px, 15.5px, 15.5px);
+p {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 @media(max-width: 680px){
     main{
-       justify-content:end;
+       justify-content:center;
+       height: 250vh;
     }    
 }

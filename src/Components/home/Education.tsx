@@ -1,8 +1,12 @@
+import { useEffect, useState } from 'react';
 import './css/Education.css'
 import SnowLogo from './imgs/SnowLogo.png'
 import UcmoLogo from './imgs/ucmoLogo.png'
+import { language } from './UserPresentation';
 
-const Education: React.FC = () => {
+const Education: React.FC<language> = ({language}) => {
+
+  const [languageText, setLanguageText] = useState<string[]>([])
 
   function moveScrollBar(direction: boolean): void{ 
       const scrollbar = document.getElementById('scrollbarEd') as HTMLDivElement;
@@ -14,10 +18,44 @@ const Education: React.FC = () => {
       }
   }
 
+  function changeLanguage(): void{
+    
+    //Spanish
+    const spanish: string[] = []
+
+    const spTitle: string = 'Educacion'
+    const spEnrolled: string = 'Inscrito como Ingeniero de Software'
+    const spClickHere: string = 'Cliquee aqui para mas informacion'
+
+    //English
+    const english: string[] = []
+
+    const enTitle: string = 'Education' 
+    const enEnrolled: string = 'Enrolled as Software engineer'
+    const enClickHere: string = 'click here for more information'
+
+    english.push(enTitle);
+    english.push(enEnrolled);
+    english.push(enClickHere);
+
+    spanish.push(spTitle);
+    spanish.push(spEnrolled);
+    spanish.push(spClickHere);
+
+    if(language === 'En') setLanguageText(english)
+      else setLanguageText(spanish)
+  }
+
+    
+  useEffect(() =>{
+    changeLanguage()
+  }, [language])
+  
+
   return (
     <article className='Education'>
         <div className='EducationTitle'>
-            Education
+            {languageText[0]}
         </div>
         <div className='EducationInformationContainer' id='scrollbarEd'>
           <div className='EducationInformation' onMouseOver={()=> moveScrollBar(true)}>
@@ -25,12 +63,12 @@ const Education: React.FC = () => {
               <div className='Text'>
                 <h2>Snow College</h2>
                 <p>Ephraim, Utah</p>
-                <p>Enrolled as Software engineer</p>
+                <p>{languageText[1]}</p>
                 <p>Associates AS</p>
               </div>
               <img src={SnowLogo} alt="Snow College Img" />              
             </div>
-            <u><span>click here for more information</span></u>
+            <u><span>{languageText[2]}</span></u>
           </div>        
 
           <div className='EducationInformation'onMouseOver={()=> moveScrollBar(false)} id='UcmoEd'>
@@ -38,12 +76,12 @@ const Education: React.FC = () => {
               <div className='Text'>
                 <h2>University of Central Missouri</h2>
                 <p>Warrensburg, Missorui</p>
-                <p>Enrolled as Software engineer</p>
+                <p>{languageText[1]}</p>
                 <p>Bachelor B.S</p>
               </div>
               <img src={UcmoLogo} alt="Snow College Img" />
             </div>
-            <u><span>click here for more information</span></u>
+            <u><span>{languageText[1]}</span></u>
 
           </div>
         </div>
