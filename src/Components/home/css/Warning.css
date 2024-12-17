@@ -15,7 +15,7 @@
     justify-content: center;
     flex-direction: column;
     background-color: rgba(128, 128, 128, 0.514);
-
+   position: absolute
 }
 .WarningTitle{
     background-color: white;
@@ -70,16 +70,22 @@
  }
 
  @media (max-width: 680px){
-      .WarningTitle , .WarningSpan, .WarningSpan button{
-         width: 60%;
-         text-align: center;
-      }
-      .WarningTitle{
-         padding: 1vh;
-      }
-      .WarningSpan, .WarningSpan button{
-         padding: 1vh;
-         color: black;
-         font-size: clamp(2.5vh, 2.5vh, 2.5vh);      
-      }
+   .WarningSpan{
+      height: 10%;
+   }
+   .WarningTitle{
+      height: 2%;
+   }
+   .WarningTitle , .WarningSpan, .WarningSpan button{
+      width: 60%;
+      text-align: center;
+   }
+   .WarningTitle{
+      padding: 1vh;
+   }
+   .WarningSpan, .WarningSpan button{
+      padding: 1vh;
+      color: black;
+      font-size: clamp(2.5vh, 2.5vh, 2.5vh);      
+   }
  }
