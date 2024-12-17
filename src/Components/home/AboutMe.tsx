@@ -45,7 +45,7 @@ const AboutMe: React.FC = () => {
       <div className='AboutMeInInformationContainer'>
         <div className='AboutMeSkills'>
           <div className='SubtitlSkills'>
-            <h2>Skillssss</h2>
+            <h2>Skills</h2>
           </div>
           
           <div className='SkillsContainer' id='skillContainer'>

@@ -5,7 +5,7 @@ import DisplayInfo from '../Components/NotFound/DisplayInfo'
 const NotFound: React.FC = () => {
   return (
     <main>
-        <Navbar/>
+        {/* <Navbar/> */}
         <DisplayInfo/>
     </main>
   )
