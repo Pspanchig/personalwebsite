@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/AboutMe.css'
 import aspnet from './imgs/aspnet.svg'
 import csharp from './imgs/csharp.svg'
@@ -19,15 +19,43 @@ const AboutMe: React.FC = () => {
     const container = document.getElementById('skillContainer') as HTMLDivElement;
     const skillTarget = document.getElementById('skill' + index) as HTMLDivElement;
 
-    const offset = skillTarget.offsetTop - 100;
-    console.log(offset - 150)
-    container.scrollTo({top: offset, behavior: 'smooth'})
-    setCurrentOffsetContainer(offset);    
+    if(window.innerHeight > 680){
+      const offset = skillTarget.offsetTop - 100;
+      container.scrollTo({top: offset, behavior: 'smooth'})
+      setCurrentOffsetContainer(offset);    
+    }
   }
 
-  function scrollShowMore(): void{
-    const container = document.getElementById('skillContainer') as HTMLDivElement;
+  function changeSkillMobile(): void {
+    const skills = document.querySelectorAll('.Skill') as NodeListOf<HTMLDivElement>;
+    console.log('Skills found:', skills[0]);
     
+    if (skills.length === 0) {
+      console.error('No elements found with the class "Skill"');
+      return;
+    }
+  
+    // Make the elements visible and then change their color
+    if (skills[0].style.display === 'flex') {
+      skills[0].style.display = 'none';
+      skills[0].style.color = 'red';
+    }
+  
+
+    // skills.forEach((skill, index) => {
+    //   if (index === 0) {
+    //     console.log(`Setting display block for element at index ${index}`);
+    //     skill.style.display = 'flex';
+    //   } else {
+    //     console.log(`Setting display none for element at index ${index}`);
+    //     skill.style.display = 'none';
+    //   }
+    // });
+  }
+  
+
+  function scrollShowMore(): void{
+    const container = document.getElementById('skillContainer') as HTMLDivElement;    
     if (container.scrollHeight - container.offsetHeight > currentOffsetContainer) {
       container.scrollTo({top: currentOffsetContainer + 150,behavior: 'smooth'});
       setCurrentOffsetContainer(currentOffsetContainer + 150);
@@ -49,6 +77,7 @@ const AboutMe: React.FC = () => {
           </div>
           
           <div className='SkillsContainer' id='skillContainer'>
+
             <div className='Skill' id='skill1' onMouseEnter={() => scrollToItem('1')}>
               <div className='SkillName'>
                 <img src={reactvite} alt="React Img" />
@@ -64,6 +93,7 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>                
                 </div>
               </div>              
+                <button id='NextSkillButton' onClick={changeSkillMobile}>Next</button>
             </div>
             <div className='Skill' id='skill2' onMouseEnter={() => scrollToItem('2')}>
               <div className='SkillName'>
