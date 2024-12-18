@@ -91,7 +91,6 @@
     margin-top: 0;
     /* background-color: red; */
     width: 100%;
-    overflow-x: visible;
     overflow-y: hidden;
     scrollbar-width: none;
     
@@ -160,5 +159,45 @@
     .AboutMe{
         height: 100%;
         width: 100%;
+    }
+    .AboutTitle{
+        min-height: 8%;
+        height: 8%;
+        max-height: 8%;
+    }
+    .AboutMeInInformationContainer{
+        flex-direction:column-reverse;
+    }
+    .AboutMeSkills, .AboutMeFocusAreas {
+        width: 100%;
+        height: 50%;
+    }
+    .TextFocusAreas{
+        height: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .TextFocusAreas h3{
+        margin-left: 0;
+        margin-block: 2px;
+    }
+    .TextFocusAreas ul{
+        list-style: none;
+        text-align: center;
+        padding-left: 0px;
+    }
+    .TextFocusAreas li{
+        margin-block: 1px;
+    }
+    .SubtitlSkills{
+        margin-top: 0;
+        border-top: 1px solid white;
+        height: 16%;
+    }
+    #MainHome{
+        margin-top: 8vh;
+    }
+    .ScrollDownSkills{
+        display: none;
     }
 }

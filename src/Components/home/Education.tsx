@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import './css/Education.css'
 import SnowLogo from './imgs/SnowLogo.png'
 import UcmoLogo from './imgs/ucmoLogo.png'
+import arrow from './imgs/arrowRight.svg'
+
 import { language } from './UserPresentation';
 
 const Education: React.FC<language> = ({language}) => {
@@ -18,18 +20,25 @@ const Education: React.FC<language> = ({language}) => {
       }
   }
 
-  function NextEducation(): void{
-    const containerSnow = document.getElementById('SnowEd') as HTMLDivElement;
-    const containerUCM = document.getElementById('UcmoEd') as HTMLElement;
-    if(containerSnow && containerUCM){
-      containerSnow.style.display = 'none'
-      containerUCM.style.display = 'block'
-      containerSnow.style.transform = 'translateX(-50)'
-      containerSnow.style.color = 'red'
-      console.log('SEXO')
-    } else {
-      console.error('Element with ID "SnowEd" not found.');
-    }
+  function ChangeEducationInformation(current: string, moveTo: string): void{
+    const containerSnow = document.querySelectorAll(`#${current}`) as NodeListOf<HTMLDivElement>;    
+    const containerUCM = document.querySelectorAll(`#${moveTo}`) as NodeListOf<HTMLDivElement>;
+
+    containerSnow.forEach((key) =>{      
+      key.style.transform = 'translateX(100vw)'        
+      setTimeout(() => {
+        key.style.display = 'none';
+      }, 1000);
+    })
+    containerUCM.forEach((key) =>{
+      setTimeout(() => {
+        key.style.transform = 'translateX(-100vw)'        
+        key.style.display = 'flex';
+        setTimeout(() => {        
+          key.style.transform = 'translateX(1vw)'        
+        }, 800);        
+      }, 250);
+    })        
   }
 
   function changeLanguage(): void{
@@ -75,7 +84,7 @@ const Education: React.FC<language> = ({language}) => {
           <div className='EducationInformation' onMouseOver={()=> moveScrollBar(true)} id='SnowEd'>
             <div className='EducationItem'>
               <button id='MoreInfEDSn'>More information</button>           
-              <button id='NextImgEDSn' onClick={NextEducation}>Next Img</button>
+              <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('SnowEd', 'UcmoEd')}>Next <img src={arrow} alt="arrow" /></button>
               <div className='Text'>
                 <h2>Snow College</h2>
                 <p>Ephraim, Utah</p>
@@ -89,6 +98,8 @@ const Education: React.FC<language> = ({language}) => {
 
           <div className='EducationInformation'onMouseOver={()=> moveScrollBar(false)} id='UcmoEd'>
             <div className='EducationItem'>
+            <button id='MoreInfEDSn'>More information</button>           
+            <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('UcmoEd', 'SnowEd')}>Next <img src={arrow} alt="arrow" /></button>
               <div className='Text'>
                 <h2>University of Central Missouri</h2>
                 <p>Warrensburg, Missorui</p>

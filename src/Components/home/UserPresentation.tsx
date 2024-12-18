@@ -34,7 +34,7 @@ const UserPresentation: React.FC<language> = ({language}) => {
 
   return (
     <>
-      <section>
+      <section id='MainHome'>
         <div className='DivContainers'>
           <div className='DivsDividerContainers' id='one'>
             <div className='UpperDiv'>
@@ -44,8 +44,6 @@ const UserPresentation: React.FC<language> = ({language}) => {
             <div className='ButtonMobileContainer'>
               <a href="#EducationSectionID" className='ButtonMobileMenu'><p>Education</p></a>
               <a href="#AboutMeSectionID" className='ButtonMobileMenu'><p>About me</p></a>
-              {/* <button className='ButtonMobileMenu'><p>Education</p></button>
-              <button className='ButtonMobileMenu'><p>About me</p></button> */}
             </div>
             <div className='LowerDiv'>
               <Education language={language}/>

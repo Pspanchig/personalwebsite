@@ -106,6 +106,11 @@
 }
 
 @media (max-width: 680px) {
+    .EducationTitle{
+        min-height: 8%;
+        height: 8%;
+        max-height: 8%;
+    }
     .Education{
         width: 100%;
         height: 100%;
@@ -143,7 +148,9 @@
         height: 30%;
     }
     #MoreInfEDSn, #NextImgEDSn{
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         border-radius: 2em;
     }
     #MoreInfEDSn{
@@ -166,4 +173,19 @@
     .Text p , .Text span{
         font-size: 13px;        
     }
+    #UcmoEd h2{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 22.5px;
+    }
+    #UcmoEd img{
+        height: 20vh;
+        width: 35vw;
+    }
+    #NextImgEDSn img{
+        height: 5vh;
+        width: 15vw;
+        margin: 0;
+    }
+
 }
