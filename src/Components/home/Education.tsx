@@ -18,6 +18,20 @@ const Education: React.FC<language> = ({language}) => {
       }
   }
 
+  function NextEducation(): void{
+    const containerSnow = document.getElementById('SnowEd') as HTMLDivElement;
+    const containerUCM = document.getElementById('UcmoEd') as HTMLElement;
+    if(containerSnow && containerUCM){
+      containerSnow.style.display = 'none'
+      containerUCM.style.display = 'block'
+      containerSnow.style.transform = 'translateX(-50)'
+      containerSnow.style.color = 'red'
+      console.log('SEXO')
+    } else {
+      console.error('Element with ID "SnowEd" not found.');
+    }
+  }
+
   function changeLanguage(): void{
     
     //Spanish
@@ -58,15 +72,17 @@ const Education: React.FC<language> = ({language}) => {
             {languageText[0]}
         </div>
         <div className='EducationInformationContainer' id='scrollbarEd'>
-          <div className='EducationInformation' onMouseOver={()=> moveScrollBar(true)}>
+          <div className='EducationInformation' onMouseOver={()=> moveScrollBar(true)} id='SnowEd'>
             <div className='EducationItem'>
+              <button id='MoreInfEDSn'>More information</button>           
+              <button id='NextImgEDSn' onClick={NextEducation}>Next Img</button>
               <div className='Text'>
                 <h2>Snow College</h2>
                 <p>Ephraim, Utah</p>
                 <p>{languageText[1]}</p>
                 <p>Associates AS</p>
               </div>
-              <img src={SnowLogo} alt="Snow College Img" />              
+              <img src={SnowLogo} alt="Snow College Img" />   
             </div>
             <u><span>{languageText[2]}</span></u>
           </div>        

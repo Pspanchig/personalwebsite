@@ -84,8 +84,11 @@
 #UcmoEd:hover{
     border-bottom-left-radius: 0.6em;
     border-bottom-right-radius: 0.6em;
+    
 }
-
+#MoreInfEDSn, #NextImgEDSn{
+    display: none;
+}
 @media screen and (max-width: 1280px) and (max-height: 720px) {
     .Text h2{
         font-size: 12px;        
@@ -100,4 +103,67 @@
         font-size: 12px;        
     }
 
+}
+
+@media (max-width: 680px) {
+    .Education{
+        width: 100%;
+        height: 100%;
+    }
+    .EducationInformation:hover{
+        width: 100%;
+        transition: 0.5s;
+        background-color: #502c8000;
+        padding-block: 0vh;
+    }
+    .EducationInformation:hover span {
+        display: none;        
+        transition: 0.5s;
+    }
+    #UcmoEd{
+        display: none;
+    }
+    .EducationInformation{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        /* background-color: red; */
+    }
+    .EducationItem{
+        flex-direction:column-reverse;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+    .Text{
+       width: 70%;        
+    }
+    .EducationItem img{
+        width: 50%;
+        height: 30%;
+    }
+    #MoreInfEDSn, #NextImgEDSn{
+        display: block;
+        border-radius: 2em;
+    }
+    #MoreInfEDSn{
+        height: 3.5vh;
+        width: 32vw;
+        background-color: orange;
+        border: 1px solid black;
+
+    }
+    #NextImgEDSn{
+        height: 6vh;
+        width: 55vw;
+        background-color: white;
+        border: 1px solid black;
+        font-size: 3vh;
+    }
+    .Text h2{
+        font-size: 30px;        
+    }
+    .Text p , .Text span{
+        font-size: 13px;        
+    }
 }

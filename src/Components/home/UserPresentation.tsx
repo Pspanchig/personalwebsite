@@ -33,32 +33,41 @@ const UserPresentation: React.FC<language> = ({language}) => {
   }, [language])
 
   return (
-    <section>
-      <div className='DivContainers'>
-        <div className='DivsDividerContainers' id='one'>
-          <div className='UpperDiv'>
-            <h1>Pablo S. Panchig</h1>
-            <h3>{languageText[0]} ☻</h3>
-          </div>
-          <div className='ButtonMobileContainer'>
-            <button className='ButtonMobileMenu'><p>Education</p></button>
-            <button className='ButtonMobileMenu'><p>About me</p></button>
-          </div>
-          <div className='LowerDiv'>
-            <Education language={language}/>
-          </div>
-        </div>      
-        <div className='DivsDividerContainers' id='two'>
-          <div className='LowerDiv'>
-          <AboutMe/>
-          </div>
-          <div className='UpperDiv'>
-          <SocialNetworks/>
-          </div>            
-        </div>      
-      </div>
-
-    </section>
+    <>
+      <section>
+        <div className='DivContainers'>
+          <div className='DivsDividerContainers' id='one'>
+            <div className='UpperDiv'>
+              <h1>Pablo S. Panchig</h1>
+              <h3>{languageText[0]} ☻</h3>
+            </div>
+            <div className='ButtonMobileContainer'>
+              <a href="#EducationSectionID" className='ButtonMobileMenu'><p>Education</p></a>
+              <a href="#AboutMeSectionID" className='ButtonMobileMenu'><p>About me</p></a>
+              {/* <button className='ButtonMobileMenu'><p>Education</p></button>
+              <button className='ButtonMobileMenu'><p>About me</p></button> */}
+            </div>
+            <div className='LowerDiv'>
+              <Education language={language}/>
+            </div>
+          </div>      
+          <div className='DivsDividerContainers' id='two'>
+            <div className='LowerDiv'>
+            <AboutMe/>
+            </div>
+            <div className='UpperDiv'>
+            <SocialNetworks/>
+            </div>            
+          </div>      
+        </div>
+      </section>
+      <section className='MobileSection' id='EducationSectionID'>
+        <Education language={language}/>
+      </section>
+      <section className='MobileSection' id='AboutMeSectionID'>
+        <AboutMe/>
+      </section>
+    </>
   )
 }
 

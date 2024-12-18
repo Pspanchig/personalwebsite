@@ -155,3 +155,10 @@
     font-size: 15px;
   }
 }
+
+@media (max-width: 680px) {
+    .AboutMe{
+        height: 100%;
+        width: 100%;
+    }
+}
