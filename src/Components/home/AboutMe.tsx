@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './css/AboutMe.css'
 import aspnet from './imgs/aspnet.svg'
 import csharp from './imgs/csharp.svg'
