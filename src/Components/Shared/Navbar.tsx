@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './css/Navbar.css'
 import spanish from './imgs/spanish-flag.svg'
 import english from './imgs/uk-flag.svg'
+import optionsImg from './imgs/menuOptions.svg'
+import closeIcon from './imgs/close.svg'
 
 interface languageChanger{
   language: string;
@@ -11,11 +13,72 @@ interface languageChanger{
 const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
 
   const [languageText, setLanguageText] = useState<string[]>([])
+  const [close, setClose] = useState<boolean>(true);
+  const [screenPixels] = useState<number>(window.innerHeight)
 
   function changeLanguage(value: boolean): void{
     if(value === true) setLanguage('En');
     else setLanguage('Sp')
     console.log(language)
+  }
+
+  function showMobileNavbar(): void{
+    const openNav = document.getElementById('openNav') as HTMLImageElement;
+    const closeNav = document.getElementById('closeNav') as HTMLImageElement;
+    const navContainer = document.getElementById('Navbar') as HTMLElement;
+    const innerNavbar = document.getElementById('NavbarContainer') as HTMLUListElement;
+    const navButtons = document.querySelectorAll('.NavbarItem') as NodeListOf<HTMLLIElement>
+    if(close === true){
+      openNav.style.transform = 'rotate(180deg)'
+      setTimeout(() => {
+        openNav.style.opacity = '0'        
+      }, 100);
+      setTimeout(() => {
+        openNav.style.display = 'none'      
+      }, 150);
+      setTimeout(() => {
+        setTimeout
+        closeNav.style.display = 'block'
+        closeNav.style.opacity = '1'
+        closeNav.style.transform = 'rotate(-90deg)'        
+      }, 160);
+    } else{
+      closeNav.style.transform = 'rotate(90deg)'
+      setTimeout(() => {
+        closeNav.style.opacity = '0'        
+      }, 100);
+      setTimeout(() => {
+        closeNav.style.display = 'none'      
+      }, 150);
+      setTimeout(() => {
+        setTimeout
+        openNav.style.display = 'block'
+        openNav.style.opacity = '1'
+        openNav.style.transform = 'rotate(-180deg)'        
+      }, 160);
+    }
+
+    if(close === false){
+      navContainer.style.backgroundColor ='#33333300'
+      innerNavbar.style.backgroundColor ='#33333300'
+      innerNavbar.style.width = '0%'
+
+      navButtons.forEach((button)=>{
+        button.style.display = 'none';
+        button.style.opacity = '0';
+      })
+    } else{
+      navContainer.style.backgroundColor ='#33333379'
+      innerNavbar.style.backgroundColor ='#333333'
+      innerNavbar.style.width = '60%'
+
+      navButtons.forEach((button)=>{
+        button.style.display = 'block'
+        button.style.opacity = '1';
+      })
+    }
+
+    setClose(!close)
   }
 
   function changeTexts(): void{
@@ -68,8 +131,10 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
 
   return (
     <nav className='Navbar' id='Navbar'>
-        <ul className='NavbarContainer'>
-            <li className='NavbarItem'>{languageText[0]}</li>
+      <img className='NavbarIcon' id='openNav' onClick={showMobileNavbar} src={optionsImg} alt="menu bars" />
+      <img className='NavbarIcon' id='closeNav' onClick={showMobileNavbar} src={closeIcon} alt="menu bars" />
+        <ul className='NavbarContainer' id='NavbarContainer'>
+            <li className='NavbarItem' id='firstMobileButton'>{languageText[0]}</li>
             <li className='NavbarItem'>{languageText[1]}</li>
             <li className='NavbarItem'>{languageText[2]}</li>
             <li className='NavbarItem'>{languageText[3]}</li>

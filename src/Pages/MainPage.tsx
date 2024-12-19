@@ -7,7 +7,7 @@ import './css/General.css'
 const MainPage: React.FC = () => {
 
   const [close, setClose] = useState<boolean>(false)
-  const [language ,setLanguage] = useState<string>('')
+  const [language ,setLanguage] = useState<string>('En')
 
   return (
     <main>      
