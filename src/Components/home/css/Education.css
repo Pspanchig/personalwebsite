@@ -129,6 +129,8 @@
         display: none;
     }
     .EducationInformation{
+        transition: 0.2s;
+        position: static;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -136,9 +138,13 @@
         /* background-color: red; */
     }
     .EducationItem{
+        
         flex-direction:column-reverse;
         height: 100%;
         justify-content: space-evenly;
+    }
+    .EducationItem button{
+        color: black;
     }
     .Text{
        width: 70%;        

@@ -59,6 +59,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
     }
 
     if(close === false){
+      navContainer.style.height = '10%'
       navContainer.style.backgroundColor ='#33333300'
       innerNavbar.style.backgroundColor ='#33333300'
       innerNavbar.style.width = '0%'
@@ -68,6 +69,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
         button.style.opacity = '0';
       })
     } else{
+      navContainer.style.height = '100%'
       navContainer.style.backgroundColor ='#33333379'
       innerNavbar.style.backgroundColor ='#333333'
       innerNavbar.style.width = '60%'

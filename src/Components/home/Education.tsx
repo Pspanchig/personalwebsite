@@ -28,7 +28,7 @@ const Education: React.FC<language> = ({language}) => {
       key.style.transform = 'translateX(100vw)'        
       setTimeout(() => {
         key.style.display = 'none';
-      }, 1000);
+      }, 100);
     })
     containerUCM.forEach((key) =>{
       setTimeout(() => {
@@ -36,9 +36,11 @@ const Education: React.FC<language> = ({language}) => {
         key.style.display = 'flex';
         setTimeout(() => {        
           key.style.transform = 'translateX(1vw)'        
-        }, 800);        
-      }, 250);
-    })        
+        }, 200);        
+      }, 150);
+    })      
+        
+
   }
 
   function changeLanguage(): void{
@@ -99,7 +101,7 @@ const Education: React.FC<language> = ({language}) => {
           <div className='EducationInformation'onMouseOver={()=> moveScrollBar(false)} id='UcmoEd'>
             <div className='EducationItem'>
             <button id='MoreInfEDSn'>More information</button>           
-            <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('UcmoEd', 'SnowEd')}>Next <img src={arrow} alt="arrow" /></button>
+            <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('UcmoEd', 'SnowEd')}>Previous <img src={arrow} alt="arrow" /></button>
               <div className='Text'>
                 <h2>University of Central Missouri</h2>
                 <p>Warrensburg, Missorui</p>

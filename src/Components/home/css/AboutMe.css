@@ -142,7 +142,7 @@
     max-width: 2vh;    
     margin-left: 0.6em;
 }
-#NextSkillButton{
+.NextSkillButton{
     display: none;
 }
 
@@ -186,7 +186,11 @@
     }
     .TextFocusAreas h3{
         margin-left: 0;
-        margin-block: 2px;
+        margin-block: 0px;
+        font-size: 3vh;
+    }
+    .TextFocusAreas p{
+        margin: 5px;
     }
     .TextFocusAreas ul{
         list-style: none;
@@ -212,6 +216,7 @@
         height: 100%;
         justify-content: space-evenly;
         align-items: center;
+        
     }
     .SkillName{
         flex-direction: column;
@@ -220,17 +225,19 @@
     }
     .SkillName h3{
         width: 100%;     
-        font-size: 4vh;
+        font-size: 6vw;
     }
     .SkillName img{
+        transition: 1s;
         width: 20vw;
     }
     .SkillPointContainer{
-        height: 100%;
-        width: 80%;
+        height: 80%;
+        width: 60%;
         margin: 0;
         background-color: #555555;
         border-radius: 2em;
+        padding: 0.25em;
     }
     .subContaniner{
         display: flex;
@@ -243,7 +250,7 @@
         height: 3vh;
         width: 3vh;
     }
-    #NextSkillButton{
+    .NextSkillButton{
         margin-top: 2vh;
         display: block;
         width: 35vw;
@@ -254,13 +261,15 @@
         color: black;
         font-size: 2vh;
     }
+    .Skill:hover img {
+        transition: 0s;
+        min-width: 20vw;
+        width: 20vw;
+        max-width: 20vw;
+    }
     .Skill:hover{
         background-color: rgba(128, 128, 128, 0);    
         transition: 0.5s;
-        /* if hover skill img increases to width 4vh */
-    }
-    .Skill:hover img , .ScrollDownSkills img {
-        transition: 0.5s;
-        width: 20vw;
+        padding-block: 0em;        
     }
 }
