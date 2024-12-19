@@ -14,7 +14,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
 
   const [languageText, setLanguageText] = useState<string[]>([])
   const [close, setClose] = useState<boolean>(true);
-  const [screenPixels] = useState<number>(window.innerHeight)
+  // const [screenPixels] = useState<number>(window.innerHeight)
 
   function changeLanguage(value: boolean): void{
     if(value === true) setLanguage('En');
