@@ -104,7 +104,7 @@ const Education: React.FC<language> = ({language}) => {
             <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('UcmoEd', 'SnowEd')}>Previous <img src={arrow} alt="arrow" /></button>
               <div className='Text'>
                 <h2>University of Central Missouri</h2>
-                <p>Warrensburg, Missorui</p>
+                <p>Warrensburg, Missouri</p>
                 <p>{languageText[1]}</p>
                 <p>Bachelor B.S</p>
               </div>
