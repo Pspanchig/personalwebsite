@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/AboutMe.css'
 import aspnet from './imgs/aspnet.svg'
 import csharp from './imgs/csharp.svg'
@@ -10,7 +10,7 @@ import mysql from './imgs/mysql.svg'
 import reactvite from './imgs/react.svg'
 import typescript from './imgs/typescript.svg'
 import arrow from './imgs/arrowDown.svg'
-
+import java from './imgs/java.svg'
 const AboutMe: React.FC = () => {
 
   const [currentOffsetContainer, setCurrentOffsetContainer] = useState<number>(0)
@@ -26,19 +26,40 @@ const AboutMe: React.FC = () => {
     }
   }
 
-  function changeSkillMobile(): void {
+  function changeSkillMobile(forward: boolean): void {
     const skills = document.querySelectorAll('.Skill') as NodeListOf<HTMLDivElement>;
     const skillsImg = document.querySelectorAll('.Skill img') as NodeListOf<HTMLImageElement>;
     
-    skills[index].style.display = 'none'
-    skillsImg[index + 1].style.transform = 'rotate(180deg)'
-    skills[index + 1].style.display = 'flex'    
-
-    if(index < 17) setIndex(index + 1)
-      else setIndex(8)
-    console.log(index)
+    if(forward === true){
+      skills[index].style.display = 'none'            
+      setTimeout(() => {  
+        skillsImg[index + 1].style.transform = 'rotate(-360deg)'
+      }, 200);
+      skillsImg[index + 1].style.transform = 'rotate(360deg)'
+      skills[index + 1].style.display = 'flex'    
+      if(index < 19) setIndex(index + 1)
+        else setIndex(9)    
+    }
+    else if(forward === false){
+      skills[index].style.display = 'none'            
+      setTimeout(() => {  
+        skillsImg[index - 1].style.transform = 'rotate(360deg)'
+      }, 200);
+      skillsImg[index - 1].style.transform = 'rotate(-360deg)'
+      skills[index - 1].style.display = 'flex'    
+      if(index > 9) setIndex(index - 1)
+        else setIndex(19)    
+    }    
   }
   
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    if (counter < 14) {
+      changeSkillMobile(true);
+      setCounter((prev) => prev + 1); // Increment counter
+    }
+  }, [counter]);
 
   function scrollShowMore(): void{
     const container = document.getElementById('skillContainer') as HTMLDivElement;    
@@ -59,7 +80,7 @@ const AboutMe: React.FC = () => {
       <div className='AboutMeInInformationContainer'>
         <div className='AboutMeSkills'>
           <div className='SubtitlSkills'>
-            <h2 onClick={changeSkillMobile}>Skills</h2>
+            <h2>Skills</h2>
           </div>
           
           <div className='SkillsContainer' id='skillContainer'>
@@ -78,8 +99,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>                
                 </div>
-              </div>              
-                <button className='NextSkillButton' >Next</button>
+              </div>           
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>   
             </div>
             <div className='Skill' id='skill2' onMouseEnter={() => scrollToItem('2')}>
               <div className='SkillName'>
@@ -96,7 +119,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
             <div className='Skill' id='skill3' onMouseEnter={() => scrollToItem('3')}>
               <div className='SkillName'>
@@ -113,7 +139,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-                <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
             <div className='Skill' id='skill4' onMouseEnter={() => scrollToItem('4')}>
               <div className='SkillName'>
@@ -130,7 +159,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'orange'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
             <div className='Skill' id='skill5' onMouseEnter={() => scrollToItem('5')}>
               <div className='SkillName'>
@@ -147,7 +179,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
             <div className='Skill' id='skill6' onMouseEnter={() => scrollToItem('6')}>
               <div className='SkillName'>
@@ -164,7 +199,30 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
+            </div>
+            <div className='Skill' id='skill10' onMouseEnter={() => scrollToItem('10')}>
+              <div className='SkillName'>
+                <img src={java} alt="Java Img" />
+                <h3>Java</h3>
+              </div>
+              <div className='subContaniner'>
+                <div className='SkillPointContainer'>
+                  <div className='SkillPoint' style={{backgroundColor: '#ec8804'}}></div>
+                  <div className='SkillPoint' style={{backgroundColor: '#ec8804'}}></div>
+                  <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
+                  <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
+                  <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
+                  <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
+                </div>
+              </div>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
             <div className='Skill' id='skill7' onMouseEnter={() => scrollToItem('7')}>
               <div className='SkillName'>
@@ -181,7 +239,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
             <div className='Skill' id='skill8' onMouseEnter={() => scrollToItem('8')}>
               <div className='SkillName'>
@@ -198,7 +259,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
             <div className='Skill' id='skill9' onMouseEnter={() => scrollToItem('9')}>
               <div className='SkillName'>
@@ -215,9 +279,12 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
-            </div>
-            <div className='Skill' id='skill9' onMouseEnter={() => scrollToItem('9')}>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
+            </div>            
+            <div className='Skill' id='skill11'>
               <div className='SkillName'>
                 <img src={git} alt="Git Img" />
                 <h3>Null</h3>
@@ -232,7 +299,10 @@ const AboutMe: React.FC = () => {
                   <div className='SkillPoint' style={{backgroundColor: 'gray'}}></div>
                 </div>
               </div>
-              <button className='NextSkillButton' >Next</button>
+              <div className='ForwardSkillButton'>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(false)}>Previous</button>
+                <button className='NextSkillButton'  onClick={() => changeSkillMobile(true)}>Next</button>
+              </div>
             </div>
           </div>
           <div className='ScrollDownSkills' onClick={scrollShowMore}>

@@ -14,7 +14,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
 
   const [languageText, setLanguageText] = useState<string[]>([])
   const [close, setClose] = useState<boolean>(true);
-  // const [screenPixels] = useState<number>(window.innerHeight)
+  // const [screenPixels] = useState<number>(window.innerWidth)
 
   function changeLanguage(value: boolean): void{
     if(value === true) setLanguage('En');
@@ -28,6 +28,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
     const navContainer = document.getElementById('Navbar') as HTMLElement;
     const innerNavbar = document.getElementById('NavbarContainer') as HTMLUListElement;
     const navButtons = document.querySelectorAll('.NavbarItem') as NodeListOf<HTMLLIElement>
+
     if(close === true){
       openNav.style.transform = 'rotate(180deg)'
       setTimeout(() => {
@@ -127,8 +128,23 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
       else setLanguageText(spanish)
   }
 
+  // function FixFullScreen(): void{
+  //   const hideMobileButtons = document.querySelectorAll('.NavbarIcon') as NodeListOf<HTMLImageElement>;
+    
+  //   if(screenPixels > 680){
+  //     hideMobileButtons.forEach((img) =>{
+  //       img.style.display = 'none'
+  //     })
+  //   } else{
+  //     hideMobileButtons.forEach((img) =>{
+  //       img.style.display = 'block'
+  //     })
+  //   }
+  // }
+
   useEffect(()=>{
     changeTexts()
+    // FixFullScreen()
   }, [language])
 
   return (

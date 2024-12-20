@@ -37,11 +37,12 @@
     overflow-y: auto;
 }
 .TextFocusAreas h3{
+    margin: 0vh;
     margin-left: 2vh;
-    font-size: clamp(3vh, 3vh, 3vh);
+    font-size: clamp(2.6vh, 2.6vh, 2.6vh);
 }
-.TextFocusAreas li{
-    font-size: clamp(2.3vh, 2.3vh, 2.3vh);
+.TextFocusAreas p{
+    font-size: clamp(15px, 15px, 15px);
 }
 .AboutMeSkills{
     border-right: 1px solid white;
@@ -142,10 +143,12 @@
     max-width: 2vh;    
     margin-left: 0.6em;
 }
-.NextSkillButton{
+.NextSkillButton , .ForwardSkillButton{
     display: none;
 }
-
+#skill11{
+    display: none;
+}
 
 @media screen and (max-width: 1280px) and (max-height: 720px) {
   .SkillName h3, .ScrollDownSkills {
@@ -154,7 +157,7 @@
   .AboutMeFocusAreas h3{
     font-size: 10px;
   }
-  .TextFocusAreas li{
+  .TextFocusAreas p{
     font-size: 8px;
   }
   .AboutMeSkills h2 ,.AboutMeFocusAreas h2{
@@ -218,16 +221,17 @@
         align-items: center;
         
     }
-    .SkillName{
+    .SkillName{        
         flex-direction: column;
         height: 60%;   
         text-align: center; 
-    }
+    }    
     .SkillName h3{
         width: 100%;     
         font-size: 6vw;
     }
     .SkillName img{
+        /* transform: rotate(180deg); */
         transition: 1s;
         width: 20vw;
     }
@@ -253,13 +257,14 @@
     .NextSkillButton{
         margin-top: 2vh;
         display: block;
-        width: 35vw;
-        height: 5vh;
+        width: 30vw;
+        height: 4vh;
         border-radius: 2em;
         border: 1px solid black;
         background-color: white;
         color: black;
         font-size: 2vh;
+        margin-inline: 1vh;
     }
     .Skill:hover img {
         transition: 0s;
@@ -270,6 +275,16 @@
     .Skill:hover{
         background-color: rgba(128, 128, 128, 0);    
         transition: 0.5s;
-        padding-block: 0em;        
+        padding-block: 0em;           
+    }
+    #skill11{
+        display: flex;
+    }
+    .ForwardSkillButton{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        /* justify-content: space-between; */
     }
 }

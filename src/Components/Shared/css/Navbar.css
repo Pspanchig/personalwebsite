@@ -106,11 +106,14 @@
         padding: 0;
         justify-content: flex-start;
         align-items: flex-start;
+        transition: 0.4s;
+
     }
     .NavbarIcon{
         display: block;
-        width: 10vw;
+        width: 45px;
         margin-left: 5vw;
+        transition: 0.5s;
     }
     .NavbarItem{
         display: none;
