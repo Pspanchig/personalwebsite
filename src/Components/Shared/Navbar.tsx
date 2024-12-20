@@ -4,6 +4,7 @@ import spanish from './imgs/spanish-flag.svg'
 import english from './imgs/uk-flag.svg'
 import optionsImg from './imgs/menuOptions.svg'
 import closeIcon from './imgs/close.svg'
+import { useNavigate } from 'react-router-dom'
 
 interface languageChanger{
   language: string;
@@ -12,6 +13,7 @@ interface languageChanger{
 
 const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
 
+  const navigate = useNavigate();
   const [languageText, setLanguageText] = useState<string[]>([])
   const [close, setClose] = useState<boolean>(true);
   // const [screenPixels] = useState<number>(window.innerWidth)
@@ -152,11 +154,11 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
       <img className='NavbarIcon' id='openNav' onClick={showMobileNavbar} src={optionsImg} alt="menu bars" />
       <img className='NavbarIcon' id='closeNav' onClick={showMobileNavbar} src={closeIcon} alt="menu bars" />
         <ul className='NavbarContainer' id='NavbarContainer'>
-            <li className='NavbarItem' id='firstMobileButton'>{languageText[0]}</li>
-            <li className='NavbarItem'>{languageText[1]}</li>
-            <li className='NavbarItem'>{languageText[2]}</li>
-            <li className='NavbarItem'>{languageText[3]}</li>
-            <li className="NavbarItem" id="LengId">{languageText[4]}
+            <li className='NavbarItem' onClick={() => navigate('/')} id='firstMobileButton'>{languageText[0]}</li>
+            <li className="NavbarItem" onClick={() => navigate('/biography')}>{languageText[1]}</li>
+            <li className='NavbarItem' onClick={() => navigate('/')}>{languageText[2]}</li>
+            <li className='NavbarItem' onClick={() => navigate('/')}>{languageText[3]}</li>
+            <li className="NavbarItem" onClick={() => navigate('/')} id="LengId">{languageText[4]}
               <span className="NavbarDropdown">
                 <div className="lenguage" onClick={() => changeLanguage(false)}>
                   <p>{languageText[5]}</p>
