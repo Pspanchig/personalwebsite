@@ -190,9 +190,10 @@
     .TextFocusAreas h3{
         margin-left: 0;
         margin-block: 0px;
-        font-size: 3vh;
+        font-size: clamp(20px, 20px, 20px);
     }
     .TextFocusAreas p{
+        font-size: clamp(10px, 10px, 10px);
         margin: 5px;
     }
     .TextFocusAreas ul{
