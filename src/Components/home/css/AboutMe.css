@@ -155,17 +155,18 @@
     font-size: 8px; /* Reduce font size */
   }
   .AboutMeFocusAreas h3{
-    font-size: 10px;
+    font-size: clamp(20px, 20px, 20px);
   }
   .TextFocusAreas p{
-    font-size: 8px;
+    font-size: clamp(10px, 10px, 10px);
   }
   .AboutMeSkills h2 ,.AboutMeFocusAreas h2{
-    font-size: 15px;
+    font-size: clamp(15px, 15px, 15px);
   }
 }
 
 @media (max-width: 680px) {
+
     .AboutMe{
         height: 100%;
         width: 100%;
@@ -281,6 +282,9 @@
     #skill11{
         display: flex;
     }
+    .AboutMeSkills h2 ,.AboutMeFocusAreas h2{
+        font-size: clamp(15px, 15px, 15px);
+      }
     .ForwardSkillButton{
         display: flex;
         width: 100%;

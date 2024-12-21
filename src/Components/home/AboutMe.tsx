@@ -11,6 +11,7 @@ import reactvite from './imgs/react.svg'
 import typescript from './imgs/typescript.svg'
 import arrow from './imgs/arrowDown.svg'
 import java from './imgs/java.svg'
+
 const AboutMe: React.FC = () => {
 
   const [currentOffsetContainer, setCurrentOffsetContainer] = useState<number>(0)
