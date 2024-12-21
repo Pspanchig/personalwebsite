@@ -10,7 +10,9 @@ section{
 @media (max-width: 680px) {
     section{
         margin-bottom: 10%; 
-        width: 92vw;       
+        width: 92vw;   
+        min-height: 500px;    
         height: 80vh;   
+        max-width: 80vh;
     }
 }
