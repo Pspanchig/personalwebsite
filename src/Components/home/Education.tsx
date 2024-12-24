@@ -108,7 +108,7 @@ const Education: React.FC<language> = ({language}) => {
                 <p>{languageText[1]}</p>
                 <p>Bachelor B.S</p>
               </div>
-              <img src={UcmoLogo} alt="Snow College Img" />
+              <img src={UcmoLogo} alt="UCMO Img" />
             </div>
             <u><span>{languageText[1]}</span></u>
 

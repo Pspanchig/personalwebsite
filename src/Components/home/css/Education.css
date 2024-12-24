@@ -106,6 +106,9 @@
 }
 
 @media (max-width: 680px) {
+    .EducationInformationContainer{
+        /* min-height: 10px; */
+    }
     .EducationTitle{
         min-height: 8%;
         height: 8%;
@@ -150,10 +153,10 @@
        width: 70%;        
     }
     .EducationItem img{
-        min-width: 50%;
+        
         width: 50%;
-        max-width: 50%;
-        min-height: 30%;
+        
+        min-height: 180px;
         height: 30%;
         max-height: 30%;
     }
@@ -190,7 +193,7 @@
     }
     #UcmoEd img{
         height: 20vh;
-        width: 35vw;
+        width: 37vw;
     }
     #NextImgEDSn img{
         height: 5vh;

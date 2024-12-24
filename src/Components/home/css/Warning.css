@@ -70,10 +70,16 @@
  }
 
  @media (max-width: 680px){
+   .Warning{
+      margin-top: 50px;
+      justify-content: flex-start;
+   }
    .WarningSpan{
+      /* margin-top: 10vh; */
       height: 10%;
    }
    .WarningTitle{
+      margin-top: 25vh;
       height: 2%;
    }
    .WarningTitle , .WarningSpan, .WarningSpan button{

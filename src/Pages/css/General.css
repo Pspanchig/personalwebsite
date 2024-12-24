@@ -35,6 +35,8 @@ p {
 @media(max-width: 680px){
     main{
        justify-content:space-evenly;
+       min-height: 2320px;
        height: 290vh;
+
     }    
 }
