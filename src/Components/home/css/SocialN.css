@@ -35,6 +35,7 @@
 }
 @media (max-width: 680px) {
   .SocialNetwork{
+    min-height: 60%;
     height: 60%;
     /* background-color: red; */
   }

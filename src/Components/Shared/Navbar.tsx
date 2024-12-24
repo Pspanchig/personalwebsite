@@ -35,7 +35,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
       openNav.style.transform = 'rotate(180deg)'
       setTimeout(() => {
         openNav.style.opacity = '0'        
-      }, 100);
+      }, 10);
       setTimeout(() => {
         openNav.style.display = 'none'      
       }, 150);
@@ -49,7 +49,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
       closeNav.style.transform = 'rotate(90deg)'
       setTimeout(() => {
         closeNav.style.opacity = '0'        
-      }, 100);
+      }, 10);
       setTimeout(() => {
         closeNav.style.display = 'none'      
       }, 150);
