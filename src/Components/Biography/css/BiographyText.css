@@ -7,16 +7,16 @@
 }
 .BiographyTextContainer{
     display: flex;
-    /* background-color: red; */
-    height: 90%;
+    /* background-color: blue; */
+    height: 100%;
     width: 90%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 }
 .BiographyTextContainer article{
     /* background-color: red; */
-    height: 85%;
+    height: 65%;
     width: 60%;
     overflow-y: auto;
 }
@@ -24,6 +24,7 @@
     font-size: large;
 }
 .BiographyTextHeader{
+    margin-top: 3vh;
     font-size: 2rem;
     font-weight: 600;
     width: 60%;
@@ -31,4 +32,30 @@
     text-align: center;
     border: 2px solid black;
     border-radius: 0.5em;
+}
+@media (max-width: 680px) {
+    .BiographyText{
+        display: flex;                   
+    }
+    .BiographyTextContainer{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;  
+        align-items: center;      
+    }    
+    
+    .BiographyTextHeader{        
+        width: 80%;        
+    }
+    .BiographyTextHeader h2{
+        font-size: clamp(1rem, 1rem, 1rem);
+    }
+    .BiographyTextContainer article{
+        width: 80%;        
+    }
+    .BiographyTextContainer article p{
+        font-size: clamp(0.8rem, 0.8rem, 0.8rem);
+    }
+    
 }

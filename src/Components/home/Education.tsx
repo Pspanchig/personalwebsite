@@ -110,7 +110,7 @@ const Education: React.FC<language> = ({language}) => {
               </div>
               <img src={UcmoLogo} alt="UCMO Img" />
             </div>
-            <u><span>{languageText[1]}</span></u>
+            <u><span>{languageText[2]}</span></u>
 
           </div>
         </div>

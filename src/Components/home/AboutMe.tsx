@@ -288,7 +288,7 @@ const AboutMe: React.FC = () => {
             <div className='Skill' id='skill11'>
               <div className='SkillName'>
                 <img src={git} alt="Git Img" />
-                <h3>Null</h3>
+                <h3>Github</h3>
               </div>
               <div className='subContaniner'>
                 <div className='SkillPointContainer'>

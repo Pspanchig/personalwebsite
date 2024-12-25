@@ -124,6 +124,7 @@
         background-color: #33333300;
         height: 10%;
         justify-content: flex-start;
+        color: white;
     }
     .NavbarContainer{
         height: 100%;
