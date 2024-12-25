@@ -3,9 +3,11 @@ import './css/BiographyText.css'
 
 const BiographyText: React.FC = () => {
   return (
-    <section className='BiographyText'>
+    <section id='BiographyTextHeader' className='BiographyText'>
         <div className='BiographyTextContainer'>
-          <h2>No dream is too big, and no dreamer too small.</h2>
+          <div className='BiographyTextHeader'>
+            <h2>No dream is too big, and no dreamer too small.</h2>
+          </div>
           <article>
             <p>Born in Quito, Ecuador the oldest capital in South America I have always been captivated by the endless possibilities of technology and creativity. From a young age, the dream of becoming a game developer fueled my passion, leading me at 15 to master Unreal Engine and Unity, along with programming languages like C++ and C#. This early immersion laid the foundation for my journey into the world of coding and innovation.</p>
             <p>At 18, I took a decisive step toward my aspirations by enrolling at Snow College in August 2022 to pursue a degree in Software Engineering. Initially uncertain, my confidence grew with each project and line of code, reaffirming that software engineering was the perfect medium to bring my creative visions to life. In December 2023, I proudly earned my Associate of Science degree, a testament to my dedication and hard work.</p>

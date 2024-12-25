@@ -3,7 +3,9 @@
     --BackgroundColorGradient-2: rgb(98, 30, 161);
 
 }
-
+html {
+    scroll-behavior: smooth;
+}
 main{    
     display: flex;
     flex-direction: column;
@@ -13,7 +15,7 @@ main{
     font-optical-sizing: auto;
     font-style: normal;
     color: white;
-    background: linear-gradient(to bottom, var(--BackgroundColorGradient-1), var(--BackgroundColorGradient-2));
+    background: #D7D7D7;
     height: 100vh;
     width: 100vw;
     position: relative;

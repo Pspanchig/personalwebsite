@@ -17,7 +17,9 @@ const GeneralDescription: React.FC = () => {
               <h2>20 Years old</h2>
               <h2>Ecuadorian</h2>
             </div>
+            <a href="#BiographyTextHeader">
             <button>Read more</button>
+            </a>
           </div>        
         </div>
         <div className='ProfilePicture'>

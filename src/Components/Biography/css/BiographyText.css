@@ -1,15 +1,16 @@
 .BiographyText{    
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to top, var(--BackgroundColorGradient-1), var(--BackgroundColorGradient-2));
     display: grid;
     place-items: center;
+    color: black;
 }
 .BiographyTextContainer{
     display: flex;
-    height: 80%;
+    /* background-color: red; */
+    height: 90%;
     width: 90%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
@@ -21,4 +22,13 @@
 }
 .BiographyTextContainer article p{
     font-size: large;
+}
+.BiographyTextHeader{
+    font-size: 2rem;
+    font-weight: 600;
+    width: 60%;
+    background-color: white;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 0.5em;
 }

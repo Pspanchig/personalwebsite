@@ -7,7 +7,9 @@ const Countries: React.FC = () => {
   return (
     <section className='Countries'>
         <div className='CountriesContainer'>
-            <h2>Cities I've lived in</h2>
+            <div className='CountriesTitle'>
+                <h2>Cities I've lived in</h2>
+            </div>
             <div className='CitiesContainer'>
                 <div className='CityElement'>
                     <h3>2004 - 2022</h3>

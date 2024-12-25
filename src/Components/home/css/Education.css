@@ -1,7 +1,7 @@
 .Education{    
     height: 85%;
     width: 85%;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,8 @@
     height: 13%;
     width: 100%;
     color: black;
-    background-color: white;
+    background-color: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +58,7 @@
 .EducationInformation:hover{
     width: 100%;
     transition: 0.5s;
-    background-color: #502C80;
+    background-color: #b6b6b6;
     padding-block: 4vh;
 }
 .EducationInformation span {
@@ -114,6 +115,8 @@
         max-height: 8%;
     }
     .Education{
+        color: black;
+        background-color: white;
         width: 100%;
         height: 100%;
     }
@@ -176,8 +179,9 @@
     #NextImgEDSn{
         height: 6vh;
         width: 55vw;
-        background-color: white;
-        border: 1px solid black;
+        color: white;
+        background-color: #555555;
+        border: 2px solid black;
         font-size: 3vh;
     }
     .Text h2{

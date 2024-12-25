@@ -1,7 +1,9 @@
 .AboutMe{
+    background-color: white;
+    color: black;
     height: 85%;
     width: 85%;
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -11,8 +13,8 @@
     border-top-right-radius: 0.5em;    
     height: 13%;
     width: 100%;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +47,7 @@
     font-size: clamp(15px, 15px, 15px);
 }
 .AboutMeSkills{
-    border-right: 1px solid white;
+    border-right: 2px solid black;
     height: 100%;
     width: 35%;
     display: flex;
@@ -57,7 +59,7 @@
     height: 1vh;
     width: 1vh;
     border-radius: 3em;
-    border: 2px solid white;
+    border: 2px solid black;
 }
 .Skill{
     display: flex;
@@ -108,7 +110,7 @@
     width: 100%;
     height: 10%;
     text-align: center;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid black;
 }
 .Skill:hover{
     background-color: rgba(128, 128, 128, 0.432);    
@@ -124,7 +126,7 @@
 }
 .ScrollDownSkills{    
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.158);
+    background-color: rgb(100, 100, 100);
     color: white;
     width: 100%;
     border-bottom-left-radius: 0.5em;
@@ -177,6 +179,7 @@
         max-height: 8%;
     }
     .AboutMeInInformationContainer{
+        
         flex-direction:column-reverse;
     }
     .AboutMeSkills, .AboutMeFocusAreas {
@@ -207,7 +210,7 @@
     }
     .SubtitlSkills{
         margin-top: 0;
-        border-top: 1px solid white;
+        border-top: 2px solid black;
         height: 16%;
     }
     #MainHome{
@@ -241,7 +244,7 @@
         height: 80%;
         width: 60%;
         margin: 0;
-        background-color: #555555;
+        background-color: #AAAAAA;
         border-radius: 2em;
         padding: 0.25em;
     }
@@ -255,6 +258,7 @@
     .SkillPoint{
         height: 3vh;
         width: 3vh;
+        border: 2px solid white;
     }
     .NextSkillButton{
         margin-top: 2vh;
@@ -262,9 +266,9 @@
         width: 30vw;
         height: 4vh;
         border-radius: 2em;
-        border: 1px solid black;
-        background-color: white;
-        color: black;
+        border: 2px solid black;
+        background-color: #555555;
+        color: white;
         font-size: 2vh;
         margin-inline: 1vh;
     }

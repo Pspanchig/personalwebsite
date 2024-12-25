@@ -13,7 +13,7 @@
     position: fixed;
     top: 0;
     height: clamp(10vh,6vh,10vh);
-    color: white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
