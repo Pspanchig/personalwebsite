@@ -1,0 +1,8 @@
+@media(max-width: 680px){
+    .mainPage{
+       justify-content:space-evenly;
+       min-height: 2320px;
+       height: 2320px;
+        max-height: 2320px;
+    }    
+}

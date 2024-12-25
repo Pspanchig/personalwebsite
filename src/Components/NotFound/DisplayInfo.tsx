@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Shared/css/General-Main.css'
+// import '../Shared/css/General-Main.css'
 import './css/DisplayInfo.css'
 import { useNavigate } from 'react-router-dom'
 

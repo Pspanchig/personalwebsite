@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../Shared/css/General-Main.css'
+// import '../Shared/css/General-Main.css'
 import './css/UserPresentation.css'
 import Education from './Education'
 import AboutMe from './AboutMe'
