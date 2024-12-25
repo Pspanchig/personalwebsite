@@ -3,8 +3,9 @@
 }
 
 @media(max-width: 680px){
-    main{
-       height: 350vh;
-       background-color: red;
+    .Biography{
+    
+       min-height: 3500px;
+       height: 350vh;       
     }    
 }
