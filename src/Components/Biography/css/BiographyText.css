@@ -35,7 +35,8 @@
 }
 @media (max-width: 680px) {
     .BiographyText{
-        display: flex;                   
+        display: flex;         
+        height: 100vh;          
     }
     .BiographyTextContainer{
         width: 100%;

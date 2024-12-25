@@ -4,7 +4,7 @@
 
 @media(max-width: 680px){
     main{
-       justify-content:space-evenly;
        height: 350vh;
+       background-color: red;
     }    
 }
