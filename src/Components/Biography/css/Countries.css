@@ -43,11 +43,13 @@
     color: #333333;
     box-shadow: 1em 1em 0.1em 0.75em black;
 }
+
 .CityElement img{
     width: 10vw;
 }
 @media (max-width: 680px) {
     .Countries{
+        min-height: 790px;
         height: 100vh;
         display: flex;                   
     }

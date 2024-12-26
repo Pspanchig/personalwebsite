@@ -12,6 +12,7 @@
     width: 80%;
     border: 3px solid black;
     border-radius: 1em;    
+    box-shadow: 1em 1em 0em 1em black;
 }
 
 .DivsDividerContainers{
@@ -136,6 +137,7 @@
         width: 92vw;   
         min-height: 650px;
         height: 65vh;
+        box-shadow: 0em 0em 0em 0em black;  
     }
     
 }

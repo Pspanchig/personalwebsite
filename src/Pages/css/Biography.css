@@ -1,6 +1,9 @@
 .Biography{
     height: 300vh;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 @media(max-width: 680px){
     .Biography{    
