@@ -3,9 +3,9 @@
 }
 
 @media(max-width: 680px){
-    .Biography{
-    
-       min-height: 3000px;
-       height: 300vh;       
+    .Biography{    
+        display: flex;
+        flex-direction: column;
+         height: 300vh;       
     }    
 }

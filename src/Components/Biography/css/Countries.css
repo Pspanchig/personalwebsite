@@ -48,7 +48,7 @@
 }
 @media (max-width: 680px) {
     .Countries{
-        height: 130vh;
+        height: 100vh;
         display: flex;                   
     }
     .CountriesContainer{
