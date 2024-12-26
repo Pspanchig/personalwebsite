@@ -1,6 +1,7 @@
 import React from 'react';
 import pic_1 from './imgs/Myself.jpg'
 import './css/GDescription.css'
+import { Link } from 'react-scroll';
 
 const GeneralDescription: React.FC = () => {
   return (
@@ -17,9 +18,8 @@ const GeneralDescription: React.FC = () => {
               <h2>20 Years old</h2>
               <h2>Ecuadorian</h2>
             </div>
-            <a href="#BiographyTextHeader">
-            <button>Read more</button>
-            </a>
+            <Link to='BiographyTextHeader' className='LinkToText' smooth={true} duration={500}><p>Read more</p></Link>
+
           </div>        
         </div>
         <div className='ProfilePicture'>

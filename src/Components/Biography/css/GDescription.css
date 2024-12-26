@@ -42,7 +42,7 @@
     border-bottom: 2px solid black;
     width: fit-content;
  }
- .TextDescription button{
+ .LinkToText{
     margin-top: auto;
     cursor: pointer;
     margin-top: 5vh;
@@ -54,7 +54,8 @@
     color: black;
     border: 2px solid black;
     background-color: #FFFF00;
-    /* box-shadow: 0.5em 0.3em 1em 0.05em rgb(148, 148, 148); */
+    display: grid;
+    place-items: center;
  }
  .ShortDescription, .YearCountry{
     border-bottom: 2px solid black;
@@ -128,6 +129,7 @@ html{
 }
 @media (max-width: 680px) {
    .GeneralDescription{
+      min-height: 1000px;
       height: 100vh;
    }
    .GeneralInformationContainer{
@@ -140,9 +142,16 @@ html{
       height: 37%;
       width: 97%;      
    }
+   .TextDescription{
+      display: grid;
+      place-items: center;
+   }
    .TextDescription h1{
       margin: 0;
       margin-block: 5px;
+      width: 100%;
+      text-align: center;
+      font-size: clamp(2rem, 2rem, 2rem);
 
    }
    .TextDescription h2{
@@ -153,27 +162,16 @@ html{
    .ShortDescription, .YearCountry{   
       width: 100%;
   }
-  .TextDescription h1{
-   width: 100%;
-   text-align: center;
-   font-size: clamp(2rem, 2rem, 2rem);
-   }
-   .TextDescription a{
-      margin-top: 2vh;
-      text-decoration: none;
-      height: 22%;
 
-      /* background-color: red; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-   }
-   .TextDescription a button{
-      height: 100%;
+   .LinkToText{
+      height: 60%;
       margin: 0;
       min-width: 130px;
       width: 40%;
       text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
    .ProfilePicture{
       width: 77%;

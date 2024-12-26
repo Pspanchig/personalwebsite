@@ -4,6 +4,8 @@ import './css/UserPresentation.css'
 import Education from './Education'
 import AboutMe from './AboutMe'
 import SocialNetworks from './SocialNetworks'
+import { Link } from 'react-scroll';
+
 
 export interface language{
   language: string;  
@@ -42,8 +44,12 @@ const UserPresentation: React.FC<language> = ({language}) => {
               <h3>{languageText[0]} ☻</h3>
             </div>
             <div className='ButtonMobileContainer'>
-              <a href="#EducationSectionID" className='ButtonMobileMenu'><p>Education</p></a>
-              <a href="#AboutMeSectionID" className='ButtonMobileMenu'><p>About me</p></a>
+            <Link to="EducationSectionID" className='ButtonMobileMenu' smooth={true} duration={500}>
+            <p>Education</p>
+            </Link>
+            <Link to="AboutMeSectionID" className='ButtonMobileMenu' smooth={true} duration={500}>
+            <p>About Me</p>
+            </Link>
             </div>
             <div className='LowerDiv'>
               <Education language={language}/>

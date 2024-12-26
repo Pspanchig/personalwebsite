@@ -6,9 +6,9 @@ html{
 }
 
 @media(max-width: 680px){
-    .Biography{    
-        display: flex;
-        flex-direction: column;
-         height: 300vh;       
+    .Biography{            
+        min-height: 3000px;
+        height: 3000px;
+        max-height: 3000px;
     }    
 }

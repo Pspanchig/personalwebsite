@@ -1,4 +1,4 @@
-.BiographyText{    
+.BiographyText{  
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -35,6 +35,8 @@
 @media (max-width: 680px) {
     .BiographyText{
         display: flex;         
+        min-height: 1000px;
+
         height: 100vh;          
     }
     .BiographyTextContainer{

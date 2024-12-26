@@ -49,7 +49,7 @@
 }
 @media (max-width: 680px) {
     .Countries{
-        min-height: 790px;
+        min-height: 1000px;
         height: 100vh;
         display: flex;                   
     }
