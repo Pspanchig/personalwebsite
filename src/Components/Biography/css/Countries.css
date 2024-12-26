@@ -73,6 +73,7 @@
     }
     .CityElement{
         width: 65%;      
+        min-height: 180px;
         height: 25%;  
     }
     .CityElement img{
