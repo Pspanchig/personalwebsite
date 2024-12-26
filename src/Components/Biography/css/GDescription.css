@@ -34,6 +34,7 @@
  .TextDescription h2{
     font-weight: 200;
     margin: 1vh;    
+    padding-bottom: 1vh;
  }
  .TextDescription h1{
     font-size: 5vw;
@@ -129,8 +130,8 @@ html{
 }
 @media (max-width: 680px) {
    .GeneralDescription{
-      min-height: 1000px;
-      height: 100vh;
+      min-height: 800px;
+      height: 80vh;
    }
    .GeneralInformationContainer{
       height: 100%;
@@ -174,7 +175,7 @@ html{
       align-items: center;
    }
    .ProfilePicture{
-      width: 77%;
+      width: 80%;
       height: 50%;
       margin-top: 5.8vh;
    }

@@ -35,7 +35,7 @@
 @media (max-width: 680px) {
     .BiographyText{
         display: flex;         
-        min-height: 1000px;
+        min-height: 800px;
 
         height: 100vh;          
     }
