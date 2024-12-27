@@ -32,6 +32,12 @@
     border: 2px solid black;
     border-radius: 0.5em;
 }
+
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+    .BiographyTextContainer article p{
+        font-size: clamp(0.8rem, 0.8rem, 0.8rem);
+    }
+}
 @media (max-width: 680px) {
     .BiographyText{
         display: flex;         
