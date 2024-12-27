@@ -12,7 +12,7 @@ const GeneralDescription: React.FC = () => {
 
   function changeImage(index: number) {
      const buttons = document.querySelectorAll('.ImgButtonSelector') as NodeListOf<HTMLButtonElement>;  
-     const imgs = document.querySelectorAll('.PhotosContainer img') as NodeListOf<HTMLImageElement>;  
+    //  const imgs = document.querySelectorAll('.PhotosContainer img') as NodeListOf<HTMLImageElement>;  
 
      if(index !== currentIndex) {
       buttons[currentIndex].style.backgroundColor = '#D7D7D7';
