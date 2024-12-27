@@ -39,12 +39,15 @@
 @media (max-width: 680px) {
     .InformationContainer{
         width: 90%;
-        height: 90%;
+        height: 75%;
         text-align: center;
     }
     .InformationContainer h1{
         font-size: clamp(2rem, 2rem, 2rem);
         width: 100%;
         margin-bottom: 5vh;
+    }
+    .InformationContainer p{
+        width: 85%;
     }
 }

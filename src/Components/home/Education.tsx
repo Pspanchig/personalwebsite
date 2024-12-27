@@ -5,10 +5,12 @@ import UcmoLogo from './imgs/ucmoLogo.png'
 import arrow from './imgs/arrowRight.svg'
 
 import { language } from './UserPresentation';
+import { useNavigate } from 'react-router-dom';
 
 const Education: React.FC<language> = ({language}) => {
 
   const [languageText, setLanguageText] = useState<string[]>([])
+  const navigate = useNavigate();
 
   function moveScrollBar(direction: boolean): void{ 
       const scrollbar = document.getElementById('scrollbarEd') as HTMLDivElement;
@@ -20,19 +22,19 @@ const Education: React.FC<language> = ({language}) => {
       }
   }
 
-  function ChangeEducationInformation(current: string, moveTo: string): void{
+  function ChangeEducationInformation(current: string, moveTo: string, direction: number): void{
     const containerSnow = document.querySelectorAll(`#${current}`) as NodeListOf<HTMLDivElement>;    
     const containerUCM = document.querySelectorAll(`#${moveTo}`) as NodeListOf<HTMLDivElement>;
 
     containerSnow.forEach((key) =>{      
-      key.style.transform = 'translateX(100vw)'        
+      key.style.transform = `translateX(${direction}vw)` 
       setTimeout(() => {
         key.style.display = 'none';
       }, 100);
     })
     containerUCM.forEach((key) =>{
       setTimeout(() => {
-        key.style.transform = 'translateX(-100vw)'        
+        key.style.transform = `translateX(${ - (direction)}vw)`        
         key.style.display = 'flex';
         setTimeout(() => {        
           key.style.transform = 'translateX(1vw)'        
@@ -85,8 +87,8 @@ const Education: React.FC<language> = ({language}) => {
         <div className='EducationInformationContainer' id='scrollbarEd'>
           <div className='EducationInformation' onMouseOver={()=> moveScrollBar(true)} id='SnowEd'>
             <div className='EducationItem'>
-              <button id='MoreInfEDSn'>More information</button>           
-              <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('SnowEd', 'UcmoEd')}>Next <img src={arrow} alt="arrow" /></button>
+              <button id='MoreInfEDSn' onClick={() => navigate('/education/snow')}>More information</button>           
+              <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('SnowEd', 'UcmoEd', -100)}>Next <img src={arrow} alt="arrow" /></button>
               <div className='Text'>
                 <h2>Snow College</h2>
                 <p>Ephraim, Utah</p>
@@ -100,8 +102,8 @@ const Education: React.FC<language> = ({language}) => {
 
           <div className='EducationInformation'onMouseOver={()=> moveScrollBar(false)} id='UcmoEd'>
             <div className='EducationItem'>
-            <button id='MoreInfEDSn'>More information</button>           
-            <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('UcmoEd', 'SnowEd')}>Previous <img src={arrow} alt="arrow" /></button>
+            <button id='MoreInfEDSn' onClick={() => navigate('/education/ucmo')}>More information</button>           
+            <button id='NextImgEDSn' onClick={() => ChangeEducationInformation('UcmoEd', 'SnowEd', 100)}>Previous <img id='GoToUCMImg' src={arrow} alt="arrow" /></button>
               <div className='Text'>
                 <h2>University of Central Missouri</h2>
                 <p>Warrensburg, Missouri</p>
