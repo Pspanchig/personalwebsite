@@ -2,7 +2,7 @@ import React from 'react';
 import './EducationMenu.css';
 import Ucmo from '../home/imgs/ucmoLogo.png'
 import Snow from '../home/imgs/snowLogo.png'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const EducationMenu: React.FC = () => {
   const navigate = useNavigate();
