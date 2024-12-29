@@ -37,6 +37,12 @@
     .BiographyTextContainer article p{
         font-size: clamp(0.8rem, 0.8rem, 0.8rem);
     }
+    .BiographyTextContainer article{
+        /* background-color: red; */
+        height: 65%;
+        width: 60%;
+        overflow-y: auto;
+    }
 }
 @media (max-width: 680px) {
     .BiographyText{

@@ -1,0 +1,59 @@
+.EducationMenu{
+    height: 100vh;
+    width: 100vw;  
+    color: black;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.InstitutionsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 50%;
+    align-items: center;    
+    background-color: rgb(29, 29, 29);
+    padding: 1em;
+    border-radius: 1em;
+    border: 1em solid white;
+}
+.InstitutionItem{
+    /* background-color: red; */
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.5s;
+
+}
+.InstitutionItem img{
+    width: 40%;
+    height: 70%;
+}
+.InstitutionItem h2{
+    height: 30%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.InstitutionItem:hover{
+    background-color: rgb(161, 161, 161);
+    color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.EducationMenu h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 1em;
+    height: 10%;
+    width: 60%;
+    background-color: white;
+}

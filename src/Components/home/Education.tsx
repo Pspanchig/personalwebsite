@@ -97,7 +97,7 @@ const Education: React.FC<language> = ({language}) => {
               </div>
               <img src={SnowLogo} alt="Snow College Img" />   
             </div>
-            <u><span>{languageText[2]}</span></u>
+            <u  onClick={() => navigate('/education/snow')}><span>{languageText[2]}</span></u>
           </div>        
 
           <div className='EducationInformation'onMouseOver={()=> moveScrollBar(false)} id='UcmoEd'>
@@ -112,7 +112,7 @@ const Education: React.FC<language> = ({language}) => {
               </div>
               <img src={UcmoLogo} alt="UCMO Img" />
             </div>
-            <u><span>{languageText[2]}</span></u>
+            <u  onClick={() => navigate('/education/ucmo')}><span>{languageText[2]}</span></u>
 
           </div>
         </div>
