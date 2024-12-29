@@ -1,7 +1,7 @@
 import React from 'react';
 import './EducationMenu.css';
 import Ucmo from '../home/imgs/ucmoLogo.png'
-import Snow from '../home/imgs/snowLogo.png'
+import Snow from '../home/imgs/SnowLogo.png'
 import { useNavigate } from 'react-router-dom';
 
 const EducationMenu: React.FC = () => {
