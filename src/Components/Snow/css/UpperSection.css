@@ -1,5 +1,5 @@
 .UpperSection{
-    height: 50%;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: space-evenly;

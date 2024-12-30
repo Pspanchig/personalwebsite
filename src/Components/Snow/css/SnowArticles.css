@@ -66,7 +66,11 @@
     width: 55%;
     height: 90%;
 }
-
+.Mascot h2{
+    font-family: "Bowlby One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 @media screen and (max-width: 1280px) and (max-height: 720px) {
     .RankingList li p, .MainTextInstitution p  {
         font-size: clamp(0.75rem, 0.75rem, 0.75rem);

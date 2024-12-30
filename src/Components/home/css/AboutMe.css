@@ -165,6 +165,9 @@
   .AboutMeSkills h2 ,.AboutMeFocusAreas h2{
     font-size: clamp(15px, 15px, 15px);
   }
+  .TextFocusAreas ul{
+    margin: 0;
+  }
 }
 
 @media (max-width: 680px) {
