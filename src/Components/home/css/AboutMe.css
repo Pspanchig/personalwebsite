@@ -37,14 +37,21 @@
     flex-direction: column;
     width: 100%;
     overflow-y: auto;
+    scrollbar-width: 0px;
+}
+.TextFocusAreas::-webkit-scrollbar{
+    display: none;    
 }
 .TextFocusAreas h3{
     margin: 0vh;
     margin-left: 2vh;
     font-size: clamp(2.6vh, 2.6vh, 2.6vh);
+    color: #313131;
 }
 .TextFocusAreas p{
-    font-size: clamp(15px, 15px, 15px);
+    font-size: 1rem;
+    color: #313131;
+
 }
 .AboutMeSkills{
     border-right: 2px solid black;
@@ -157,13 +164,16 @@
     font-size: 8px; /* Reduce font size */
   }
   .AboutMeFocusAreas h3{
-    font-size: clamp(20px, 20px, 20px);
+    font-size: clamp(0.85rem, 0.85rem, 0.85rem);
   }
   .TextFocusAreas p{
-    font-size: clamp(10px, 10px, 10px);
+    font-size: clamp(.7rem, .7rem, .7rem);
+    margin: 1.5vh;
+    
   }
+
   .AboutMeSkills h2 ,.AboutMeFocusAreas h2{
-    font-size: clamp(15px, 15px, 15px);
+    font-size: clamp(1rem, 1rem, 1rem);
   }
   .TextFocusAreas ul{
     margin: 0;
@@ -171,7 +181,7 @@
 }
 
 @media (max-width: 680px) {
-
+    
     .AboutMe{
         height: 100%;
         width: 100%;
@@ -197,10 +207,10 @@
     .TextFocusAreas h3{
         margin-left: 0;
         margin-block: 0px;
-        font-size: clamp(20px, 20px, 20px);
+        font-size: clamp(1.3rem, 1.3rem, 1.3rem);
     }
     .TextFocusAreas p{
-        font-size: clamp(10px, 10px, 10px);
+        font-size: clamp(0.95rem, 0.95rem, 0.95rem);
         margin: 5px;
     }
     .TextFocusAreas ul{
@@ -290,7 +300,8 @@
         display: flex;
     }
     .AboutMeSkills h2 ,.AboutMeFocusAreas h2{
-        font-size: clamp(15px, 15px, 15px);
+        font-size: clamp(1.5rem, 1.5rem, 1.5rem);
+
       }
     .ForwardSkillButton{
         display: flex;
@@ -299,4 +310,5 @@
         justify-content: center;
         /* justify-content: space-between; */
     }
+
 }

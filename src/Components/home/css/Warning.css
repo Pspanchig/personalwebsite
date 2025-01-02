@@ -29,6 +29,7 @@
     font-weight: 400;
     font-style: normal;
     text-align: center;
+    transition: ease-in-out 0.35s;
  }
  .WarningTitle h2{
     margin-block: 0;    
@@ -47,6 +48,7 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     color: black;
+    transition: ease-in-out 1s;
  }
  .WarningSpan button{
     cursor: pointer;;

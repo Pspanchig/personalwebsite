@@ -12,18 +12,18 @@ const Warning: React.FC<closeSpan> = ({closeBool, setCloseBool}) => {
         const BlurDiv = document.getElementById('WId') as HTMLElement ;
         const BlurTitle = document.getElementById('WTId') as HTMLDivElement ;
         const BlurSpan = document.getElementById('WSId') as HTMLSpanElement ;
+        // transform: translateY(100);
 
         if(BlurDiv && BlurTitle && BlurSpan){
+            BlurTitle.style.transform = 'translateY(-2000%)';
+            BlurSpan.style.transform = 'translateY(-2000%)';
             BlurDiv.style.transition = '1s';
-            BlurDiv.style.backgroundColor = 'rgba(128, 128, 128, 0)';
-            BlurTitle.style.transition = '2s';
-            BlurTitle.style.display = 'none';
-            BlurSpan.style.transition = '2s';
-            BlurSpan.style.display = 'none';
+            BlurDiv.style.backgroundColor = 'rgba(128, 128, 128, 0)';            
+            
         }
         setTimeout(() => {
             setCloseBool(!closeBool);
-        }, 800);
+        }, 1000);
     }
 
     return closeBool !== true &&(

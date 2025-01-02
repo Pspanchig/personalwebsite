@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/SnowGenInfo.css'; 
 import snowLogo from'../home/imgs/SnowLogo.png';
+import arrow from '../home/imgs/arrowDown.svg'
 
 const SnowGenInfo: React.FC = () => {
   return (
@@ -14,7 +15,14 @@ const SnowGenInfo: React.FC = () => {
         <h3>Degree Earned</h3>
         <p>Associates of Science</p>
         <h3>Location</h3>
-        <p>150 College Av, Ephraim, Utah</p>
+        <p id='LocationSnow'>150 College Av, Ephraim, Utah</p>
+        <button id='ShowMoreLocation'>
+          <p>Show more</p>          
+          <img 
+            src={arrow} 
+            alt="arrow" 
+          />
+        </button>
       </section>
       
         <iframe

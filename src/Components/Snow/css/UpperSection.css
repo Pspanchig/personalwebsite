@@ -5,3 +5,14 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+@media (max-width: 680px) {
+    .UpperSection{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        min-height: 1500px;
+        height: 1500px;
+        max-height: 1500px;
+    }
+}

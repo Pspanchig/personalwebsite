@@ -16,6 +16,7 @@ const LowerSection: React.FC = () => {
           Courses place an emphasis on software processes and lifecycles and utilize a team approach to building software with active learning (“learning by doing”) which also provides leadership opportunities, such as software development team lead roles, for every student.
         </p>
         <p>Courses include significant learning in management areas such as project planning, resource allocation, quality assurance, testing, metrics, maintenance and troubleshooting, configuration management and personnel management.</p>
+        <p>Find even more information at <a href="https://www.snow.edu/academics/science_math/engineering/se/">Snow College website</a></p>
       </article>
     </section>
   );

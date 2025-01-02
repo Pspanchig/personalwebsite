@@ -26,23 +26,25 @@ const SnowArticles: React.FC = () => {
           </p>
          </article>
          <div className='ArticleContinaerInstitutions'>
-          <article className='ArticleInstitutions'>
-            <div className='EducationTitle'>Rankings</div>
+          <article className='ArticleInstitutions' id='Article2'>
+            <div className='EducationTitle InstitutionTitle'>Rankings</div>
             <div className='RankingList'>
-                <ul>
+                <ul>                
                   <li><p>#33 in Regional Colleges West</p></li>
                   <li><p>#11 in Top Public Schools</p></li>
                   <li><p>#236-286 in Engineering Programs </p></li>
+                  <li> <a href="https://amspub.abet.org/aps/name-search?searchType=institution&keyword=Snow%20college"><p>Abet Acredited</p> </a><img src="https://www.millersville.edu/computerscience/img/abet-cac-2x.png" alt="Abet Img" /></li>
                 </ul>
             </div>
           </article>
-            <article className='ArticleInstitutions'>
-              <div className='EducationTitle'>Mascot</div>
+            <article className='ArticleInstitutions' id='Article3'>
+              <div className='EducationTitle InstitutionTitle'>Mascot</div>
               <div className='Mascot'>
               <img src="https://i.pinimg.com/originals/52/2e/5a/522e5a1a82af633116221954f56bca3a.jpg" alt="badgerSnow" />
               <h2>Badger!</h2>
               </div>
             </article>
+            <button id='ShowNextInstitution'>Show next</button>
          </div>
     </section>
   );

@@ -38,3 +38,12 @@
         font-size: clamp(0.75rem, 0.75rem, 0.75rem);
     }  
 }
+
+@media (max-width: 680px) {
+    .LowerSection{
+        min-height: 1200px;
+        height: 1200px;
+        max-height: 1200px;
+    }
+    
+}
