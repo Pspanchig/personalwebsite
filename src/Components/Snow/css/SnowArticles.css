@@ -134,7 +134,7 @@
     }
     .ArticleInstitutions{
         height: 70%;
-        width: 65%;
+        width: 85%;
     }
     .InstitutionTitle{
         min-height: 20%;
@@ -149,12 +149,14 @@
         border: 2px solid black;
         border-radius: 2em;
         font-size: larger;
+        color: black;
     }
     .RankingList li {
         margin: .1vh;
     }
     .RankingList ul img{
-        width: 25%;
-        margin-right: 2vh;
+        width: 45%;
+        height: 200%;
+        /* margin-right: 2vh; */
     }
 }

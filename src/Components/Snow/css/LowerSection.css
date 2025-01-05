@@ -45,5 +45,17 @@
         height: 1200px;
         max-height: 1200px;
     }
-    
+    .LowerSection h1{
+        font-size: clamp(1rem, 1rem, 1rem);
+    }
+    .LoweSectionHeader{
+        width: 90%;
+        height: 4%;
+    }
+    .LowerSection p{
+        font-size: clamp(0.65rem, 0.65rem, 0.65rem);
+    }
+    .LowerSection h2{
+        font-size: clamp(0.9rem, 0.9rem, 0.9rem);
+    }
 }

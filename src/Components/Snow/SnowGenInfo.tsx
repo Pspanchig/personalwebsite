@@ -6,7 +6,7 @@ import arrow from '../home/imgs/arrowDown.svg'
 const SnowGenInfo: React.FC = () => {
   return (
     <article className="SnowGenInfo">
-      <img src={snowLogo} alt="snow logo" />
+      <img src={snowLogo} id='scimg1' alt="snow logo" />
       <h1>Snow College</h1>    
 
       <section>
