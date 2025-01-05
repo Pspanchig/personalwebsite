@@ -59,7 +59,7 @@ iframe{
     .SnowGenInfo{
         margin-top: 10vh;
         width: 85%;
-        height: 35%;
+        height: 40%;
     }
     .SnowGenInfo h1{
         font-size: clamp(2rem, 2rem, 2rem);

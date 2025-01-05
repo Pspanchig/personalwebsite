@@ -16,15 +16,14 @@ const AboutMe: React.FC = () => {
 
   const [currentOffsetContainer, setCurrentOffsetContainer] = useState<number>(0)
   const [index, setIndex] = useState<number>(9);
+
   function scrollToItem(index: string): void{
     const container = document.getElementById('skillContainer') as HTMLDivElement;
-    const skillTarget = document.getElementById('skill' + index) as HTMLDivElement;
+    const skillTarget = document.getElementById('skill' + index) as HTMLDivElement;    
+    const offset: number = skillTarget.offsetTop - 100;
 
-    if(window.innerHeight > 680){
-      const offset = skillTarget.offsetTop - 100;
-      container.scrollTo({top: offset, behavior: 'smooth'})
-      setCurrentOffsetContainer(offset);    
-    }
+    container.scrollTo({top: offset, behavior: 'smooth'})
+    setCurrentOffsetContainer(offset);        
   }
 
   function changeSkillMobile(forward: boolean): void {

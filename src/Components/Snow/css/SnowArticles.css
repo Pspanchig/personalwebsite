@@ -25,7 +25,7 @@
     font-weight: 300;
     overflow-y: auto;
     display: flex;
-    place-items: center;
+    align-items: flex-start;
 }
 .ArticleContinaerInstitutions{
     height: 35%;
@@ -104,7 +104,7 @@
     .SnowArticles{
         justify-content: space-evenly;
         width: 85%;
-        height: 70%;
+        height: 60%;
     }
     #Article3{
         display: none;
@@ -122,11 +122,15 @@
         font-size: clamp(0.75rem, 0.75rem, 0.75rem);        
     }
     .MainTextInstitution{
-        height: 50%;
+        height: 65%;
     }
     .ArticleContinaerInstitutions{
         flex-direction: column;
         height: 25%;
+        width: 100%;
+    }
+    .RankingList ul{
+        padding-left: 0;
     }
     .ArticleInstitutions{
         height: 70%;
@@ -148,5 +152,9 @@
     }
     .RankingList li {
         margin: .1vh;
+    }
+    .RankingList ul img{
+        width: 25%;
+        margin-right: 2vh;
     }
 }

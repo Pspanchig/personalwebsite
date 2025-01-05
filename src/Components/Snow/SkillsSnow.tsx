@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './css/SkillsSnow.css';
 
 const SkillsSnow: React.FC = () => {
 
+  const ScrollDiv = useRef<HTMLElement>(null);
   let listOfSkillsItem: NodeListOf<HTMLDivElement>;
   let listOfSkillsContainer: NodeListOf<HTMLDivElement>;
   let listOfImgsContainer: NodeListOf<HTMLImageElement>;
@@ -11,7 +12,7 @@ const SkillsSnow: React.FC = () => {
   useEffect(() => {
     listOfSkillsItem = document.querySelectorAll('.SkillItem');
     listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer');
-    listOfImgsContainer = document.querySelectorAll('.SkillItemContainer img');
+    listOfImgsContainer = document.querySelectorAll('#SkillImg');
     listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo');
   }, []);
 
@@ -27,33 +28,42 @@ const SkillsSnow: React.FC = () => {
 
   function ReadMore(index: number): void{
     
+    listOfSkillsContainer[index].style.width = '55%';
     listOfSkillsItem[index].style.minWidth = '30vw';
-    listOfSkillsContainer[index].style.width = '50%';
-    listOfImgsContainer[index].style.borderTopRightRadius = '0em';
     listOfSkillsContainer[index].style.borderTopRightRadius = '0em';
     listOfSkillsContainer[index].style.borderBottomRightRadius = '0em';
     listOfMoreInfo[index].style.display = 'flex';
+    listOfImgsContainer[index].style.borderTopRightRadius = '0em';
     setTimeout(() => {
-      listOfMoreInfo[index].style.width = '50%';      
+      listOfMoreInfo[index].style.width = '45%';      
     }, 100);
-
   }
 
-  function closeMoreInfo(index: number): void{    
-    listOfSkillsItem[index].style.minWidth = '16vw';
+  function closeMoreInfo(index: number): void{  
+    
     listOfSkillsContainer[index].style.width = '100%';
-    listOfImgsContainer[index].style.borderTopRightRadius = '2.5em';
-    listOfSkillsContainer[index].style.borderTopRightRadius = '2.5em';
-    listOfSkillsContainer[index].style.borderBottomRightRadius = '2.5em';
+    listOfSkillsItem[index].style.minWidth = '16vw';    
     listOfMoreInfo[index].style.width = '0%';
+
     setTimeout(() => {
+      listOfImgsContainer[index].style.borderTopRightRadius = '2.5em';
+    }, 200);
+    
+    listOfSkillsContainer[index].style.borderTopRightRadius = '2.5em';
+    listOfSkillsContainer[index].style.borderBottomRightRadius = '2.5em';     
+    setTimeout(() => {      
       listOfMoreInfo[index].style.display = 'none';      
-    }, 100);
+    }, 200);       
+  }
+
+  function ScrollToElement(index: number): void{
+    const offsetItem: number = listOfSkillsItem[index].offsetLeft - 600;
+    ScrollDiv.current?.scrollTo({left: offsetItem, behavior: 'smooth'})
   }
 
   return (
-    <section className='SkillsSnow'>
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(0)} onMouseEnter={() => smallRotation(0)}>
+    <section className='SkillsSnow' ref={ScrollDiv}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(0)} onMouseEnter={() => {smallRotation(0); ScrollToElement(0)}}>
         <div className='SkillItemContainer'>
           <img id='SkillImg' src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skill Img" />
           <div className='SkillItemDescription'>
@@ -71,8 +81,9 @@ const SkillsSnow: React.FC = () => {
           <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer languages, such as SQL, Java, Python, and C++.</p>
         </div>
         </div>
+
             {/* Skill Item 1 */}
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(1)} onMouseEnter={() => smallRotation(1)}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(1)} onMouseEnter={() => {smallRotation(1); ScrollToElement(1)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
@@ -104,7 +115,7 @@ const SkillsSnow: React.FC = () => {
 
 
       {/* Skill Item 2 */}
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(2)}  onMouseEnter={() => smallRotation(2)}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(2)}  onMouseEnter={() => {smallRotation(2); ScrollToElement(2)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
@@ -136,7 +147,7 @@ const SkillsSnow: React.FC = () => {
 
 
       {/* Skill Item 3 */}
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(3)}  onMouseEnter={() => smallRotation(3)}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(3)} onMouseEnter={() => {smallRotation(3); ScrollToElement(3)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
@@ -168,7 +179,7 @@ const SkillsSnow: React.FC = () => {
 
 
       {/* Skill Item 4 */}
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(4)}  onMouseEnter={() => smallRotation(4)}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(4)} onMouseEnter={() => {smallRotation(4); ScrollToElement(4)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
@@ -200,7 +211,7 @@ const SkillsSnow: React.FC = () => {
 
 
       {/* Skill Item 5 */}
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(5)}  onMouseEnter={() => smallRotation(5)}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(5)} onMouseEnter={() => {smallRotation(5); ScrollToElement(5)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
@@ -232,7 +243,7 @@ const SkillsSnow: React.FC = () => {
 
 
       {/* Skill Item 6 */}
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(6)}  onMouseEnter={() => smallRotation(6)}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(6)} onMouseEnter={() => {smallRotation(6); ScrollToElement(6)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
