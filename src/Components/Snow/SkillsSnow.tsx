@@ -16,49 +16,56 @@ const SkillsSnow: React.FC = () => {
     listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo');
   }, []);
 
-  function smallRotation(index: number): void{      
-    listOfSkillsItem[index].style.transform = 'rotate(5deg)';
-    setTimeout(() => {      
-      listOfSkillsItem[index].style.transform = 'rotate(-10deg)';
-    }, 150);
-    setTimeout(() => {      
-      listOfSkillsItem[index].style.transform = 'rotate(0deg)';
-    }, 250);
-  }
+  function smallRotation(index: number): void{  
+    if(window.innerWidth > 680)    {
+      listOfSkillsItem[index].style.transform = 'rotate(5deg)';
+      setTimeout(() => {      
+        listOfSkillsItem[index].style.transform = 'rotate(-10deg)';
+      }, 150);
+      setTimeout(() => {      
+        listOfSkillsItem[index].style.transform = 'rotate(0deg)';
+      }, 250);
+    }
+    }
 
   function ReadMore(index: number): void{
-    
-    listOfSkillsContainer[index].style.width = '55%';
-    listOfSkillsItem[index].style.minWidth = '30vw';
-    listOfSkillsContainer[index].style.borderTopRightRadius = '0em';
-    listOfSkillsContainer[index].style.borderBottomRightRadius = '0em';
-    listOfMoreInfo[index].style.display = 'flex';
-    listOfImgsContainer[index].style.borderTopRightRadius = '0em';
-    setTimeout(() => {
-      listOfMoreInfo[index].style.width = '45%';      
-    }, 100);
+    if(window.innerWidth > 680){
+      listOfSkillsContainer[index].style.width = '55%';
+      listOfSkillsItem[index].style.minWidth = '30vw';
+      listOfSkillsContainer[index].style.borderTopRightRadius = '0em';
+      listOfSkillsContainer[index].style.borderBottomRightRadius = '0em';
+      listOfMoreInfo[index].style.display = 'flex';
+      listOfImgsContainer[index].style.borderTopRightRadius = '0em';
+      setTimeout(() => {
+        listOfMoreInfo[index].style.width = '45%';      
+      }, 100);
+    }
   }
 
   function closeMoreInfo(index: number): void{  
     
-    listOfSkillsContainer[index].style.width = '100%';
-    listOfSkillsItem[index].style.minWidth = '16vw';    
-    listOfMoreInfo[index].style.width = '0%';
-
-    setTimeout(() => {
-      listOfImgsContainer[index].style.borderTopRightRadius = '2.5em';
-    }, 200);
-    
-    listOfSkillsContainer[index].style.borderTopRightRadius = '2.5em';
-    listOfSkillsContainer[index].style.borderBottomRightRadius = '2.5em';     
-    setTimeout(() => {      
-      listOfMoreInfo[index].style.display = 'none';      
-    }, 200);       
+    if(window.innerWidth > 680){
+      listOfSkillsContainer[index].style.width = '100%';
+      listOfSkillsItem[index].style.minWidth = '16vw';    
+      listOfMoreInfo[index].style.width = '0%';
+  
+      setTimeout(() => {
+        listOfImgsContainer[index].style.borderTopRightRadius = '2.5em';
+      }, 200);
+      
+      listOfSkillsContainer[index].style.borderTopRightRadius = '2.5em';
+      listOfSkillsContainer[index].style.borderBottomRightRadius = '2.5em';     
+      setTimeout(() => {      
+        listOfMoreInfo[index].style.display = 'none';      
+      }, 200);       
+    }
   }
 
   function ScrollToElement(index: number): void{
-    const offsetItem: number = listOfSkillsItem[index].offsetLeft - 600;
-    ScrollDiv.current?.scrollTo({left: offsetItem, behavior: 'smooth'})
+    if(window.innerWidth > 680){
+      const offsetItem: number = listOfSkillsItem[index].offsetLeft - 600;
+      ScrollDiv.current?.scrollTo({left: offsetItem, behavior: 'smooth'})
+    }
   }
 
   return (

@@ -57,7 +57,7 @@ const AboutMe: React.FC = () => {
   useEffect(() => {
     if (counter < 13) {
       changeSkillMobile(true);
-      setCounter((prev) => prev + 1); // Increment counter
+      setCounter((prev) => prev + 1); 
     }
   }, [counter]);
 
