@@ -42,6 +42,9 @@
     padding-bottom: 1vh;
     border-bottom: 2px solid black;
     width: fit-content;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 1000;
+    font-style: normal;
  }
  .LinkToText{
     margin-top: auto;

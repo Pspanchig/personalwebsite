@@ -30,7 +30,7 @@
  }
  .UpperDiv h1{
     /* text-shadow: 3px 3px 3px black; */
-    font-size: clamp(8vh, 8vh, 8vh);
+    font-size: clamp(7vh, 7vh, 7vh);
     margin-bottom: 0;
     border-bottom: 1px solid black;
     font-family: "IBM Plex Serif", serif;
