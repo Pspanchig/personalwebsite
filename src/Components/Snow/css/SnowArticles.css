@@ -64,8 +64,9 @@
     margin-inline: 1vw;
 }
 .RankingList ul{
-
+    padding: 0;
     height: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -130,25 +131,29 @@
         width: 100%;
     }
     .RankingList ul{
-        padding-left: 0;
     }
     .ArticleInstitutions{
         height: 70%;
-        width: 85%;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .InstitutionTitle{
         min-height: 20%;
-    }.RankingList{
+    }
+    .RankingList{
         height: 80%;
+        width: fit-content;        
     }
     #ShowNextInstitution{
         display: block;
         background-color: #F59A23;
         height: 15%;
-        width: 40%;
+        width: 25%;
         border: 2px solid black;
         border-radius: 2em;
-        font-size: larger;
+        font-size: normal;
         color: black;
     }
     .RankingList li {

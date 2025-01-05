@@ -106,9 +106,12 @@
 
 @media (max-width: 680px) {
     .SkillsSnow{
+        height: 45%;
         width: 90%;
     }
     .SkillItem{
         min-width: 70vw;
+        height: 70%;
+        margin-right: 10vw;
     }
 }
