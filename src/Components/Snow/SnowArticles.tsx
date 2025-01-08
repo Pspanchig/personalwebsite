@@ -1,6 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './css/SnowArticles.css';
+
 const SnowArticles: React.FC = () => {
+  const [showFirst, setShowFirst] = useState<boolean>(false)
+  
+  function NextArticle(): void{
+    const articles = document.querySelectorAll('.ArticleInstitutions') as NodeListOf<HTMLElement>
+    
+    if(showFirst === false){
+      articles[0].style.width = '0%'
+      articles[0].style.transform = 'rotate(-360deg)'
+      articles[1].style.transform = 'rotate(0deg)'
+      
+      setTimeout(() => {        
+        articles[0].style.display = 'none'
+        articles[1].style.display = 'flex'
+        articles[1].style.width = '70%'
+        articles[1].style.color = 'black'
+      }, 500);
+    } else{
+      articles[1].style.width = '0%'
+      articles[1].style.transform = 'rotate(360deg)'
+      articles[0].style.transform = 'rotate(0deg)'
+      
+      setTimeout(() => {        
+        articles[1].style.display = 'none'
+        articles[0].style.display = 'flex'
+        articles[0].style.width = '70%'
+        articles[0].style.color = 'black'
+      }, 500);
+    }
+    
+    setShowFirst(!showFirst);
+  }
+
+
   return (
     <section className='SnowArticles'>
          <article className='MainTextInstitution'>
@@ -44,7 +78,7 @@ const SnowArticles: React.FC = () => {
               <h2>Badger!</h2>
               </div>
             </article>
-            <button id='ShowNextInstitution'>Show next</button>
+            <button id='ShowNextInstitution' onClick={NextArticle}>Show next</button>
          </div>
     </section>
   );

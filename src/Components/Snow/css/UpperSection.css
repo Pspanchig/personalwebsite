@@ -9,10 +9,10 @@
 @media (max-width: 680px) {
     .UpperSection{
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
-        min-height: 1300px;
-        height: 1300px;
-        max-height: 1300px;
+        min-height: 1500px;
+        height: 1500px;
+        max-height: 1500px;
     }
 }

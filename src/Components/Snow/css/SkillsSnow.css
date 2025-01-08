@@ -121,7 +121,7 @@
 
 @media (max-width: 680px) {
     .SkillsSnow{
-        height: 45%;
+        height: 50%;
         width: 90%;        
         flex-direction: column;
         box-sizing: border-box;
@@ -134,7 +134,7 @@
         transform: rotate(180deg);
     }
     .SkillItem{
-        min-width: 70vw;
+        min-width: 68vw;
         height: 85%;
         margin-inline: 10vw;
     }

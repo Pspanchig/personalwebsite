@@ -5,18 +5,22 @@ import arrow from './imgs/left-arrow-svgrepo-com.svg'
 const SkillsSnow: React.FC = () => {
 
   const skillsMobileContainer = useRef<HTMLDivElement>(null)
-  const [moveScrollMobile, setMoveScrollMobile] = useState<number>(0);
+  const [indexScrollMobile, setIndexScrollMobile] = useState<number>(1);
 
-  let listOfSkillsItem: NodeListOf<HTMLDivElement>;
-  let listOfSkillsContainer: NodeListOf<HTMLDivElement>;
-  let listOfImgsContainer: NodeListOf<HTMLImageElement>;
-  let listOfMoreInfo: NodeListOf<HTMLDivElement>;
+  // const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
+  // const listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer') as NodeListOf<HTMLDivElement>;
+  // const listOfImgsContainer  = document.querySelectorAll('#SkillImg') as NodeListOf<HTMLImageElement>;
+  // const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
+  // let listOfSkillsItem: NodeListOf<HTMLDivElement>;
+  // let listOfSkillsContainer: NodeListOf<HTMLDivElement>;
+  // let listOfImgsContainer: NodeListOf<HTMLImageElement>;
+  // let listOfMoreInfo: NodeListOf<HTMLDivElement>;
   
   useEffect(() => {
-    listOfSkillsItem = document.querySelectorAll('.SkillItem');
-    listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer');
-    listOfImgsContainer = document.querySelectorAll('#SkillImg');
-    listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo');
+    // listOfSkillsItem = document.querySelectorAll('.SkillItem');
+    // listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer');
+    // listOfImgsContainer = document.querySelectorAll('#SkillImg');
+    // listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo');
   }, []);
   
   //Get current size of the screen
@@ -31,6 +35,8 @@ const SkillsSnow: React.FC = () => {
   // }, []);
 
   function smallRotation(index: number): void{  
+    const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
+
     if(window.innerWidth > 680)    {
       listOfSkillsItem[index].style.transform = 'rotate(5deg)';
       setTimeout(() => {      
@@ -43,6 +49,12 @@ const SkillsSnow: React.FC = () => {
     }
 
   function ReadMore(index: number): void{
+    const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
+    const listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer') as NodeListOf<HTMLDivElement>;
+    const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
+    const listOfImgsContainer  = document.querySelectorAll('#SkillImg') as NodeListOf<HTMLImageElement>;
+
+
     if(window.innerWidth > 680){
       listOfSkillsContainer[index].style.width = '55%';
       listOfSkillsItem[index].style.minWidth = '30vw';
@@ -59,7 +71,11 @@ const SkillsSnow: React.FC = () => {
   }
 
   function closeMoreInfo(index: number): void{  
-    
+    const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
+    const listOfImgsContainer  = document.querySelectorAll('#SkillImg') as NodeListOf<HTMLImageElement>;
+    const listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer') as NodeListOf<HTMLDivElement>;
+    const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
+
     if(window.innerWidth > 680){
       listOfSkillsContainer[index].style.width = '100%';
       listOfSkillsItem[index].style.minWidth = '16vw';    
@@ -79,26 +95,39 @@ const SkillsSnow: React.FC = () => {
 
   function ScrollToElement(index: number): void{
     if(window.innerWidth > 680){
+      const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
+
       const offsetItem: number = listOfSkillsItem[index].offsetLeft - 600;
       skillsMobileContainer.current?.scrollTo({left: offsetItem, behavior: 'smooth'})
-      console.log('Working')
     }
   }
 
   function MoveCoursesMobile(direction: number): void{
+    const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
     if(window.innerWidth < 680 && skillsMobileContainer.current){
+      
+      const targetElement = listOfSkillsItem[indexScrollMobile];
+      const targetOffsetLeft = targetElement.offsetLeft - 65;
 
-      skillsMobileContainer.current?.scrollTo({left: moveScrollMobile + direction, behavior: 'smooth'})
-      console.log(moveScrollMobile)
-      if(moveScrollMobile >= skillsMobileContainer.current?.scrollWidth - 401 || moveScrollMobile < 0){
-            setMoveScrollMobile(0)
-        } else{
-          setMoveScrollMobile(moveScrollMobile + direction); 
-        }
+      if(indexScrollMobile >= 6 || indexScrollMobile <= 0 ){
+        setIndexScrollMobile(1)
+      } else{
+        setIndexScrollMobile(indexScrollMobile + direction); 
+      }
+
+      skillsMobileContainer.current.scrollTo({
+        left: targetOffsetLeft, 
+        behavior: 'smooth'
+      })
+
     }
   } 
 
   function ReadMoreMobile(index: number): void{
+    const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
+    const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
+    const listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer') as NodeListOf<HTMLDivElement>;
+
     listOfSkillsItem[index].style.transform = 'rotate(-360deg)';    
     listOfSkillsContainer[index].style.display = 'none';
     listOfMoreInfo[index].style.display = 'flex';
@@ -107,6 +136,10 @@ const SkillsSnow: React.FC = () => {
     listOfMoreInfo[index].style.borderBottomLeftRadius = '2.5em';
   }
   function ReadLessMobile(index: number): void{
+    const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
+    const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
+    const listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer') as NodeListOf<HTMLDivElement>;
+
     listOfSkillsItem[index].style.transform = 'rotate(0deg)';    
     listOfSkillsContainer[index].style.display = 'flex';
     listOfMoreInfo[index].style.display = 'none';
@@ -390,8 +423,8 @@ const SkillsSnow: React.FC = () => {
       </div>
       </div>
       <div className='MoveSkillsArrows'>
-          <img src={arrow} alt="leftArrow" onClick={() => MoveCoursesMobile(-1/7 * 1000)}/>
-          <img src={arrow} alt="righttArrow" id='lASS' onClick={() => MoveCoursesMobile(1/7 * 1000)}/>
+          <img src={arrow} alt="leftArrow" onClick={() => MoveCoursesMobile(-1)}/>
+          <img src={arrow} alt="righttArrow" id='lASS' onClick={() => MoveCoursesMobile(1)}/>
       </div>
     </section>
   );

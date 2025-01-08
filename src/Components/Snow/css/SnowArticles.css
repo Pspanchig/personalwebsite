@@ -105,7 +105,7 @@
     .SnowArticles{
         justify-content: space-evenly;
         width: 85%;
-        height: 60%;
+        height: 55%;
     }
     #Article3{
         display: none;
@@ -123,7 +123,7 @@
         font-size: clamp(0.75rem, 0.75rem, 0.75rem);        
     }
     .MainTextInstitution{
-        height: 65%;
+        height: 55%;
     }
     .ArticleContinaerInstitutions{
         flex-direction: column;
@@ -131,11 +131,13 @@
         width: 100%;
     }
     .ArticleInstitutions{
-        height: 70%;
-        width: 60%;
+        overflow: hidden;
+        height: 73%;
+        width: 70%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        transition: 0.5s;
     }
     .InstitutionTitle{
         min-height: 20%;
@@ -148,7 +150,7 @@
         display: block;
         background-color: #F59A23;
         height: 15%;
-        width: 25%;
+        width: 28%;
         border: 2px solid black;
         border-radius: 2em;
         font-size: normal;

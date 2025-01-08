@@ -1,10 +1,10 @@
 .LowerSection{
-    height: 120vh;
+    height: 122vh;
     width: 100%;    
     color: black;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 .LoweSectionHeader{
@@ -41,9 +41,9 @@
 
 @media (max-width: 680px) {
     .LowerSection{
-        min-height: 1400px;
-        height: 1400px;
-        max-height: 1400px;
+        min-height: 1250px;
+        height: 1250px;
+        max-height: 1250px;
     }
     .LowerSection h1{
         font-size: clamp(1rem, 1rem, 1rem);
