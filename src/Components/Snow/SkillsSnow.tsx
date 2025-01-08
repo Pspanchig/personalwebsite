@@ -1,20 +1,34 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './css/SkillsSnow.css';
+import arrow from './imgs/left-arrow-svgrepo-com.svg'
 
 const SkillsSnow: React.FC = () => {
 
-  const ScrollDiv = useRef<HTMLElement>(null);
+  const skillsMobileContainer = useRef<HTMLDivElement>(null)
+  const [moveScrollMobile, setMoveScrollMobile] = useState<number>(0);
+
   let listOfSkillsItem: NodeListOf<HTMLDivElement>;
   let listOfSkillsContainer: NodeListOf<HTMLDivElement>;
   let listOfImgsContainer: NodeListOf<HTMLImageElement>;
   let listOfMoreInfo: NodeListOf<HTMLDivElement>;
-
+  
   useEffect(() => {
     listOfSkillsItem = document.querySelectorAll('.SkillItem');
     listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer');
     listOfImgsContainer = document.querySelectorAll('#SkillImg');
     listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo');
   }, []);
+  
+  //Get current size of the screen
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setScreenWidth(window.innerWidth);
+  //   };
+  //   window.addEventListener("resize", handleResize);    
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   function smallRotation(index: number): void{  
     if(window.innerWidth > 680)    {
@@ -38,7 +52,9 @@ const SkillsSnow: React.FC = () => {
       listOfImgsContainer[index].style.borderTopRightRadius = '0em';
       setTimeout(() => {
         listOfMoreInfo[index].style.width = '45%';      
-      }, 100);
+      }, 100);      
+      ScrollToElement(index);
+      
     }
   }
 
@@ -64,12 +80,44 @@ const SkillsSnow: React.FC = () => {
   function ScrollToElement(index: number): void{
     if(window.innerWidth > 680){
       const offsetItem: number = listOfSkillsItem[index].offsetLeft - 600;
-      ScrollDiv.current?.scrollTo({left: offsetItem, behavior: 'smooth'})
+      skillsMobileContainer.current?.scrollTo({left: offsetItem, behavior: 'smooth'})
+      console.log('Working')
     }
   }
 
+  function MoveCoursesMobile(direction: number): void{
+    if(window.innerWidth < 680 && skillsMobileContainer.current){
+
+      skillsMobileContainer.current?.scrollTo({left: moveScrollMobile + direction, behavior: 'smooth'})
+      console.log(moveScrollMobile)
+      if(moveScrollMobile >= skillsMobileContainer.current?.scrollWidth - 401 || moveScrollMobile < 0){
+            setMoveScrollMobile(0)
+        } else{
+          setMoveScrollMobile(moveScrollMobile + direction); 
+        }
+    }
+  } 
+
+  function ReadMoreMobile(index: number): void{
+    listOfSkillsItem[index].style.transform = 'rotate(-360deg)';    
+    listOfSkillsContainer[index].style.display = 'none';
+    listOfMoreInfo[index].style.display = 'flex';
+    listOfMoreInfo[index].style.width = '100%';
+    listOfMoreInfo[index].style.borderTopLeftRadius = '2.5em';
+    listOfMoreInfo[index].style.borderBottomLeftRadius = '2.5em';
+  }
+  function ReadLessMobile(index: number): void{
+    listOfSkillsItem[index].style.transform = 'rotate(0deg)';    
+    listOfSkillsContainer[index].style.display = 'flex';
+    listOfMoreInfo[index].style.display = 'none';
+    listOfMoreInfo[index].style.width = '0%';
+    listOfMoreInfo[index].style.borderTopLeftRadius = '0em';
+    listOfMoreInfo[index].style.borderBottomLeftRadius = '0em';
+  }
+
   return (
-    <section className='SkillsSnow' ref={ScrollDiv}>
+    <section className='SkillsSnow' >
+      <div className='SCIS' id='SCIS'  ref={skillsMobileContainer}>
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(0)} onMouseEnter={() => {smallRotation(0); ScrollToElement(0)}}>
         <div className='SkillItemContainer'>
           <img id='SkillImg' src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skill Img" />
@@ -80,12 +128,20 @@ const SkillsSnow: React.FC = () => {
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
               <p>Read more</p>
             </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(0)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
           </div>
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
           <h1>Fundamentals Of Programing</h1>
           <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer languages, such as SQL, Java, Python, and C++.</p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(0)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
         </div>
         </div>
 
@@ -107,6 +163,11 @@ const SkillsSnow: React.FC = () => {
               />
               <p>Read more</p>
             </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(1)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
           </div>
         </div>
         <div className='SkillMoreInfo'>
@@ -117,6 +178,10 @@ const SkillsSnow: React.FC = () => {
             concept of “objects”, which can contain data and code. OOP helps organize 
             software design around data, or objects, rather than functions and logic.
           </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(1)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
         </div>
       </div>
 
@@ -139,6 +204,10 @@ const SkillsSnow: React.FC = () => {
               />
               <p>Read more</p>
             </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(2)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
           </div>
         </div>
         <div className='SkillMoreInfo'>
@@ -149,6 +218,10 @@ const SkillsSnow: React.FC = () => {
             aspects such as web design, web publishing, web programming, and 
             database management.
           </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(2)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
         </div>
       </div>
 
@@ -171,6 +244,11 @@ const SkillsSnow: React.FC = () => {
               />
               <p>Read more</p>
             </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(3)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
           </div>
         </div>
         <div className='SkillMoreInfo'>
@@ -181,6 +259,10 @@ const SkillsSnow: React.FC = () => {
             efficiently. Algorithms are sets of instructions that solve specific 
             problems. Mastering both is essential for efficient software development.
           </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(3)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
         </div>
       </div>
 
@@ -203,6 +285,11 @@ const SkillsSnow: React.FC = () => {
               />
               <p>Read more</p>
             </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(4)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
           </div>
         </div>
         <div className='SkillMoreInfo'>
@@ -213,6 +300,10 @@ const SkillsSnow: React.FC = () => {
             processing and communication in computers and other digital devices. 
             They form the backbone of modern computing hardware.
           </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(4)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
         </div>
       </div>
 
@@ -235,6 +326,11 @@ const SkillsSnow: React.FC = () => {
               />
               <p>Read more</p>
             </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(5)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
           </div>
         </div>
         <div className='SkillMoreInfo'>
@@ -245,6 +341,10 @@ const SkillsSnow: React.FC = () => {
             form a computer, while architecture involves the design of the system 
             and how hardware and software interact to achieve performance goals.
           </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(5)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
         </div>
       </div>
 
@@ -267,6 +367,11 @@ const SkillsSnow: React.FC = () => {
               />
               <p>Read more</p>
             </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(6)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
           </div>
         </div>
         <div className='SkillMoreInfo'>
@@ -277,7 +382,16 @@ const SkillsSnow: React.FC = () => {
             including databases, server logic, APIs, and integration of front-end 
             functionality to ensure data and services are delivered seamlessly.
           </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(6)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
         </div>
+      </div>
+      </div>
+      <div className='MoveSkillsArrows'>
+          <img src={arrow} alt="leftArrow" onClick={() => MoveCoursesMobile(-1/7 * 1000)}/>
+          <img src={arrow} alt="righttArrow" id='lASS' onClick={() => MoveCoursesMobile(1/7 * 1000)}/>
       </div>
     </section>
   );

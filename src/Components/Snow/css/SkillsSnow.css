@@ -5,12 +5,24 @@
     border-radius: 1em;
     border: 4px solid white;
     color: white;
-    overflow-x: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;    
     justify-content: flex-start;    
 }
-.SkillsSnow::-webkit-scrollbar{
+.MoveSkillsArrows{
+    display: none;
+}
+.SCIS{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    align-items: center;    
+    justify-content: flex-start;  
+    scrollbar-width: none;  
+}
+.SCIS::-webkit-scrollbar{
     display: none;
 }
 .SkillItem{    
@@ -68,6 +80,9 @@
     width: 100%;
     cursor: pointer;
 }
+.SkillItemMoreMobile{
+    display: none;
+}
 .SkillItemMore img{
     width: 1.5vw;
     margin-right: 1vh;
@@ -107,11 +122,69 @@
 @media (max-width: 680px) {
     .SkillsSnow{
         height: 45%;
-        width: 90%;
+        width: 90%;        
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    .SCIS{
+        position: static;
+        height: 80%;
+    }
+    #lASS{
+        transform: rotate(180deg);
     }
     .SkillItem{
         min-width: 70vw;
-        height: 70%;
-        margin-right: 10vw;
+        height: 85%;
+        margin-inline: 10vw;
+    }
+    .SkillItemContainer{
+        box-shadow: 8px 10px 0em 0.2em black;
+
+    }
+    .SkillItem:hover{
+        margin-inline: 10vw;
+        height: 85%;
+        width: 20%;
+    }
+    .MoveSkillsArrows{        
+        display: flex;
+        height: 20%;
+        width: 100%;
+    }
+    .MoveSkillsArrows img{
+        width: 50%;
+        height: 80%;
+        transition: 500ms;
+    }
+    .MoveSkillsArrows img:hover{
+        width: 52%;
+        height: 82%;
+        transition: 500ms;
+    }
+    .SkillItemMore{
+        display: none;
+    }
+    .SkillItemMoreMobile{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        cursor: pointer;
+    }
+    .SkillItemMoreMobile img{
+        width: 6vw;
+        margin-right: 4vw;
+    }
+    .SkillMoreInfo{
+        box-shadow: 8px 10px 0em 0.2em black;        
+    }
+    .SkillMoreInfo:last-child{
+        margin-bottom: auto;
+    }
+    .SkillMoreInfo .SkillItemMoreMobile{        
+        width: 80%;
+        margin-top: 5vh;
+        margin-bottom: auto;
     }
 }
