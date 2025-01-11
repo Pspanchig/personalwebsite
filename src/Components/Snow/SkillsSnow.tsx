@@ -1,39 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './css/SkillsSnow.css';
 import arrow from './imgs/left-arrow-svgrepo-com.svg'
 
 const SkillsSnow: React.FC = () => {
 
+
   const skillsMobileContainer = useRef<HTMLDivElement>(null)
-  const [indexScrollMobile, setIndexScrollMobile] = useState<number>(1);
-
-  // const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
-  // const listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer') as NodeListOf<HTMLDivElement>;
-  // const listOfImgsContainer  = document.querySelectorAll('#SkillImg') as NodeListOf<HTMLImageElement>;
-  // const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
-  // let listOfSkillsItem: NodeListOf<HTMLDivElement>;
-  // let listOfSkillsContainer: NodeListOf<HTMLDivElement>;
-  // let listOfImgsContainer: NodeListOf<HTMLImageElement>;
-  // let listOfMoreInfo: NodeListOf<HTMLDivElement>;
+  const indexScrollMobile = useRef<number>(0);
   
-  useEffect(() => {
-    // listOfSkillsItem = document.querySelectorAll('.SkillItem');
-    // listOfSkillsContainer = document.querySelectorAll('.SkillItemContainer');
-    // listOfImgsContainer = document.querySelectorAll('#SkillImg');
-    // listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo');
-  }, []);
-  
-  //Get current size of the screen
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setScreenWidth(window.innerWidth);
-  //   };
-  //   window.addEventListener("resize", handleResize);    
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
-
   function smallRotation(index: number): void{  
     const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
 
@@ -54,7 +28,6 @@ const SkillsSnow: React.FC = () => {
     const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
     const listOfImgsContainer  = document.querySelectorAll('#SkillImg') as NodeListOf<HTMLImageElement>;
 
-
     if(window.innerWidth > 680){
       listOfSkillsContainer[index].style.width = '55%';
       listOfSkillsItem[index].style.minWidth = '30vw';
@@ -65,7 +38,9 @@ const SkillsSnow: React.FC = () => {
       setTimeout(() => {
         listOfMoreInfo[index].style.width = '45%';      
       }, 100);      
-      ScrollToElement(index);
+      setTimeout(() => {        
+        ScrollToElement(index);
+      }, 300);
       
     }
   }
@@ -102,27 +77,24 @@ const SkillsSnow: React.FC = () => {
     }
   }
 
-  function MoveCoursesMobile(direction: number): void{
+  function MoveCoursesMobile(direction: number): void {
     const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
-    if(window.innerWidth < 680 && skillsMobileContainer.current){
+  
+    if (window.innerWidth < 680 && skillsMobileContainer.current && listOfSkillsItem.length > 0) {
+  
+      let newIndex = indexScrollMobile.current + direction;  
+      newIndex = Math.max(0, Math.min(newIndex, listOfSkillsItem.length - 1));      
+      indexScrollMobile.current = newIndex;      
       
-      const targetElement = listOfSkillsItem[indexScrollMobile];
+      const targetElement = listOfSkillsItem[newIndex];      
       const targetOffsetLeft = targetElement.offsetLeft - 65;
 
-      if(indexScrollMobile >= 6 || indexScrollMobile <= 0 ){
-        setIndexScrollMobile(1)
-      } else{
-        setIndexScrollMobile(indexScrollMobile + direction); 
-      }
-
       skillsMobileContainer.current.scrollTo({
-        left: targetOffsetLeft, 
+        left: targetOffsetLeft,
         behavior: 'smooth'
-      })
-
+      });
     }
-  } 
-
+  }
   function ReadMoreMobile(index: number): void{
     const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
     const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
@@ -135,6 +107,7 @@ const SkillsSnow: React.FC = () => {
     listOfMoreInfo[index].style.borderTopLeftRadius = '2.5em';
     listOfMoreInfo[index].style.borderBottomLeftRadius = '2.5em';
   }
+
   function ReadLessMobile(index: number): void{
     const listOfSkillsItem = document.querySelectorAll('.SkillItem') as NodeListOf<HTMLDivElement>;
     const listOfMoreInfo = document.querySelectorAll('.SkillMoreInfo') as NodeListOf<HTMLDivElement>;
