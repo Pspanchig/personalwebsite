@@ -1,0 +1,16 @@
+.Ucmo{
+    height: 222vh;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    overflow: hidden;
+
+}
+
+@media (max-width: 680px) {
+    .Ucmo{
+        min-height: 2750px;
+        height: 2750px;
+        max-height: 2750px;
+    }
+}
