@@ -41,6 +41,9 @@ iframe{
 #ShowMoreLocation{
     display: none;
 }
+.MapsInformation{            
+    display: none;
+}
 @media screen and (max-width: 1280px) and (max-height: 720px) {
     iframe{
         width: 90%;
@@ -121,7 +124,7 @@ iframe{
         overflow-y: auto;
         transition: 300ms;
     }
-    .MapsInformation iframe{
+    .MapsInformation iframe{        
         height: 50%;
     }
 }
