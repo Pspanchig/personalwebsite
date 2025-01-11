@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, {  useState } from 'react';
 import './css/SnowArticles.css';
 
 const SnowArticles: React.FC = () => {
@@ -6,7 +6,6 @@ const SnowArticles: React.FC = () => {
 
   function NextArticle(): void{
     const articles = document.querySelectorAll('.ArticleInstitutions') as NodeListOf<HTMLElement>
-    const articlesImg = document.querySelectorAll('.ArticleInstitutions img') as NodeListOf<HTMLElement>
     
     if(showFirst === false){
       articles[0].style.width = '0%'
