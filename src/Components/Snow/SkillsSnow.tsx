@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import './css/SkillsSnow.css';
 import arrow from './imgs/left-arrow-svgrepo-com.svg'
 
@@ -83,9 +83,9 @@ const SkillsSnow: React.FC = () => {
     if (window.innerWidth < 680 && skillsMobileContainer.current && listOfSkillsItem.length > 0) {
   
       let newIndex = indexScrollMobile.current + direction;  
-      newIndex = Math.max(0, Math.min(newIndex, listOfSkillsItem.length - 1));      
+      newIndex = Math.max(0, Math.min(newIndex, listOfSkillsItem.length - 1));   
       indexScrollMobile.current = newIndex;      
-      
+
       const targetElement = listOfSkillsItem[newIndex];      
       const targetOffsetLeft = targetElement.offsetLeft - 65;
 
