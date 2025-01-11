@@ -30,6 +30,7 @@
  }
  .UpperDiv h1{
     /* text-shadow: 3px 3px 3px black; */
+    text-align: center;
     font-size: clamp(7vh, 7vh, 7vh);
     margin-bottom: 0;
     border-bottom: 1px solid black;

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './css/SnowArticles.css';
 
 const SnowArticles: React.FC = () => {
   const [showFirst, setShowFirst] = useState<boolean>(false)
-  
+
   function NextArticle(): void{
     const articles = document.querySelectorAll('.ArticleInstitutions') as NodeListOf<HTMLElement>
+    const articlesImg = document.querySelectorAll('.ArticleInstitutions img') as NodeListOf<HTMLElement>
     
     if(showFirst === false){
       articles[0].style.width = '0%'
@@ -13,9 +14,11 @@ const SnowArticles: React.FC = () => {
       articles[1].style.transform = 'rotate(0deg)'
       
       setTimeout(() => {        
-        articles[0].style.display = 'none'
         articles[1].style.display = 'flex'
-        articles[1].style.width = '70%'
+        articles[0].style.display = 'none'      
+        setTimeout(() => {       
+          articles[1].style.width = '70%'
+        }, 100);
         articles[1].style.color = 'black'
       }, 500);
     } else{
@@ -24,9 +27,11 @@ const SnowArticles: React.FC = () => {
       articles[0].style.transform = 'rotate(0deg)'
       
       setTimeout(() => {        
-        articles[1].style.display = 'none'
         articles[0].style.display = 'flex'
-        articles[0].style.width = '70%'
+        articles[1].style.display = 'none'
+        setTimeout(() => {          
+          articles[0].style.width = '70%'
+        }, 100);
         articles[0].style.color = 'black'
       }, 500);
     }

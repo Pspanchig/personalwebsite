@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .SnowGenInfo img{
     min-width: 10vw;
@@ -60,7 +61,9 @@ iframe{
     .SnowGenInfo{
         margin-top: 10vh;
         width: 85%;
+        min-height: 38%;
         height: 38%;
+        max-height: 38%;        
     }    
     #scimg1{
         width: 32vw;
@@ -91,6 +94,34 @@ iframe{
         width: 100%;
     }
     #ShowMoreLocation img{
-        width: 10vw;        
+        width: 10vw;    
+        
+    }
+    .SnowGenInfo:last-child{
+        justify-content: flex-start;
+    }
+    .MapsInformation{
+        text-align: center;
+        display: none;
+        border: 3px solid white;
+        box-shadow: 3px 3px 0.3em  black;
+        color: white;
+        border-radius: 2.5em;
+        margin-top: 2vh;
+        position: absolute;
+        background-color: rgb(112, 112, 112);
+        height: 0%;     
+        min-width: 80%;
+        width: 80%;
+        max-width: 80%;
+        left: 10%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-y: auto;
+        transition: 300ms;
+    }
+    .MapsInformation iframe{
+        height: 50%;
     }
 }

@@ -176,8 +176,10 @@
         border-radius: 2em;
     }
     #MoreInfEDSn{
-        height: 3.5vh;
-        width: 32vw;
+        width: fit-content;
+        height: fit-content;
+        padding-block: 0.5vh;
+        padding-inline: 5vw;
         background-color: orange;
         border: 1px solid black;
 
@@ -209,6 +211,9 @@
         height: 5vh;
         width: 15vw;
         margin: 0;
+    }
+    .NextImgEDSn img{
+        min-height: 100%;
     }
 
 }

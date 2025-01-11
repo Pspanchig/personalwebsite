@@ -51,6 +51,7 @@
     .LoweSectionHeader{
         width: 90%;
         height: 4%;
+        text-align: center;
     }
     .LowerSection p{
         font-size: clamp(0.65rem, 0.65rem, 0.65rem);

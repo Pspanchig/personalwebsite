@@ -138,9 +138,11 @@
         flex-direction: column;
         align-items: center;
         transition: 0.5s;
+        padding-inline: 1vw;
     }
     .InstitutionTitle{
         min-height: 20%;
+        padding-inline: 1vw;
     }
     .RankingList{
         height: 80%;
@@ -149,8 +151,10 @@
     #ShowNextInstitution{
         display: block;
         background-color: #F59A23;
-        height: 15%;
-        width: 28%;
+        height: fit-content;
+        width: fit-content;
+        padding-block: 0.5vh;
+        padding-inline: 5vw;
         border: 2px solid black;
         border-radius: 2em;
         font-size: normal;
