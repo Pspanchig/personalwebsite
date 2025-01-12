@@ -19,9 +19,10 @@
 }
 .UcmoGenInfo h1{
     text-align: center;
-    font-size: clamp(2rem, 2rem, 2rem);
+    font-size: clamp(1.7rem, 1.7rem, 1.7rem);
     width: 80%;
     margin-block: 1vh;
+    margin-top: 2vh;
     font-family: "IBM Plex Serif", serif;
     font-weight: 1000;
     font-style: normal;
@@ -73,16 +74,20 @@ iframe{
     #ucimg1{
         width: 30vw;
         height: 17vh;
-        margin-bottom: 0vh;
+        margin-bottom: 3vh;
     }
     .UcmoGenInfo h1{
-        font-size: clamp(2rem, 2rem, 2rem);
+        font-size: clamp(1.6rem, 1.6rem, 1.6rem);
     }
     .UcmoGenInfo h3{
         font-size: clamp(1.2rem, 1.2rem, 1.2rem);
     }
     .UcmoGenInfo section p{
         font-size: clamp(0.9rem, 0.9rem, 0.9rem);
+        /* background-color: red; */
+    }
+    .UcmoGenInfo section{
+        width: 60%;
     }
     #LocationUcmo, iframe{
         display: none;

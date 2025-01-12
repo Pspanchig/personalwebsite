@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/LowerSection.css';
-import SkillsSnow from './SkillsSnow';
+import SkillsSnow from './SkillsUcmo';
 
 const LowerSection: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const LowerSection: React.FC = () => {
       </div>
       <SkillsSnow/>
       <article>
-        <h2>More about  Software Engineering at Snow College</h2>
+        <h2>More about  Software Engineering at University of Central Missouri</h2>
         <p>The Snow College Software Engineering program provides students with an educational experience that builds upon traditional computer science and engineering and produces software engineers that create high-quality software in a systematic, controlled, and efficient manner. This is accomplished in the following ways:</p>
         <p>The degree has a strong emphasis on mathematics and use of engineering methods in software design.
           Courses place an emphasis on software processes and lifecycles and utilize a team approach to building software with active learning (“learning by doing”) which also provides leadership opportunities, such as software development team lead roles, for every student.

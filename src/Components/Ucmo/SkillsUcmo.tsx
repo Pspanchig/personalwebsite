@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import './css/SkillsSnow.css';
+import './css/SkillsUcmo.css';
 import arrow from './imgs/left-arrow-svgrepo-com.svg'
 
-const SkillsSnow: React.FC = () => {
+const SkillsUcmo: React.FC = () => {
 
 
   const skillsMobileContainer = useRef<HTMLDivElement>(null)
@@ -122,14 +122,14 @@ const SkillsSnow: React.FC = () => {
   }
 
   return (
-    <section className='SkillsSnow' >
-      <div className='SCIS' id='SCIS'  ref={skillsMobileContainer}>
+    <section className='SkillsUcmo' >
+      <div className='UCIS' id='UCIS'  ref={skillsMobileContainer}>
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(0)} onMouseEnter={() => {smallRotation(0); ScrollToElement(0)}}>
         <div className='SkillItemContainer'>
           <img id='SkillImg' src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skill Img" />
           <div className='SkillItemDescription'>
             <p>Computer Science</p>
-            <h1>Fundamentals Of Programing</h1>
+            <h1>Computers & Modern Society</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(0)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
               <p>Read more</p>
@@ -142,7 +142,7 @@ const SkillsSnow: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
-          <h1>Fundamentals Of Programing</h1>
+          <h1>Secure Programming</h1>
           <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer languages, such as SQL, Java, Python, and C++.</p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(0)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -160,8 +160,8 @@ const SkillsSnow: React.FC = () => {
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
-            <p>Computer Science</p>
-            <h1>Object-oriented Programming</h1>
+            <p>Software Engneering</p>
+            <h1>Software Requiremnts Engneering</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(1)}>
               <img 
                 src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
@@ -178,11 +178,11 @@ const SkillsSnow: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
-          <h1>Object-oriented Programming</h1>
+          <h1>Software Requiremnts Engneerng</h1>
           <p>
-            Object-oriented programming (OOP) is a programming paradigm based on the 
-            concept of “objects”, which can contain data and code. OOP helps organize 
-            software design around data, or objects, rather than functions and logic.
+              Aims at equipping students with requirements engineering techniques for software-intensive systems. 
+              Students will learn asystematic approach to discover, analyze, model, write, and validate requirements 
+              from both theoretical and practical perspectives.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(1)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -201,8 +201,8 @@ const SkillsSnow: React.FC = () => {
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
-            <p>Computer Science</p>
-            <h1>Introduction to Web Development</h1>
+            <p>Software Engineering</p>
+            <h1>Software Engineering</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(2)}>
               <img 
                 src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
@@ -218,11 +218,11 @@ const SkillsSnow: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
-          <h1>Introduction to Web Development</h1>
+          <h1>Software Engineering</h1>
           <p>
-            Web development involves creating and maintaining websites. It includes 
-            aspects such as web design, web publishing, web programming, and 
-            database management.
+              An introduction to software development process (Agile, Lean, Scrum and Kanban), 
+              with emphasis on software design, team management, and application development. Students will gain 
+              experience in developing and managing software projects. Ethical issues regarding software development will be discussed.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(2)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -242,7 +242,7 @@ const SkillsSnow: React.FC = () => {
           />
           <div className='SkillItemDescription'>
             <p>Computer Science</p>
-            <h1>Data Structures and Algorithms</h1>
+            <h1>Algorithm Design and Analysis</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(3)}>
               <img 
                 src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
@@ -259,11 +259,11 @@ const SkillsSnow: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
-          <h1>Data Structures and Algorithms</h1>
+          <h1>Algorithm Design and Analysis</h1>
           <p>
-            Data structures organize data so it can be accessed and worked with 
-            efficiently. Algorithms are sets of instructions that solve specific 
-            problems. Mastering both is essential for efficient software development.
+            Techniques needed to analyze and design algorithms are discussed. It covers a 
+            large number of classical algorithms and their complexity. Topics such as sorting, 
+            graph algorithms, and NP-completeness are discussed
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(3)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -271,7 +271,6 @@ const SkillsSnow: React.FC = () => {
           </div>
         </div>
       </div>
-
 
       {/* Skill Item 4 */}
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(4)} onMouseEnter={() => {smallRotation(4); ScrollToElement(4)}}>
@@ -283,7 +282,7 @@ const SkillsSnow: React.FC = () => {
           />
           <div className='SkillItemDescription'>
             <p>Computer Science</p>
-            <h1>Digital Circuits</h1>
+            <h1>Database Theory & Apps</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(4)}>
               <img 
                 src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
@@ -300,11 +299,11 @@ const SkillsSnow: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
-          <h1>Digital Circuits</h1>
+          <h1>Database Theory & Apps</h1>
           <p>
-            Digital circuits use discrete signal levels to represent information for 
-            processing and communication in computers and other digital devices. 
-            They form the backbone of modern computing hardware.
+            An introduction to database theory and applications. Topics include: E-R model, relational database design, 
+            normalization theory, SQL, application design and development, security, and database administration. 
+            A significant application-oriented project will be required.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(4)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -312,7 +311,6 @@ const SkillsSnow: React.FC = () => {
           </div>
         </div>
       </div>
-
 
       {/* Skill Item 5 */}
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(5)} onMouseEnter={() => {smallRotation(5); ScrollToElement(5)}}>
@@ -323,8 +321,8 @@ const SkillsSnow: React.FC = () => {
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
-            <p>Computer Science</p>
-            <h1>Computer Organization and Architecture</h1>
+            <p>Software Engineering</p>
+            <h1>Software Design & Architecture</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(5)}>
               <img 
                 src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
@@ -341,11 +339,11 @@ const SkillsSnow: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
-          <h1>Computer Organization and Architecture</h1>
+          <h1>Software Design & Architecture</h1>
           <p>
-            Computer organization deals with hardware components that connect to 
-            form a computer, while architecture involves the design of the system 
-            and how hardware and software interact to achieve performance goals.
+            In depth study of concepts and principles of software design and software architecture, 
+            as well as practical approaches for employing design patterns and architectures in real systems. 
+            Students will gain experiences with examples in design pattern application and case studies in software architecture. 
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(5)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -353,7 +351,6 @@ const SkillsSnow: React.FC = () => {
           </div>
         </div>
       </div>
-
 
       {/* Skill Item 6 */}
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(6)} onMouseEnter={() => {smallRotation(6); ScrollToElement(6)}}>
@@ -365,7 +362,7 @@ const SkillsSnow: React.FC = () => {
           />
           <div className='SkillItemDescription'>
             <p>Software Engineering</p>
-            <h1>Back-end Web Development</h1>
+            <h1>Secure Software Engineering</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(6)}>
               <img 
                 src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
@@ -382,11 +379,12 @@ const SkillsSnow: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Software Engineering</p>
-          <h1>Back-end Web Development</h1>
+          <h1>Secure Software Engineering</h1>
           <p>
-            Back-end development focuses on the server side of an application, 
-            including databases, server logic, APIs, and integration of front-end 
-            functionality to ensure data and services are delivered seamlessly.
+            In depth study of secure development lifecycle. The course reevaluates each phase of the development 
+            lifecycle from a security perspective and uses best practices from different secure SDL methodologies. 
+            Students will learn how to practice risk analysis, static/dynamic analysis, penetration testing, and 
+            secure code review in a dialectic process.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(6)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -394,6 +392,128 @@ const SkillsSnow: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Skill Item 7 */}
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(6)} onMouseEnter={() => {smallRotation(7); ScrollToElement(7)}}>
+        <div className='SkillItemContainer'>
+          <img 
+            id='SkillImg' 
+            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            alt="Skill Img" 
+          />
+          <div className='SkillItemDescription'>
+            <p>Software Engineering</p>
+            <h1>Senior Project</h1>
+            <div className='SkillItemMore' onClick={() => ReadMore(7)}>
+              <img 
+                src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
+                alt="atribute icon" 
+              />
+              <p>Read more</p>
+            </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(7)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
+          </div>
+        </div>
+        <div className='SkillMoreInfo'>
+          <p>Software Engineering</p>
+          <h1>Senior Project</h1>
+          <p>
+            Semester- long senior capstone project in which teams design, plan, implement, test, and deploy a software 
+            development project. Selected topics in software development, group dynamics, project management, and 
+            ethics and professional responsibility. Includes a formal presentation to the Computer Science faculty. 
+          </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(7)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Skill Item 8 */}
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(8)} onMouseEnter={() => {smallRotation(8); ScrollToElement(8)}}>
+        <div className='SkillItemContainer'>
+          <img 
+            id='SkillImg' 
+            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            alt="Skill Img" 
+          />
+          <div className='SkillItemDescription'>
+            <p>Software Engineering</p>
+            <h1>Software Testng & Qual Assurnc</h1>
+            <div className='SkillItemMore' onClick={() => ReadMore(8)}>
+              <img 
+                src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
+                alt="atribute icon" 
+              />
+              <p>Read more</p>
+            </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(8)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
+          </div>
+        </div>
+        <div className='SkillMoreInfo'>
+          <p>Software Engineering</p>
+          <h1>Software Testng & Qual Assurnc</h1>
+          <p>
+            Concepts and techniques for testing software and assuring its quality. Students learn the testing fundamentals, 
+            the theory behind criteria-based test design and to apply that theory in practice. Topics include coverage 
+            criteria for testing (graph coverage, logic coverage, input space partitioning, syntax-based testing); software 
+            development process (SCRUM); test team organization; maturity models; software quality factors; and testing tools.
+          </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(8)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Skill Item 9 */}
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(9)} onMouseEnter={() => {smallRotation(9); ScrollToElement(9)}}>
+        <div className='SkillItemContainer'>
+          <img 
+            id='SkillImg' 
+            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            alt="Skill Img" 
+          />
+          <div className='SkillItemDescription'>
+            <p>Software Engineering</p>
+            <h1>Project Management</h1>
+            <div className='SkillItemMore' onClick={() => ReadMore(9)}>
+              <img 
+                src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
+                alt="atribute icon" 
+              />
+              <p>Read more</p>
+            </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(9)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
+          </div>
+        </div>
+        <div className='SkillMoreInfo'>
+          <p>Software Engineering</p>
+          <h1>Project Management</h1>
+          <p>
+            An introduction to project management and software tools for  project management. Topics include project 
+            management process, scope management, time management and cost management. Students learn how a successful 
+            project outcome will be achieved. This course helps students confidently prepare for PMP certificate. 
+          </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(9)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
+        </div>
+      </div>
+      
       </div>
       <div className='MoveSkillsArrows'>
           <img src={arrow} alt="leftArrow" onClick={() => MoveCoursesMobile(-1)}/>
@@ -403,4 +523,4 @@ const SkillsSnow: React.FC = () => {
   );
 }
 
-export default SkillsSnow;
+export default SkillsUcmo;
