@@ -12,8 +12,7 @@ const Snow: React.FC = () => {
 
     useEffect(() => {
       const scrollToTop = () => {
-          spanRef.current?.scrollIntoView({ behavior: 'smooth' });
-          console.log('Scrolling to span');
+          spanRef.current?.scrollIntoView({ behavior: 'instant' });
       };
   
       // Use setTimeout to ensure content has rendered

@@ -126,7 +126,7 @@ const SkillsUcmo: React.FC = () => {
       <div className='UCIS' id='UCIS'  ref={skillsMobileContainer}>
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(0)} onMouseEnter={() => {smallRotation(0); ScrollToElement(0)}}>
         <div className='SkillItemContainer'>
-          <img id='SkillImg' src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skill Img" />
+          <img id='SkillImg' src="https://images.pexels.com/photos/9831612/pexels-photo-9831612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Skill Img" />
           <div className='SkillItemDescription'>
             <p>Computer Science</p>
             <h1>Computers & Modern Society</h1>
@@ -142,8 +142,8 @@ const SkillsUcmo: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
-          <h1>Secure Programming</h1>
-          <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer languages, such as SQL, Java, Python, and C++.</p>
+          <h1>Computers & Modern Society</h1>
+          <p> The technical, social, legal, ethical, and economic implications of computing and the controversies they raise from a computer scientist’s perspective. </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(0)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
               <p>Read less</p>
@@ -151,12 +151,12 @@ const SkillsUcmo: React.FC = () => {
         </div>
         </div>
 
-            {/* Skill Item 1 */}
+      {/* Skill Item 1 */}
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(1)} onMouseEnter={() => {smallRotation(1); ScrollToElement(1)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -177,7 +177,7 @@ const SkillsUcmo: React.FC = () => {
           </div>
         </div>
         <div className='SkillMoreInfo'>
-          <p>Computer Science</p>
+          <p>Software Engineering</p>
           <h1>Software Requiremnts Engneerng</h1>
           <p>
               Aims at equipping students with requirements engineering techniques for software-intensive systems. 
@@ -197,7 +197,7 @@ const SkillsUcmo: React.FC = () => {
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=600" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -217,7 +217,7 @@ const SkillsUcmo: React.FC = () => {
           </div>
         </div>
         <div className='SkillMoreInfo'>
-          <p>Computer Science</p>
+          <p>Software Engineering</p>
           <h1>Software Engineering</h1>
           <p>
               An introduction to software development process (Agile, Lean, Scrum and Kanban), 
@@ -231,13 +231,12 @@ const SkillsUcmo: React.FC = () => {
         </div>
       </div>
 
-
       {/* Skill Item 3 */}
       <div className='SkillItem' onMouseLeave={() => closeMoreInfo(3)} onMouseEnter={() => {smallRotation(3); ScrollToElement(3)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/17483848/pexels-photo-17483848/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-a-look-inside-how-ai-microchips-are-designed-it-was-created-by-champ-panupong-techawongthawon-as-part-of-the-v.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/17485707/pexels-photo-17485707/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-illustration-visualises-an-artificial-neural-network-as-physical-objects-the-complex-structure-represents-a-network-of-infor.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -277,7 +276,7 @@ const SkillsUcmo: React.FC = () => {
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/6636458/pexels-photo-6636458.jpeg?auto=compress&cs=tinysrgb&w=600" 
+            src="https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -338,7 +337,7 @@ const SkillsUcmo: React.FC = () => {
           </div>
         </div>
         <div className='SkillMoreInfo'>
-          <p>Computer Science</p>
+          <p>Software Engineering</p>
           <h1>Software Design & Architecture</h1>
           <p>
             In depth study of concepts and principles of software design and software architecture, 
@@ -357,7 +356,7 @@ const SkillsUcmo: React.FC = () => {
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/5380792/pexels-photo-5380792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -394,11 +393,11 @@ const SkillsUcmo: React.FC = () => {
       </div>
 
       {/* Skill Item 7 */}
-      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(6)} onMouseEnter={() => {smallRotation(7); ScrollToElement(7)}}>
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(7)} onMouseEnter={() => {smallRotation(7); ScrollToElement(7)}}>
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -438,12 +437,12 @@ const SkillsUcmo: React.FC = () => {
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
             <p>Software Engineering</p>
-            <h1>Software Testng & Qual Assurnc</h1>
+            <h1>Software Testing & Quality Assurance</h1>
             <div className='SkillItemMore' onClick={() => ReadMore(8)}>
               <img 
                 src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
@@ -460,7 +459,7 @@ const SkillsUcmo: React.FC = () => {
         </div>
         <div className='SkillMoreInfo'>
           <p>Software Engineering</p>
-          <h1>Software Testng & Qual Assurnc</h1>
+          <h1>Software Testing & Quality Assurance</h1>
           <p>
             Concepts and techniques for testing software and assuring its quality. Students learn the testing fundamentals, 
             the theory behind criteria-based test design and to apply that theory in practice. Topics include coverage 
@@ -479,7 +478,7 @@ const SkillsUcmo: React.FC = () => {
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/10725897/pexels-photo-10725897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -508,6 +507,44 @@ const SkillsUcmo: React.FC = () => {
             project outcome will be achieved. This course helps students confidently prepare for PMP certificate. 
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(9)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read less</p>
+          </div>
+        </div>
+      </div>
+      {/* Skill Item 10 */}
+      <div className='SkillItem' onMouseLeave={() => closeMoreInfo(10)} onMouseEnter={() => {smallRotation(10); ScrollToElement(10)}}>
+        <div className='SkillItemContainer'>
+          <img 
+            id='SkillImg' 
+            src="https://images.pexels.com/photos/5380643/pexels-photo-5380643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            alt="Skill Img" 
+          />
+          <div className='SkillItemDescription'>
+            <p>Cybersecurity </p>
+            <h1>Secure Programming</h1>
+            <div className='SkillItemMore' onClick={() => ReadMore(10)}>
+              <img 
+                src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" 
+                alt="atribute icon" 
+              />
+              <p>Read more</p>
+            </div>
+            <div className='SkillItemMoreMobile' onClick={() => ReadMoreMobile(10)}>
+              <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
+              <p>Read more</p>
+            </div>
+
+          </div>
+        </div>
+        <div className='SkillMoreInfo'>
+          <p>Cybersecurity </p>
+          <h1>Secure Programming</h1>
+          <p>
+          Introduction to secure and reliable programming practices. Topics include security loophole identification, 
+          conversion of noncompliant code to compliant code, and best defensive programming practices
+          </p>
+          <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(10)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
               <p>Read less</p>
           </div>

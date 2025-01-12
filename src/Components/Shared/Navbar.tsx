@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './css/Navbar.css'
 import spanish from './imgs/spanish-flag.svg'
 import english from './imgs/uk-flag.svg'
@@ -16,7 +16,8 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
   const navigate = useNavigate();
   const [languageText, setLanguageText] = useState<string[]>([])
   const [close, setClose] = useState<boolean>(true);
-  // const [screenPixels] = useState<number>(window.innerWidth)
+  const navbar = useRef<HTMLElement>(null);
+  const navbarMobile = useRef<HTMLImageElement>(null);
 
   function changeLanguage(value: boolean): void{
     if(value === true) setLanguage('En');
@@ -130,28 +131,61 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
       else setLanguageText(spanish)
   }
 
-  // function FixFullScreen(): void{
-  //   const hideMobileButtons = document.querySelectorAll('.NavbarIcon') as NodeListOf<HTMLImageElement>;
-    
-  //   if(screenPixels > 680){
-  //     hideMobileButtons.forEach((img) =>{
-  //       img.style.display = 'none'
-  //     })
-  //   } else{
-  //     hideMobileButtons.forEach((img) =>{
-  //       img.style.display = 'block'
-  //     })
-  //   }
-  // }
-
   useEffect(()=>{
     changeTexts()
-    // FixFullScreen()
   }, [language])
 
+  useEffect(() => {
+    let prevScrollPos: number = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos: number = window.pageYOffset;
+      if(window.innerWidth > 680){
+        if (prevScrollPos > currentScrollPos) {
+          navbar.current!.style.top = '0';
+          navbar.current!.style.transition = 'ease-in-out 0.5s';
+          if(currentScrollPos === 0){
+            navbar.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)'
+            navbar.current!.style.color = 'black'
+          }else{
+            navbar.current!.style.color = 'white'
+            navbar.current!.style.backgroundColor = '#343434'
+          }
+        } else {
+          navbar.current!.style.top = '-100px';
+        } 
+      } else{
+        if(window.innerWidth < 680 && close === true){
+          if (prevScrollPos > currentScrollPos) {
+            navbarMobile.current!.style.top = '20px';          
+            if(currentScrollPos === 0 ){        
+              var path = navbarMobile.current!.querySelector('path');
+              path?.setAttribute('fill', 'red');      
+              navbarMobile.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+              navbarMobile.current!.style.top = '20px';          
+            }else{
+              navbarMobile.current!.style.backgroundColor = '#343434';
+
+            }
+          } else {
+            navbarMobile.current!.style.top = '-100px';
+  
+          } 
+        }
+      }
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className='Navbar' id='Navbar'>
-      <img className='NavbarIcon' id='openNav' onClick={showMobileNavbar} src={optionsImg} alt="menu bars" />
+    <nav className='Navbar' id='Navbar' ref={navbar}>
+      <img className='NavbarIcon' id='openNav' onClick={showMobileNavbar} src={optionsImg} alt="menu bars" ref={navbarMobile}/>
       <img className='NavbarIcon' id='closeNav' onClick={showMobileNavbar} src={closeIcon} alt="menu bars" />
         <ul className='NavbarContainer' id='NavbarContainer'>
             <li className='NavbarItem' onClick={() => navigate('/')} id='firstMobileButton'>{languageText[0]}</li>

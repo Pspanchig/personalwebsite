@@ -6,7 +6,7 @@ const LowerSection: React.FC = () => {
   return (
     <section className='LowerSection'>
       <div className='LoweSectionHeader'>
-        <h1>What Did I learned at Snow College?</h1>
+        <h1>What did I learned at Snow College?</h1>
       </div>
       <SkillsSnow/>
       <article>

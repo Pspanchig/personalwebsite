@@ -2,7 +2,6 @@
 
 .Navbar{   
     z-index: 9999; /* or another high value */
- 
     font-family: "IBM Plex Serif", serif;
     font-weight: 600;
     font-style: normal;

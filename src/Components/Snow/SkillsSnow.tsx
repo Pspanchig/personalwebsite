@@ -143,7 +143,11 @@ const SkillsSnow: React.FC = () => {
         <div className='SkillMoreInfo'>
           <p>Computer Science</p>
           <h1>Fundamentals Of Programing</h1>
-          <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer languages, such as SQL, Java, Python, and C++.</p>
+          <p>
+            This course introduces the discipline of computing and emphasizes problem-solving and programming. 
+            Considerable time is devoted to learning how to solve problems using a current programming language (C#). 
+            Basic principles of program design and implementation are introduced.
+          </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(0)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
               <p>Read less</p>
@@ -180,9 +184,8 @@ const SkillsSnow: React.FC = () => {
           <p>Computer Science</p>
           <h1>Object-oriented Programming</h1>
           <p>
-            Object-oriented programming (OOP) is a programming paradigm based on the 
-            concept of “objects”, which can contain data and code. OOP helps organize 
-            software design around data, or objects, rather than functions and logic.
+            This course continues the development of the discipline of computing. It introduces the concepts of object-oriented 
+            programming. Basic data structures, recursion, and fundamental computing algorithms are introduced.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(1)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -261,9 +264,8 @@ const SkillsSnow: React.FC = () => {
           <p>Computer Science</p>
           <h1>Data Structures and Algorithms</h1>
           <p>
-            Data structures organize data so it can be accessed and worked with 
-            efficiently. Algorithms are sets of instructions that solve specific 
-            problems. Mastering both is essential for efficient software development.
+            This course covers data structures and algorithms in some depth. Topics include data structures, 
+            recursion, problem solving strategies, and complexity analysis. Sorting and searching algorithms are covered in detail.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(3)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -302,9 +304,10 @@ const SkillsSnow: React.FC = () => {
           <p>Computer Science</p>
           <h1>Digital Circuits</h1>
           <p>
-            Digital circuits use discrete signal levels to represent information for 
-            processing and communication in computers and other digital devices. 
-            They form the backbone of modern computing hardware.
+            This course is an introduction to digital systems, logic gates, combinational logic circuits, and sequential
+             logic circuits. It includes minimization techniques and implementation with encoders, decoders, multiplexers, 
+             and programmable logic devices. It considers Mealy and Moore models of state machines, state minimization, 
+             and state assignment. It also introduces a hardware description language.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(4)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -343,9 +346,8 @@ const SkillsSnow: React.FC = () => {
           <p>Computer Science</p>
           <h1>Computer Organization and Architecture</h1>
           <p>
-            Computer organization deals with hardware components that connect to 
-            form a computer, while architecture involves the design of the system 
-            and how hardware and software interact to achieve performance goals.
+            This course introduces organization and architecture of computer systems. Topics include assembly 
+            language programming, instruction sets, pipelining, and memory systems.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(5)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
@@ -360,7 +362,7 @@ const SkillsSnow: React.FC = () => {
         <div className='SkillItemContainer'>
           <img 
             id='SkillImg' 
-            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            src="https://images.pexels.com/photos/2881233/pexels-photo-2881233.jpeg?auto=compress&cs=tinysrgb&w=600" 
             alt="Skill Img" 
           />
           <div className='SkillItemDescription'>
@@ -384,9 +386,8 @@ const SkillsSnow: React.FC = () => {
           <p>Software Engineering</p>
           <h1>Back-end Web Development</h1>
           <p>
-            Back-end development focuses on the server side of an application, 
-            including databases, server logic, APIs, and integration of front-end 
-            functionality to ensure data and services are delivered seamlessly.
+            This course focuses on the concepts and technologies needed to develop dynamic web-based applications. 
+            Students build data-driven websites and APIs using modern languages and tools.
           </p>
           <div className='SkillItemMoreMobile' onClick={() => ReadLessMobile(6)}>
               <img src="https://www.svgrepo.com/show/512467/menu-navigation-grid-1530.svg" alt="atribute icon" />
