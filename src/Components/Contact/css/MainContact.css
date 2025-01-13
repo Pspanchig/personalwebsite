@@ -1,0 +1,17 @@
+.MainContact{
+    background-color: white;
+    height: 80%;
+    width: 80%;
+    border-radius: 2.5em;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MainContact h1{
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 1000;
+    font-style: normal;
+    font-size: clamp(3rem, 3rem, 3rem);
+}

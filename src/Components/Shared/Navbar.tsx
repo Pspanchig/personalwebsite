@@ -158,9 +158,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
         if(window.innerWidth < 680 && close === true){
           if (prevScrollPos > currentScrollPos) {
             navbarMobile.current!.style.top = '20px';          
-            if(currentScrollPos === 0 ){        
-              var path = navbarMobile.current!.querySelector('path');
-              path?.setAttribute('fill', 'red');      
+            if(currentScrollPos <= 0 ){         
               navbarMobile.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)';
               navbarMobile.current!.style.top = '20px';          
             }else{
@@ -183,6 +181,17 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
     };
   }, []);
 
+  useEffect(()=>{
+    const ShowAtBeginning = () =>{
+      navbar.current!.style.top = '0';
+      navbar.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)'
+      navbar.current!.style.color = 'black'
+    }
+    setTimeout(() => {      
+      ShowAtBeginning();
+    }, 100);
+  },[])
+
   return (
     <nav className='Navbar' id='Navbar' ref={navbar}>
       <img className='NavbarIcon' id='openNav' onClick={showMobileNavbar} src={optionsImg} alt="menu bars" ref={navbarMobile}/>
@@ -191,7 +200,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
             <li className='NavbarItem' onClick={() => navigate('/')} id='firstMobileButton'>{languageText[0]}</li>
             <li className="NavbarItem" onClick={() => navigate('/biography')}>{languageText[1]}</li>
             <li className='NavbarItem' onClick={() => navigate('/')}>{languageText[2]}</li>
-            <li className='NavbarItem' onClick={() => navigate('/')}>{languageText[3]}</li>
+            <li className='NavbarItem' onClick={() => navigate('/contact')}>{languageText[3]}</li>
             <li className="NavbarItem" onClick={() => navigate('/')} id="LengId">{languageText[4]}
               <span className="NavbarDropdown">
                 <div className="lenguage" onClick={() => changeLanguage(false)}>
