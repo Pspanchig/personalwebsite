@@ -136,46 +136,50 @@ const Navbar: React.FC<languageChanger> = ({language}) => {
   }, [language])
 
   useEffect(() => {
-    let prevScrollPos: number = window.pageYOffset;
+let prevScrollPos: number = window.pageYOffset;
 
-    const handleScroll = () => {
-      const currentScrollPos: number = window.pageYOffset;
-      if(window.innerWidth > 680){
-        if (prevScrollPos > currentScrollPos) {
-          navbar.current!.style.top = '0';
-          navbar.current!.style.transition = 'ease-in-out 0.5s';
-          if(currentScrollPos === 0){
-            navbar.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)'
-            navbar.current!.style.color = 'black'
-          }else{
-            navbar.current!.style.color = 'white'
-            navbar.current!.style.backgroundColor = '#343434'
-          }
+const handleScroll = () => {
+  const currentScrollPos: number = window.pageYOffset;
+
+  if (window.innerWidth > 680) {
+    /* ---------- DESKTOP: igual que antes ---------- */
+    if (prevScrollPos > currentScrollPos) {
+      navbar.current!.style.top = '0';
+      navbar.current!.style.transition = 'ease-in-out 0.5s';
+      if (currentScrollPos === 0) {
+        navbar.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+        navbar.current!.style.color = 'black';
+      } else {
+        navbar.current!.style.color = 'white';
+        navbar.current!.style.backgroundColor = '#343434';
+      }
+    } else {
+      navbar.current!.style.top = '-100px';
+    }
+  } else {
+    /* ---------- MOBILE ---------- */
+    if (window.innerWidth < 680 && close === true) {
+      if (prevScrollPos > currentScrollPos) {
+        navbarMobile.current!.style.top = '20px';
+        if (currentScrollPos <= 0) {
+          navbarMobile.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+          navbarMobile.current!.style.top = '20px';
         } else {
-          navbar.current!.style.top = '-100px';
-        } 
-      } else{
-        if(window.innerWidth < 680 && close === true){
-          if (prevScrollPos > currentScrollPos) {
-            navbarMobile.current!.style.top = '20px';          
-            if(currentScrollPos <= 0 ){         
-              navbarMobile.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)';
-              navbarMobile.current!.style.top = '20px';          
-            }else{
-              navbarMobile.current!.style.backgroundColor = '#343434';
-
-            }
-          } else {
-            navbarMobile.current!.style.top = '-100px';
-  
-          } 
+          navbarMobile.current!.style.backgroundColor = '#343434';
+        }
+      } else {
+        if (currentScrollPos > 0) {
+          navbarMobile.current!.style.top = '-100px';
+        } else {
+          navbarMobile.current!.style.top = '20px'; 
         }
       }
-      prevScrollPos = currentScrollPos;
-    };
+    }
+  }
 
+  prevScrollPos = currentScrollPos;
+};
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
