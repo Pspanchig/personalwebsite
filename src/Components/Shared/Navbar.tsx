@@ -184,8 +184,10 @@ const Navbar: React.FC<languageChanger> = ({language}) => {
   useEffect(()=>{
     const ShowAtBeginning = () =>{
       navbar.current!.style.top = '0';
-      navbar.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)'
-      navbar.current!.style.color = 'black'
+      navbar.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)'      
+      if(window.innerWidth > 680) navbar.current!.style.color = 'black'
+      else navbar.current!.style.color = 'white'
+
     }
     setTimeout(() => {      
       ShowAtBeginning();
