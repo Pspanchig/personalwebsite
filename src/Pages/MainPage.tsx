@@ -8,7 +8,7 @@ import './css/MainPage.css'
 const MainPage: React.FC = () => {
 
   const [close, setClose] = useState<boolean>(false)
-  const [language ,setLanguage] = useState<string>('En')
+  const [language] = useState<string>('En')
   const spanRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const MainPage: React.FC = () => {
   return (
     <main className='mainPage'> 
         <span ref={spanRef}></span>                 
-        <Navbar language={language} setLanguage={setLanguage}/>
+        <Navbar language={language}/>
         <UserPresentation language={language}/>
         <Warning closeBool={close} setCloseBool={setClose}/>
     </main>

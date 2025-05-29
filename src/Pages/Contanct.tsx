@@ -5,11 +5,11 @@ import MainContact from '../Components/Contact/MainContact';
 
 const Contact: React.FC = () => {
         
-    const [language ,setLanguage] = useState<string>('En')    
+    const [language] = useState<string>('En')    
 
   return (
     <main className='Contact'>
-        <Navbar language={language} setLanguage={setLanguage}/>
+        <Navbar language={language}/>
         <MainContact/>
     </main>
   );

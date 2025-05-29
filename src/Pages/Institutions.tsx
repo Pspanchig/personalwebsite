@@ -7,11 +7,11 @@ import Navbar from '../Components/Shared/Navbar';
 import EducationMenu from '../Components/EducationMenu/EducationMenu';
 
 const Institutions: React.FC = () => {
-    const [language ,setLanguage] = useState<string>('En')
+    const [language] = useState<string>('En')
     
     const Education: React.FC = () => {
         return <main className='Institutions'> 
-            <Navbar language={language} setLanguage={setLanguage} />
+            <Navbar language={language} />
             <EducationMenu />
         </main>
     }

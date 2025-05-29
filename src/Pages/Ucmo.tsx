@@ -5,7 +5,7 @@ import LowerSection from '../Components/Ucmo/LowerSection';
 import './css/Ucmo.css'
 
 const Ucmo: React.FC = () => {
-    const [language ,setLanguage] = useState<string>('En')
+    const [language] = useState<string>('En')
     const spanRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const Ucmo: React.FC = () => {
   return (
     <main className='Ucmo'>   
       <span ref={spanRef}></span>      
-      <Navbar language={language} setLanguage={setLanguage}/>
+      <Navbar language={language}/>
       <UpperSection/>
       <LowerSection/>
     </main>

@@ -6,7 +6,7 @@ import LowerSection from '../Components/Snow/LowerSection';
 import './css/Snow.css';
 
 const Snow: React.FC = () => {
-    const [language ,setLanguage] = useState<string>('En')
+    const [language] = useState<string>('En')
     const snowRef = useRef<HTMLElement>(null);
     const spanRef = useRef<HTMLSpanElement>(null);
 
@@ -24,7 +24,7 @@ const Snow: React.FC = () => {
   return (    
     <main className='Snow' ref={snowRef}>
       <span ref={spanRef}></span>
-        <Navbar language={language} setLanguage={setLanguage}/>
+        <Navbar language={language} />
          <UpperSection />
          <LowerSection />         
     </main>

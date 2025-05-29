@@ -7,7 +7,7 @@ import BiographyText from '../Components/Biography/BiographyText';
 import Countries from '../Components/Biography/Countries';
 
 const Biography: React.FC = () => {
-    const [language ,setLanguage] = useState<string>('En')
+    const [language] = useState<string>('En')
     const spanRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const Biography: React.FC = () => {
     return (
     <main className='Biography'>
         <span ref={spanRef}></span>            
-        <Navbar language={language} setLanguage={setLanguage}/>
+        <Navbar language={language} />
         <GeneralDescription/>
         <BiographyText/>
         <Countries/>
