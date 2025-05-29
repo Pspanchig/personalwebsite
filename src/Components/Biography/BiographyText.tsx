@@ -6,7 +6,7 @@ const BiographyText: React.FC = () => {
     <section id='BiographyTextHeader' className='BiographyText'>
         <div className='BiographyTextContainer'>
           <div className='BiographyTextHeader'>
-            <h2>No dream is too big, and no dreamer too small.</h2>
+            <h2>"No dream is too big, and no dreamer too small."</h2>
           </div>
           <article>
             <p>Born in Quito, Ecuador the oldest capital in South America I have always been captivated by the endless possibilities of technology and creativity. From a young age, the dream of becoming a game developer fueled my passion, leading me at 15 to master Unreal Engine and Unity, along with programming languages like C++ and C#. This early immersion laid the foundation for my journey into the world of coding and innovation.</p>

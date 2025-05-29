@@ -201,7 +201,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
             <li className="NavbarItem" onClick={() => navigate('/biography')}>{languageText[1]}</li>
             <li className='NavbarItem' onClick={() => navigate('/')}>{languageText[2]}</li>
             <li className='NavbarItem' onClick={() => navigate('/contact')}>{languageText[3]}</li>
-            <li className="NavbarItem" onClick={() => navigate('/')} id="LengId">{languageText[4]}
+            {/* <li className="NavbarItem" onClick={() => navigate('/')} id="LengId">{languageText[4]}
               <span className="NavbarDropdown">
                 <div className="lenguage" onClick={() => changeLanguage(false)}>
                   <p>{languageText[5]}</p>
@@ -212,7 +212,7 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
                   <img src={english} alt="English flag" />
                 </div>
               </span>
-            </li>
+            </li> */}
         </ul>
     </nav>
   )
