@@ -2,3 +2,13 @@
     color: black;        
 }
 
+@media(max-width: 680px){
+    .Contact{ 
+        display: flex;           
+        flex-direction: column;
+        justify-content: space-evenly;
+        min-height: 1500px;
+        height: 1500px;
+        max-height: 1500px;
+    }    
+}

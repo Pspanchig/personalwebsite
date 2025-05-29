@@ -190,7 +190,10 @@ const handleScroll = () => {
       navbar.current!.style.top = '0';
       navbar.current!.style.backgroundColor = 'rgba(255, 255, 255, 0)'      
       if(window.innerWidth > 680) navbar.current!.style.color = 'black'
-      else navbar.current!.style.color = 'white'
+      else{
+         navbar.current!.style.color = 'white'
+         navbarMobile.current!.style.top = '20px'; 
+      }
 
     }
     setTimeout(() => {      

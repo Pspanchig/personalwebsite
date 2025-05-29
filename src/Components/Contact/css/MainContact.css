@@ -11,7 +11,6 @@
     box-shadow: 1em 1em 0em 1em black;
 
 }
-
 .MainContact h1{
     margin: 0.2em;
     font-family: "IBM Plex Serif", serif;
@@ -25,4 +24,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.CanAlsolDesktop{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CanAlsolMobile{
+    display: none;
+}
+@media (max-width: 680px) {
+    .MainContact{
+        width: 90%;
+        height: 40%;
+        box-shadow:none;
+    }
+    .CanAlsolDesktop{
+        display: none;
+    }    
+    .CanAlsolMobile{
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40%;
+        width: 90%;
+        border-radius: 1em;
+        border: 3px solid black;
+    }
 }
