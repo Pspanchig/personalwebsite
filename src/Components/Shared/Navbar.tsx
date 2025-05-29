@@ -1,17 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './css/Navbar.css'
-import spanish from './imgs/spanish-flag.svg'
-import english from './imgs/uk-flag.svg'
+// import spanish from './imgs/spanish-flag.svg'
+// import english from './imgs/uk-flag.svg'
 import optionsImg from './imgs/menuOptions.svg'
 import closeIcon from './imgs/close.svg'
 import { useNavigate } from 'react-router-dom'
 
 interface languageChanger{
   language: string;
-  setLanguage: (value: string) => void;
+  // setLanguage: (value: string) => void;
 }
 
-const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
+const Navbar: React.FC<languageChanger> = ({language}) => {
 
   const navigate = useNavigate();
   const [languageText, setLanguageText] = useState<string[]>([])
@@ -19,11 +19,11 @@ const Navbar: React.FC<languageChanger> = ({language, setLanguage}) => {
   const navbar = useRef<HTMLElement>(null);
   const navbarMobile = useRef<HTMLImageElement>(null);
 
-  function changeLanguage(value: boolean): void{
-    if(value === true) setLanguage('En');
-    else setLanguage('Sp')
-    console.log(language)
-  }
+  // function changeLanguage(value: boolean): void{
+  //   if(value === true) setLanguage('En');
+  //   else setLanguage('Sp')
+  //   console.log(language)
+  // }
 
   function showMobileNavbar(): void{
     const openNav = document.getElementById('openNav') as HTMLImageElement;
