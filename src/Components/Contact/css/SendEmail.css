@@ -78,8 +78,27 @@
     }
     .SendEmail{
         width: 90%;
+        height: 95%;
+        background-color: white;
     }    
     .EmailInput p{
         min-width: 90px;
+    }
+    .EmailMe{
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;    
+    }
+    .SendEm{
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;    
+    }
+    .EmailInputsContainer{
+        width: 100%;        
+    }
+    .EmailMessage{
+        height: 30%;
+    }
+    .EmailInput textarea{
+        
     }
 }

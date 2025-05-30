@@ -38,8 +38,13 @@
 @media (max-width: 680px) {
     .MainContact{
         width: 90%;
-        height: 40%;
+        height: 42%;
         box-shadow:none;
+        background-color: rgb(241, 241, 241);
+    }
+    .MainContact h1{
+        font-size: 2em;
+        margin: 0.5em;
     }
     .CanAlsolDesktop{
         display: none;

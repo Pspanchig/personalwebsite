@@ -94,6 +94,7 @@
 
 }
 @media(max-width: 680px){
+    
     .NavbarItem{
         /* width: 25%; */
         margin-inline: 0;
