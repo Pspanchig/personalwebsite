@@ -1,5 +1,6 @@
 .Contact{
-    color: black;        
+    color: black;     
+    max-height: 100vh;
 }
 
 @media(max-width: 680px){
@@ -12,3 +13,4 @@
         max-height: 1300px;
     }    
 }
+

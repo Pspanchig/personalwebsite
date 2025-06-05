@@ -4,13 +4,15 @@ import NotFound from './Pages/NotFound';
 import Biography from './Pages/Biography';
 import Institutions from './Pages/Institutions';
 import Contact from './Pages/Contanct';
-
+import Projects from './Pages/Projects';
 
 function App() {
   return (
     <HashRouter>
       <Routes>
         <Route path='/biography' element={<Biography />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/projects' element={<Projects />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/' element={<MainPage />} />
         <Route path='/education/*' element={<Institutions />} />

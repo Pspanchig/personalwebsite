@@ -1,0 +1,49 @@
+.FilterBy{
+    display: flex;
+    height: 100%;
+    /* background-color: blue; */
+    width: 15%;
+    justify-content: center;
+}
+.FilterContainer{
+    width: 80%;
+    height: 80%;
+    /* background-color: green; */
+}
+.CheckbocFilter{
+    display: flex;
+    align-items: center;
+    height: 30%;
+}
+.CheckbocFilter input{
+    cursor: pointer;
+}
+.CheckbocFilter p{
+    margin-inline: 5%;
+}
+.TechnologiesContainer{
+    /* background-color: teal; */
+    height: 20%;
+    overflow-y: auto;
+}
+.price-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Arial, sans-serif;
+}
+
+.price-filter input {
+  width: 35%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.price-filter button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.BlueLabel{
+    color: #02A7F0;
+}

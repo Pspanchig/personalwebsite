@@ -208,7 +208,7 @@ const handleScroll = () => {
         <ul className='NavbarContainer' id='NavbarContainer'>
             <li className='NavbarItem' onClick={() => navigate('/')} id='firstMobileButton'>{languageText[0]}</li>
             <li className="NavbarItem" onClick={() => navigate('/biography')}>{languageText[1]}</li>
-            <li className='NavbarItem' onClick={() => navigate('/')}>{languageText[2]}</li>
+            <li className='NavbarItem' onClick={() => navigate('/projects')}>{languageText[2]}</li>
             <li className='NavbarItem' onClick={() => navigate('/contact')}>{languageText[3]}</li>
             {/* <li className="NavbarItem" onClick={() => navigate('/')} id="LengId">{languageText[4]}
               <span className="NavbarDropdown">

@@ -1,0 +1,25 @@
+.ProjectsMenu{
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+    height: 90%;
+    color: rgb(48, 48, 48);
+}
+.ProjectsContainer{    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: auto;
+    /* background-color: green; */
+    list-style: none;
+}
+.ProjectItem{
+    height: 25%;
+    min-height: 25%;
+    margin: 1em;
+    border-radius: 1em;
+    background-color: #F2F2F2;
+    
+}

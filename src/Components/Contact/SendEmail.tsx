@@ -14,25 +14,25 @@ const SendEmail: React.FC = () => {
     const [message, setMessage] = useState<string>('');
 
 
-    const validate = (): boolean => {
-        if (!name.trim()) {
-        alert('Please provide your name');
-        return false;
-        }
-        if (!email.trim() || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email)) {
-        alert('Please provide a valid email address');
-        return false;
-        }
-        if (!subject.trim()) {
-        alert('Please provide a subject');
-        return false;
-        }
-        if (!message.trim()) {
-        alert('Please enter your message');
-        return false;
-        }
-        return true;
-    };
+  const validate = (): boolean => {
+      if (!name.trim()) {
+      alert('Please provide your name');
+      return false;
+      }
+      if (!email.trim() || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email)) {
+      alert('Please provide a valid email address');
+      return false;
+      }
+      if (!subject.trim()) {
+      alert('Please provide a subject');
+      return false;
+      }
+      if (!message.trim()) {
+      alert('Please enter your message');
+      return false;
+      }
+      return true;
+  };
 
   const handleSendEmail = async (): Promise<void> => {
     if (!validate()) return;
@@ -51,11 +51,14 @@ const SendEmail: React.FC = () => {
     } catch (err: any) {
       console.error('EmailJS error:', err);
       alert('There was a problem sending your message, please try again.');
-    }
+    } finally{
       setName(''); 
       setEmail(''); 
       setSubject(''); 
       setMessage('');
+      alert('Your email has been succesfully sent')
+    }
+   
   };
 
 
