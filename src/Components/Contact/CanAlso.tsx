@@ -30,8 +30,8 @@ const CanAlso: React.FC = () => {
                 alt="whatsapp"/>
             <div className='TextCA'>                
                 <p>You can also text me directly at </p>
-                <a href="https://wa.me/593998974462" target="_blank">
-                <h4>(+593) 0998974462</h4>
+                <a href="https://wa.me/593998587329" target="_blank">
+                <h4>(+593) 0998587329</h4>
                 </a>
             </div>
         </div>
