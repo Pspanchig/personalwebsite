@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './css/ProjectsList.css'
 import DragNDrop from './DragNDrop';
-import supabase from '../Shared/supabase';
+// import supabase from '../Shared/supabase';
 
 const ProjectsList: React.FC = () => {
 
-  const [email] = useState<string>('pspanchig@outlook.com');
-  const [password] = useState<string>('superSecure123');
+  // const [email] = useState<string>('pspanchig@outlook.com');
+  // const [password] = useState<string>('superSecure123');
 
-  const signUp = async (): Promise<void> => {    
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password
-    });
+  // const signUp = async (): Promise<void> => {    
+  //   const { data, error } = await supabase.auth.signUp({
+  //     email: email,
+  //     password: password
+  //   });
 
-    if (error) {      
-      alert(`Sign-up failed: ${error.message}`);
-      console.error('Supabase signUp error details:', error);
-      return;
-    }
+  //   if (error) {      
+  //     alert(`Sign-up failed: ${error.message}`);
+  //     console.error('Supabase signUp error details:', error);
+  //     return;
+  //   }
 
-    console.log('Signup successful, user data:', data);    
-  };
+  //   console.log('Signup successful, user data:', data);    
+  // };
 
-  useEffect(() => {
-    signUp();
-  }, []);
+  // useEffect(() => {
+  //   signUp();
+  // }, []);
 
   return (
     <article className='ProjectsList'>
