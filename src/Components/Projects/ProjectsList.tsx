@@ -34,7 +34,7 @@ const ProjectsList: React.FC = () => {
     .from('Projects List')
     .select('*')
     if (error) {
-      console.error('Error fetching users:', error)      
+      console.error('Error fetching users:', error)      ;
     }
     setProjects(data!)
   }
