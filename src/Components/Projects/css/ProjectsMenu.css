@@ -15,14 +15,7 @@
     /* background-color: green; */
     list-style: none;
 }
-.ProjectItem{
-    height: 25%;
-    min-height: 25%;
-    margin: 1em;
-    border-radius: 1em;
-    background-color: #F2F2F2;
-    
-}
+
 @media (max-width: 680px) {
     .ProjectsMenu{
         display: flex;

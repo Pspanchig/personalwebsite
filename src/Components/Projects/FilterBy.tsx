@@ -10,7 +10,7 @@ const FilterBy: React.FC = () => {
         <h4 className='BlueLabel'>Techonology</h4>
         <div className='TechnologiesContainer'>
           <label htmlFor="Checkbox" className='CheckbocFilter'>
-            <input type="checkbox" />
+            <input type="checkbox" value='C#'/>
             <p>C#</p>
           </label>
           <label htmlFor="Checkbox" className='CheckbocFilter'>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './css/ProjectsList.css'
 import DragNDrop from './DragNDrop';
 import supabase from '../Shared/supabase';
@@ -16,8 +16,10 @@ interface Technologies{
 }
 const ProjectsList: React.FC = () => {
 
+  const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
   const [technologies, setTechnologies] = useState<Technologies[]>([])
+  const span = useRef<HTMLSpanElement>(null)
 
   const getTechnologies = async(): Promise<void> =>{
     const {data, error} = await supabase
@@ -38,7 +40,62 @@ const ProjectsList: React.FC = () => {
     }
     setProjects(data!)
   }
+
+const cleanSearch = (): void =>{
+    const Projects = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLElement>;
+    Projects.forEach(p => {
+        p.style.display = 'flex'
+    })
+}
+
+const handleSearchBar = (): void => {
+  const ProjectsName = document.querySelectorAll('.ProjectItem h2') as NodeListOf<HTMLElement>;
+  const Projects = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLElement>;
+
+  ProjectsName.forEach((t, index) => {
+    if (t.innerText.toLowerCase().includes(searchbar.toLocaleLowerCase())) {
+      Projects[index].style.display = '';    
+    }else {
+      Projects[index].style.display = 'none'      
+    }
+
+    if((t.innerText.toLowerCase().includes(searchbar.toLocaleLowerCase()) === false)){
+      span.current!.style.display = 'block'
+      setTimeout(() => {        
+        span.current!.style.display = 'none'
+      }, 1000);
+    }
+  });
+
+  setSearchbar('');
+  };
+
   
+  // This change the color of the technologies names when page is loaded
+  useEffect(() =>{
+    const technologiesLabel = (): void =>{
+    const technologies = document.querySelectorAll('.TechLabel') as NodeListOf<HTMLElement>
+        technologies.forEach(t => {
+          if(t.innerText === 'TS'){
+            t.style.backgroundColor = '#016FA0'
+          }
+          else if(t.innerText === 'HTML'){
+            t.style.backgroundColor = '#FDB25A'
+          }
+          else if(t.innerText === 'CSS'){
+            t.style.backgroundColor = '#00c0c0'
+          }
+          else if(t.innerText === 'Java'){
+            t.style.backgroundColor = '#F9791E'
+          }
+          else if(t.innerText === 'C#'){
+            t.style.backgroundColor = '#63A103'
+          }
+        })
+      }
+    technologiesLabel()
+  },[technologies])
+
   useEffect(() =>{
     getProjectsInfo()
     getTechnologies()
@@ -49,10 +106,14 @@ const ProjectsList: React.FC = () => {
       <div className='ProjectListHeader'>
         <h1>Projects list</h1>
         <div className='PLSearchBar'>
+          <button onClick={cleanSearch}>clean</button>
           <input 
             type="text" 
+            value={searchbar}
+            onChange={(e) => setSearchbar(e.target.value)}
             placeholder='Find a project here...'/>
           <img 
+          onClick={handleSearchBar}
             src="https://www.svgrepo.com/show/507417/search-circle.svg" 
             alt="search img" />
         </div>
@@ -60,19 +121,33 @@ const ProjectsList: React.FC = () => {
 
       <section className="ProjectsO">  
         <ul className="ProjectsContainer" role="list">
+          <span ref={span}>Nothing was found</span>
+          {
+            projects.length === 0 &&(
+              <li className="ProjectItem" draggable>
+                <p>Loading...</p>
+              </li>
+            )
+          }
           {
             projects.map((p, i) => (
             <li key={i} className="ProjectItem" draggable>
-              <h2>{p.project_name}</h2>
-              <h3>{p.project_date}</h3>
-              <p>{p.project_description}</p>              
-              {
-                technologies
-                  .filter((t) => t.table_id === p.id)
-                  .map((t, index) => (
-                    <div key={index}>{t.techonology}</div>
-                  ))
-              }
+              <div className='ProjectItemInformation'>
+                <h2>{p.project_name}</h2>
+                <div style={{display: 'flex'}}>
+                  <p>Created at </p><h3 style={{marginLeft: '1%'}}>{p.project_date}</h3>
+                </div>
+                <p>{p.project_description}</p>              
+                <div className='TechLabelContainer'>
+                {
+                  technologies
+                    .filter((t) => t.table_id === p.id)
+                    .map((t, index) => (
+                        <div key={index} className='TechLabel'>{t.techonology}</div>
+                      ))
+                    }
+                </div>
+              </div>
             </li>
             ))
           }          
