@@ -9,6 +9,8 @@ interface TechnologiesSelection {
   setCss: (value: boolean) => void;
   setJava: (value: boolean) => void;
   setUpdate: (value: boolean) => void;
+  setInitialDate: (value: number) => void;
+  setFinalDate: (value: number) => void;
   update: boolean;
 }
 
@@ -20,7 +22,9 @@ const FilterBy: React.FC<TechnologiesSelection> = ({
   setCss,
   setJava,
   setUpdate,
-  update
+  update,
+  setFinalDate,
+  setInitialDate
   }) => {
 
   return (
@@ -58,10 +62,17 @@ const FilterBy: React.FC<TechnologiesSelection> = ({
         <hr />
         <h4 className='BlueLabel'>Year</h4>
         <div className="price-filter">
-        <input type="number" placeholder="Min" id="minPrice" />
+        <input 
+          type="number" 
+          onChange={(e) => setInitialDate((Number)(e.target.value))} 
+          placeholder="Min" id="minPrice" />
         <span>-</span>
-        <input type="number" placeholder="Max" id="maxPrice" />
-        <button>Go</button>
+        <input 
+          type="number" 
+          placeholder="Max" 
+          onChange={(e) => setFinalDate((Number)(e.target.value))}
+          id="maxPrice" />
+        <button onClick={() => setUpdate(!update)}>Go</button>
       </div>
       </div>
     </article>

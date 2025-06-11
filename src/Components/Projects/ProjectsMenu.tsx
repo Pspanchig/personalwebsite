@@ -11,7 +11,8 @@ const ProjectsMenu: React.FC = () => {
   const [css, setCss] = useState<boolean>(false)
   const [java, setJava] = useState<boolean>(false)
   const [update, setUpdate] = useState<boolean>(false);
-
+  const [initialDate, setInitialDate] = useState<number>(0);
+  const [finalDate, setFinalDate] = useState<number>(0);
   return (
     <section className='ProjectsMenu'>
       <FilterBy 
@@ -23,6 +24,8 @@ const ProjectsMenu: React.FC = () => {
         setJava={setJava}
         setUpdate={setUpdate}
         update={update}
+        setFinalDate={setFinalDate}
+        setInitialDate={setInitialDate}
       />
       <ProjectsList
         cSharp={cSharp}
@@ -32,6 +35,8 @@ const ProjectsMenu: React.FC = () => {
         css={css}
         java={java}
         update={update}
+        initialDate={initialDate}
+        finalDate={finalDate}
       />
     </section>
   );

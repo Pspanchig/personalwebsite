@@ -22,6 +22,8 @@ interface TechnolgiesToUse{
   css: boolean;
   java: boolean
   update: boolean;
+  initialDate?: number;
+  finalDate?: number;
 }
 const ProjectsList: React.FC<TechnolgiesToUse> = ({
   cSharp,
@@ -30,7 +32,9 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   html,
   css,
   java,
-  update
+  update,
+  initialDate,
+  finalDate
   }) => {
 
   const [searchbar, setSearchbar] = useState<string>('')
@@ -120,33 +124,48 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   
   useEffect(() => {
     filterByTechnology();
+    filterByYear();
   },[update])
   
-const filterByTechnology = (): void => {
-  const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
+  const filterByTechnology = (): void => {
+    const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
+    projectItems.forEach((item) => {
+      const techLabels = item.querySelectorAll('.TechLabel') as NodeListOf<HTMLDivElement>;
+      const labels = Array.from(techLabels).map(label => label.textContent?.trim());
 
-  projectItems.forEach((item) => {
-    const techLabels = item.querySelectorAll('.TechLabel') as NodeListOf<HTMLDivElement>;
-    const labels = Array.from(techLabels).map(label => label.textContent?.trim());
+      const activeTechs: string[] = [];
+      
+      if (cSharp) activeTechs.push('C#');
+      if (js) activeTechs.push('JS');
+      if (ts) activeTechs.push('TS');
+      if (html) activeTechs.push('HTML');
+      if (css) activeTechs.push('CSS');
+      if (java) activeTechs.push('Java');
 
-    const activeTechs: string[] = [];
-    
-    if (cSharp) activeTechs.push('C#');
-    if (js) activeTechs.push('JS');
-    if (ts) activeTechs.push('TS');
-    if (html) activeTechs.push('HTML');
-    if (css) activeTechs.push('CSS');
-    if (java) activeTechs.push('Java');
+      const shouldShow = labels.some(label => activeTechs.includes(label!));
+      item.style.display = shouldShow ? 'flex' : 'none';
 
-    const shouldShow = labels.some(label => activeTechs.includes(label!));
-    item.style.display = shouldShow ? 'flex' : 'none';
+      if(!cSharp && !js && !ts && !html && !css && !java) {
+        item.style.display = 'flex';
+      }
+    });
+  };
 
-    if(!cSharp && !js && !ts && !html && !css && !java) {
-      item.style.display = 'flex';
-    }
-  });
-};
+  const filterByYear = (): void => {
 
+    const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
+    const projectDate = document.querySelectorAll('.ProjectItem h3') as NodeListOf<HTMLHeadingElement>;
+
+    projectDate.forEach((date, index) => {
+      var projectsDate: number = (Number)(date.innerText.substring(0, 4));
+      if(initialDate !== null && finalDate !== null){
+        if(projectsDate >= initialDate! && projectsDate <= finalDate!){
+          projectItems[index].style.display = 'flex';
+        }else projectItems[index].style.display = 'none';
+      }
+    })
+      
+  }
 
   return (
     <article className='ProjectsList'>
