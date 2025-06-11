@@ -14,7 +14,24 @@ interface Technologies{
   techonology: string,
   table_id: string
 }
-const ProjectsList: React.FC = () => {
+interface TechnolgiesToUse{
+  cSharp: boolean;    
+  js: boolean;
+  ts: boolean;
+  html: boolean;
+  css: boolean;
+  java: boolean
+  update: boolean;
+}
+const ProjectsList: React.FC<TechnolgiesToUse> = ({
+  cSharp,
+  js,
+  ts,
+  html,
+  css,
+  java,
+  update
+  }) => {
 
   const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
@@ -41,14 +58,14 @@ const ProjectsList: React.FC = () => {
     setProjects(data!)
   }
 
-const cleanSearch = (): void =>{
-    const Projects = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLElement>;
-    Projects.forEach(p => {
-        p.style.display = 'flex'
-    })
-}
+  const cleanSearch = (): void =>{
+      const Projects = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLElement>;
+      Projects.forEach(p => {
+          p.style.display = 'flex'
+      })
+  }
 
-const handleSearchBar = (): void => {
+  const handleSearchBar = (): void => {
   const ProjectsName = document.querySelectorAll('.ProjectItem h2') as NodeListOf<HTMLElement>;
   const Projects = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLElement>;
 
@@ -69,8 +86,6 @@ const handleSearchBar = (): void => {
 
   setSearchbar('');
   };
-
-  
   // This change the color of the technologies names when page is loaded
   useEffect(() =>{
     const technologiesLabel = (): void =>{
@@ -93,7 +108,9 @@ const handleSearchBar = (): void => {
           }
         })
       }
-    technologiesLabel()
+
+      technologiesLabel()        
+
   },[technologies])
 
   useEffect(() =>{
@@ -101,6 +118,36 @@ const handleSearchBar = (): void => {
     getTechnologies()
   },[])
   
+  useEffect(() => {
+    filterByTechnology();
+  },[update])
+  
+const filterByTechnology = (): void => {
+  const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
+
+  projectItems.forEach((item) => {
+    const techLabels = item.querySelectorAll('.TechLabel') as NodeListOf<HTMLDivElement>;
+    const labels = Array.from(techLabels).map(label => label.textContent?.trim());
+
+    const activeTechs: string[] = [];
+    
+    if (cSharp) activeTechs.push('C#');
+    if (js) activeTechs.push('JS');
+    if (ts) activeTechs.push('TS');
+    if (html) activeTechs.push('HTML');
+    if (css) activeTechs.push('CSS');
+    if (java) activeTechs.push('Java');
+
+    const shouldShow = labels.some(label => activeTechs.includes(label!));
+    item.style.display = shouldShow ? 'flex' : 'none';
+
+    if(!cSharp && !js && !ts && !html && !css && !java) {
+      item.style.display = 'flex';
+    }
+  });
+};
+
+
   return (
     <article className='ProjectsList'>
       <div className='ProjectListHeader'>

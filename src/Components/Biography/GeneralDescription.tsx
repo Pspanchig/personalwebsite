@@ -42,7 +42,7 @@ const GeneralDescription: React.FC = () => {
               <h2>Dreamer with a passion for innovation</h2>
             </div>
             <div className='YearCountry'>
-              <h2>20 Years old</h2>
+              <h2>21 Years old</h2>
               <h2>Ecuadorian</h2>
             </div>
             <Link to='BiographyTextHeader' className='LinkToText' smooth={true} duration={500}><p>Read more</p></Link>
