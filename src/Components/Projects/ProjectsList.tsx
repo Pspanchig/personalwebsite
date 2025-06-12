@@ -123,49 +123,53 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   },[])
   
   useEffect(() => {
-    filterByTechnology();
-    filterByYear();
-  },[update])
+  applyFilters();
+}, [update]);
+
+const applyFilters = (): void => {
+  const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
+  const projectDates = document.querySelectorAll('.ProjectItem h3') as NodeListOf<HTMLHeadingElement>;
   
-  const filterByTechnology = (): void => {
-    const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
-    projectItems.forEach((item) => {
-      const techLabels = item.querySelectorAll('.TechLabel') as NodeListOf<HTMLDivElement>;
-      const labels = Array.from(techLabels).map(label => label.textContent?.trim());
+  projectItems.forEach((item, index) => {
+    const passesYearFilter = checkYearFilter(projectDates[index]);
+    const passesTechFilter = checkTechFilter(item);
+    
+    item.style.display = (passesYearFilter && passesTechFilter) ? 'flex' : 'none';
+  });
+};
 
-      const activeTechs: string[] = [];
-      
-      if (cSharp) activeTechs.push('C#');
-      if (js) activeTechs.push('JS');
-      if (ts) activeTechs.push('TS');
-      if (html) activeTechs.push('HTML');
-      if (css) activeTechs.push('CSS');
-      if (java) activeTechs.push('Java');
+const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
+  if (initialDate === 0 && finalDate === 0) {
+    return true;
+  }
+  
+  if (initialDate !== null && finalDate !== null) {
+    const projectYear = Number(dateElement.innerText.substring(0, 4));
+    return projectYear >= initialDate! && projectYear <= finalDate!;
+  }
+  
+  return true;
+};
 
-      const shouldShow = labels.some(label => activeTechs.includes(label!));
-      item.style.display = shouldShow ? 'flex' : 'none';
-
-      if(!cSharp && !js && !ts && !html && !css && !java) {
-        item.style.display = 'flex';
-      }
-    });
+  const checkTechFilter = (item: HTMLDivElement): boolean => {
+    if (!cSharp && !js && !ts && !html && !css && !java) {
+      return true;
+    }
+    
+    const activeTechs: string[] = [];
+    if (cSharp) activeTechs.push('C#');
+    if (js) activeTechs.push('JS');
+    if (ts) activeTechs.push('TS');
+    if (html) activeTechs.push('HTML');
+    if (css) activeTechs.push('CSS');
+    if (java) activeTechs.push('Java');
+    
+    const techLabels = item.querySelectorAll('.TechLabel') as NodeListOf<HTMLDivElement>;
+    const labels = Array.from(techLabels).map(label => label.textContent?.trim());
+    
+    return labels.some(label => activeTechs.includes(label!));
   };
 
-  const filterByYear = (): void => {
-
-    const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
-    const projectDate = document.querySelectorAll('.ProjectItem h3') as NodeListOf<HTMLHeadingElement>;
-
-    projectDate.forEach((date, index) => {
-      var projectsDate: number = (Number)(date.innerText.substring(0, 4));
-      if(initialDate !== null && finalDate !== null){
-        if(projectsDate >= initialDate! && projectsDate <= finalDate!){
-          projectItems[index].style.display = 'flex';
-        }else projectItems[index].style.display = 'none';
-      }
-    })
-      
-  }
 
   return (
     <article className='ProjectsList'>
