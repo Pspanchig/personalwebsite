@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './css/ProjectsList.css'
 import DragNDrop from './DragNDrop';
 import supabase from '../Shared/supabase';
@@ -40,7 +40,7 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
   const [technologies, setTechnologies] = useState<Technologies[]>([])
-  const span = useRef<HTMLSpanElement>(null)
+  // const span = useRef<HTMLSpanElement>(null)
 
   const getTechnologies = async(): Promise<void> =>{
     const {data, error} = await supabase
@@ -80,12 +80,12 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
       Projects[index].style.display = 'none'      
     }
 
-    if((t.innerText.toLowerCase().includes(searchbar.toLocaleLowerCase()) === false)){
-      span.current!.style.display = 'block'
-      setTimeout(() => {        
-        span.current!.style.display = 'none'
-      }, 1000);
-    }
+    // if((t.innerText.toLowerCase().includes(searchbar.toLocaleLowerCase()) === false)){
+    //   span.current!.style.display = 'block'
+    //   setTimeout(() => {        
+    //     span.current!.style.display = 'none'
+    //   }, 1000);
+    // }
   });
 
   setSearchbar('');
@@ -191,7 +191,7 @@ const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
 
       <section className="ProjectsO">  
         <ul className="ProjectsContainer" role="list">
-          <span ref={span}>Nothing was found</span>
+          {/* <span ref={span}>Nothing was found</span> */}
           {
             projects.length === 0 &&(
               <li className="ProjectItem" draggable>
