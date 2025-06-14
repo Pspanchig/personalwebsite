@@ -3,7 +3,7 @@ import './css/DragNDrop.css'
 
 const DragNDrop: React.FC = () => {
   return (
-    <section className='DragNDrop' onDrop={(e) => ('')}>
+    <section className='DragNDrop'>
       <h3>Show project information</h3>
       <article>
         <div className='DropProject'>
