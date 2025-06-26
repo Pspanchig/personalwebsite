@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './css/ProjectsList.css'
 import DragNDrop from './DragNDrop';
 import supabase from '../Shared/supabase';
+import Draggable from './Draggable';
+import { DndContext } from '@dnd-kit/core';
 
-interface Projects {
+export interface Projects {
   id?: string,
   project_name: string,
   project_date: string,
   project_description: string  
 }
-interface Technologies{
+export interface Technologies{
   id?: string,
   techonology: string,
   table_id: string
@@ -40,7 +42,6 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
   const [technologies, setTechnologies] = useState<Technologies[]>([])
-  // const span = useRef<HTMLSpanElement>(null)
 
   const getTechnologies = async(): Promise<void> =>{
     const {data, error} = await supabase
@@ -87,44 +88,26 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
     //   }, 1000);
     // }
   });
+  
+
 
   setSearchbar('');
   };
-  // This change the color of the technologies names when page is loaded
-  useEffect(() =>{
-    const technologiesLabel = (): void =>{
-    const technologies = document.querySelectorAll('.TechLabel') as NodeListOf<HTMLElement>
-        technologies.forEach(t => {
-          if(t.innerText === 'TS'){
-            t.style.backgroundColor = '#016FA0'
-          }
-          else if(t.innerText === 'HTML'){
-            t.style.backgroundColor = '#FDB25A'
-          }
-          else if(t.innerText === 'CSS'){
-            t.style.backgroundColor = '#00c0c0'
-          }
-          else if(t.innerText === 'Java'){
-            t.style.backgroundColor = '#F9791E'
-          }
-          else if(t.innerText === 'C#'){
-            t.style.backgroundColor = '#63A103'
-          }
-        })
-      }
-
-      technologiesLabel()        
-
-  },[technologies])
+  
 
   useEffect(() =>{
     getProjectsInfo()
     getTechnologies()
   },[])
   
-  useEffect(() => {
+useEffect(() => {
   applyFilters();
 }, [update]);
+
+const handleDragEnd = (event: any) => {
+    const { active, over } = event;
+    console.log('Dropped:', active.id, 'over', over?.id);
+  };
 
 const applyFilters = (): void => {
   const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
@@ -149,7 +132,7 @@ const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
   }
   
   return true;
-};
+  };
 
   const checkTechFilter = (item: HTMLDivElement): boolean => {
     if (!cSharp && !js && !ts && !html && !css && !java) {
@@ -193,32 +176,17 @@ const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
         <ul className="ProjectsContainer" role="list">
           {/* <span ref={span}>Nothing was found</span> */}
           {
-            projects.length === 0 &&(
-              <li className="ProjectItem" draggable>
+            (projects.length === 0 || projects === null) &&(
+              <li className="ProjectItem" style={{maxHeight:'100px'}}>
                 <p>Loading...</p>
               </li>
             )
           }
           {
             projects.map((p, i) => (
-            <li key={i} className="ProjectItem" draggable>
-              <div className='ProjectItemInformation'>
-                <h2>{p.project_name}</h2>
-                <div style={{display: 'flex'}}>
-                  <p>Created at </p><h3 style={{marginLeft: '1%'}}>{p.project_date}</h3>
-                </div>
-                <p>{p.project_description}</p>              
-                <div className='TechLabelContainer'>
-                {
-                  technologies
-                    .filter((t) => t.table_id === p.id)
-                    .map((t, index) => (
-                        <div key={index} className='TechLabel'>{t.techonology}</div>
-                      ))
-                    }
-                </div>
-              </div>
-            </li>
+              <DndContext onDragEnd={handleDragEnd}>
+                <Draggable p={p} i={i} technologies={technologies} key={i}/>
+              </DndContext>
             ))
           }          
         </ul>

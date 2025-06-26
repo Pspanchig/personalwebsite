@@ -22,14 +22,15 @@
     /* background-color: blue; */
 }
  .ProjectItem{
-    height: 25%;
+    height: 30%;
     min-height: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1em;
     border-radius: 1em;
-    background-color: #F2F2F2;    
+    background-color: #fafafa;    
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 .ProjectItemInformation{
     /* background-color: green; */
@@ -43,6 +44,12 @@
 .ProjectItemInformation h2, .ProjectItemInformation h3,.ProjectItemInformation p{
     margin: 0.5em;
     margin-inline: 0;
+}
+.ProjectItemInformation h2{
+    background-color: gray;
+    color: white;
+    padding: 0.3em;
+    border-radius: 1em;    
 }
 .ProjectDragAndDrop{
     width: 35%;
@@ -88,7 +95,7 @@
 .PLSearchBar input{
     width: 70%;
     border: 2px solid black;
-    border-radius: 0.5em;
+    border-radius: 1em;
     height: 30px;
     /* height: 100%; */
     /* max-height: 500px;     */
@@ -97,6 +104,7 @@
 
     width: 80%;    
     height: 20%;
+    margin-top: 2vh;
     display: flex;
     align-items: center;    
     overflow-x: auto;
@@ -107,8 +115,9 @@
     padding: 1%;
     color: white;
     text-shadow: 1px 1px 1px gray;
-    border-radius: 0.3em;
-    width: 3vw;
+    border-radius: 0.5em;
+    width: 3vw;    
+    min-width: fit-content;
     margin-right: 5%;
     text-align: center;
 
