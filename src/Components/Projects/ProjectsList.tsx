@@ -3,7 +3,8 @@ import './css/ProjectsList.css'
 import DragNDrop from './DragNDrop';
 import supabase from '../Shared/supabase';
 import Draggable from './Draggable';
-import { DndContext } from '@dnd-kit/core';
+import { DndContext, DragEndEvent } from '@dnd-kit/core';
+import ProjectInformation from './ProjectInformation';
 
 export interface Projects {
   id?: string,
@@ -42,6 +43,8 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
   const [technologies, setTechnologies] = useState<Technologies[]>([])
+  const [currentProject, setCurrentProject] = useState<Projects | null>(null);
+  const [haveProject, setHaveProject] = useState<boolean>(false);
 
   const getTechnologies = async(): Promise<void> =>{
     const {data, error} = await supabase
@@ -94,32 +97,39 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   setSearchbar('');
   };
   
-
   useEffect(() =>{
     getProjectsInfo()
     getTechnologies()
   },[])
-  
-useEffect(() => {
-  applyFilters();
-}, [update]);
-
-const handleDragEnd = (event: any) => {
-    const { active, over } = event;
-    console.log('Dropped:', active.id, 'over', over?.id);
-  };
-
-const applyFilters = (): void => {
-  const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
-  const projectDates = document.querySelectorAll('.ProjectItem h3') as NodeListOf<HTMLHeadingElement>;
-  
-  projectItems.forEach((item, index) => {
-    const passesYearFilter = checkYearFilter(projectDates[index]);
-    const passesTechFilter = checkTechFilter(item);
     
-    item.style.display = (passesYearFilter && passesTechFilter) ? 'flex' : 'none';
-  });
-};
+  useEffect(() => {
+    applyFilters();
+  }, [update]);
+
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (over?.id === 'drop-zone') {
+      const project: Projects = active.data.current?.project;
+      setCurrentProject(project);
+
+      if(project){
+        setHaveProject(true);
+      }
+    }
+  }
+
+  const applyFilters = (): void => {
+    const projectItems = document.querySelectorAll('.ProjectItem') as NodeListOf<HTMLDivElement>;
+    const projectDates = document.querySelectorAll('.ProjectItem h3') as NodeListOf<HTMLHeadingElement>;
+    
+    projectItems.forEach((item, index) => {
+      const passesYearFilter = checkYearFilter(projectDates[index]);
+      const passesTechFilter = checkTechFilter(item);
+      
+      item.style.display = (passesYearFilter && passesTechFilter) ? 'flex' : 'none';
+    });
+  };
 
 const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
   if (initialDate === 0 && finalDate === 0) {
@@ -155,7 +165,14 @@ const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
 
 
   return (
-    <article className='ProjectsList'>
+
+  <>
+  {
+    haveProject && (
+      <ProjectInformation Close={setHaveProject} CurrentProject={currentProject}/>
+    )
+  }
+  <article className='ProjectsList'>
       <div className='ProjectListHeader'>
         <h1>Projects list</h1>
         <div className='PLSearchBar'>
@@ -169,33 +186,39 @@ const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
           onClick={handleSearchBar}
             src="https://www.svgrepo.com/show/507417/search-circle.svg" 
             alt="search img" />
-        </div>
       </div>
-
-      <section className="ProjectsO">  
+    </div>
+    <section className="ProjectsO">  
+      <DndContext onDragEnd={handleDragEnd}>
         <ul className="ProjectsContainer" role="list">
-          {/* <span ref={span}>Nothing was found</span> */}
-          {
-            (projects.length === 0 || projects === null) &&(
-              <li className="ProjectItem" style={{maxHeight:'100px'}}>
-                <p>Loading...</p>
-              </li>
-            )
-          }
-          {
-            projects.map((p, i) => (
-              <DndContext onDragEnd={handleDragEnd}>
-                <Draggable p={p} i={i} technologies={technologies} key={i}/>
-              </DndContext>
-            ))
-          }          
+          <div className="ProjectContainerofitems">
+            {
+              (projects.length === 0 || projects === null) && (
+                <li className="ProjectItem" style={{ maxHeight: '100px' }}>
+                  <p>Loading...</p>
+                </li>
+              )
+            }
+            {
+              projects.map((p, i) => (
+                <Draggable       
+                  key={p.id || i}
+                  id={`project-${p.id || i}`} 
+                  p={p}
+                  i={i}
+                  technologies={technologies}/>
+              ))
+            }
+          </div>
+          <div className="ProjectDragAndDrop">
+            <DragNDrop />     
+          </div>
         </ul>
-
-        <div className="ProjectDragAndDrop">
-          <DragNDrop/>
-        </div>
+      </DndContext>
     </section>
-    </article>
+  </article>
+  </>
+
   );
 };
 

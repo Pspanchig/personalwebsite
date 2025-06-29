@@ -36,6 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 300ms;
 }
 .DropProject img{
     width: 50%;

@@ -3,19 +3,21 @@ import { useDraggable } from '@dnd-kit/core';
 import { Projects, Technologies } from './ProjectsList';
 
 interface DraggableProps {
-  i: number;
+    i: number;
     p: Projects;
-    technologies: Technologies [];
+    id: string;
+    technologies: Technologies [];    
 }
-const Draggable: React.FC<DraggableProps> = ({i, p, technologies}) => {
+const Draggable: React.FC<DraggableProps> = ({ id, p, i, technologies }) => {
+
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: 'draggable-project',
+    id,
+    data: { project: p },
   });
 
   const style: React.CSSProperties = {
     transform: transform ? `translate(${transform.x}px, ${transform.y}px)` : undefined,
     padding: 20,
-    // background: '#3498db',
     color: 'black',
     cursor: 'grab',
     position: 'relative', 
@@ -29,7 +31,8 @@ const Draggable: React.FC<DraggableProps> = ({i, p, technologies}) => {
       ref={setNodeRef}
       style={style}
       {...listeners}
-      {...attributes}>
+      {...attributes}
+    >
             <div className='ProjectItemInformation'>
             <h2>{p.project_name}</h2>
             <div style={{display: 'flex'}}>
