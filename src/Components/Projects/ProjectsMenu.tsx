@@ -13,6 +13,7 @@ const ProjectsMenu: React.FC = () => {
   const [update, setUpdate] = useState<boolean>(false);
   const [initialDate, setInitialDate] = useState<number>(0);
   const [finalDate, setFinalDate] = useState<number>(0);
+  
   return (
     <section className='ProjectsMenu'>
       <FilterBy 

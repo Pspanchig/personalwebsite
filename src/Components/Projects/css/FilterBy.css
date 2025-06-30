@@ -51,17 +51,39 @@
     .FilterBy{
         width: 100%;
         height: 20%;
+        overflow-x: auto;
+    }
+    .FilterBy h4{
+        margin: 0.5em;
     }
     .FilterContainer{  
         display: flex;          
         flex-direction: row;
         height: 100%;
         width: 100%;
-        overflow-x: auto;
+    }
+    .TechnologiesContainer{
+        /* background-color: red; */
+        min-width: fit-content;
+        height: 100%;
+        padding-inline: 1em;
+    }
+    .price-filter{
+        min-width: 65vw;
     }
     .CheckbocFilter{
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
+    }
+    .FilterByHeader, .BlueLabel{
+        min-width: 25vw;
+        display: flex;
+        
+        align-items: center;
+        justify-content: center;
+    }
+    .FilterByTechnologiesSection{
+        display: flex;
     }
 }

@@ -136,7 +136,7 @@
 }
 @media (max-width: 680px) {
     .ProjectsList{        
-        width: 100%;
+        width: 98%;
         border-right: 3px solid black;
         border-top-right-radius: 2em;
     }
@@ -152,6 +152,25 @@
         margin-right: 1em;
     }
     .ProjectsContainer{
+        width: 100%;
+        padding: 0;
+    }
+    .ProjectItem{
         width: 80%;
+        height: 100%;
+    }
+    .ProjectContainerofitems{        
+        width: 100%;
+        align-items: center;
+    }
+    .TechLabel{
+        min-width: fit-content;
+        width: 10vw;
+    }
+    .TechLabelContainer{
+        /* background-color: blue; */
+        height: 5vh;
+        max-height: 5vh;
+        min-height: 5vh;
     }
 }

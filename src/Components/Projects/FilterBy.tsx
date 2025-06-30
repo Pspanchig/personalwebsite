@@ -30,34 +30,38 @@ const FilterBy: React.FC<TechnologiesSelection> = ({
   return (
     <article className='FilterBy'>
       <div className='FilterContainer'>
-        <h4>Filter by</h4>
+        <h4 className='FilterByHeader'>Filter by</h4>
         <hr />
-        <h4 className='BlueLabel'>Techonology</h4>
-        <div className='TechnologiesContainer'>
-          <label htmlFor="Checkbox" className='CheckbocFilter'>
-            <input type="checkbox" onChange={(e) => {setCSharp(e.target.checked); setUpdate(!update) }}/>
-            <p>C#</p>
-          </label>
-          <label htmlFor="Checkbox" className='CheckbocFilter'>
-            <input type="checkbox" onChange={(e) => {setJs(e.target.checked); setUpdate(!update) }}/>
-            <p>JavaScript</p>
-          </label>
-          <label htmlFor="Checkbox" className='CheckbocFilter'>
-            <input type="checkbox" onChange={(e) => {setTs(e.target.checked); setUpdate(!update) }}/>
-            <p>TypeScript</p>
-          </label>
-          <label htmlFor="Checkbox" className='CheckbocFilter'>
-            <input type="checkbox" onChange={(e) => {setJava(e.target.checked); setUpdate(!update) }}/>
-            <p>Java</p>
-          </label>
-          <label htmlFor="Checkbox" className='CheckbocFilter'>
-            <input type="checkbox" onChange={(e) => {setCss(e.target.checked); setUpdate(!update) }}/>
-            <p>CSS</p>
-          </label>
-          <label htmlFor="Checkbox" className='CheckbocFilter'>
-            <input type="checkbox" onChange={(e) => {setHTML(e.target.checked); setUpdate(!update) }}/>
-            <p>HTML</p>
-          </label>
+        
+
+        <div className='FilterByTechnologiesSection'>
+          <h4 className='BlueLabel'>Techonology</h4>
+          <div className='TechnologiesContainer'>
+            <label htmlFor="Checkbox" className='CheckbocFilter'>
+              <input type="checkbox" onChange={(e) => {setCSharp(e.target.checked); setUpdate(!update) }}/>
+              <p>C#</p>
+            </label>
+            <label htmlFor="Checkbox" className='CheckbocFilter'>
+              <input type="checkbox" onChange={(e) => {setJs(e.target.checked); setUpdate(!update) }}/>
+              <p>JavaScript</p>
+            </label>
+            <label htmlFor="Checkbox" className='CheckbocFilter'>
+              <input type="checkbox" onChange={(e) => {setTs(e.target.checked); setUpdate(!update) }}/>
+              <p>TypeScript</p>
+            </label>
+            <label htmlFor="Checkbox" className='CheckbocFilter'>
+              <input type="checkbox" onChange={(e) => {setJava(e.target.checked); setUpdate(!update) }}/>
+              <p>Java</p>
+            </label>
+            <label htmlFor="Checkbox" className='CheckbocFilter'>
+              <input type="checkbox" onChange={(e) => {setCss(e.target.checked); setUpdate(!update) }}/>
+              <p>CSS</p>
+            </label>
+            <label htmlFor="Checkbox" className='CheckbocFilter'>
+              <input type="checkbox" onChange={(e) => {setHTML(e.target.checked); setUpdate(!update) }}/>
+              <p>HTML</p>
+            </label>
+          </div>
         </div>
         <hr />
         <h4 className='BlueLabel'>Year</h4>

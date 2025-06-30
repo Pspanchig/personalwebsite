@@ -40,6 +40,7 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   finalDate
   }) => {
 
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 680);
   const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
   const [technologies, setTechnologies] = useState<Technologies[]>([])
@@ -163,9 +164,35 @@ const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
     return labels.some(label => activeTechs.includes(label!));
   };
 
+  const ProjectListContent = (
+  <ul className="ProjectsContainer" role="list">
+    <div className="ProjectContainerofitems">
+      {
+        (projects.length === 0 || projects === null) && (
+          <li className="ProjectItem" style={{ maxHeight: '100px' }}>
+            <p>Loading...</p>
+          </li>
+        )
+      }
+      {
+        projects.map((p, i) => (
+          <Draggable
+            key={p.id || i}
+            id={`project-${p.id || i}`}
+            p={p}
+            i={i}
+            technologies={technologies}
+          />
+        ))
+      }
+    </div>
+    <div className="ProjectDragAndDrop">
+      <DragNDrop />
+    </div>
+  </ul>
+  );
 
   return (
-
   <>
   {
     haveProject && (
@@ -189,32 +216,15 @@ const checkYearFilter = (dateElement: HTMLHeadingElement): boolean => {
       </div>
     </div>
     <section className="ProjectsO">  
-      <DndContext onDragEnd={handleDragEnd}>
-        <ul className="ProjectsContainer" role="list">
-          <div className="ProjectContainerofitems">
-            {
-              (projects.length === 0 || projects === null) && (
-                <li className="ProjectItem" style={{ maxHeight: '100px' }}>
-                  <p>Loading...</p>
-                </li>
-              )
-            }
-            {
-              projects.map((p, i) => (
-                <Draggable       
-                  key={p.id || i}
-                  id={`project-${p.id || i}`} 
-                  p={p}
-                  i={i}
-                  technologies={technologies}/>
-              ))
-            }
-          </div>
-          <div className="ProjectDragAndDrop">
-            <DragNDrop />     
-          </div>
-        </ul>
-      </DndContext>
+      {
+        !isMobile ? (
+          <DndContext onDragEnd={handleDragEnd}>
+            {ProjectListContent}
+          </DndContext>
+        ) : (
+          ProjectListContent
+        )
+      }
     </section>
   </article>
   </>
