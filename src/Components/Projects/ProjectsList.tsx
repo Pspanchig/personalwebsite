@@ -40,7 +40,7 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   finalDate
   }) => {
 
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 680);
+  const [isMobile] = useState<boolean>(window.innerWidth <= 680);
   const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
   const [technologies, setTechnologies] = useState<Technologies[]>([])
