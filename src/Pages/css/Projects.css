@@ -8,6 +8,9 @@
 @media (max-width: 680px) {
     .Projects{
         align-items: center;
+        height: 120vh;
+        max-height: 120vh;
+        justify-content: flex-start;
         /* justify-content: center; */
     }
 }

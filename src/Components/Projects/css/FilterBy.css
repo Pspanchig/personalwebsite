@@ -49,8 +49,11 @@
 }
 @media (max-width: 680px) {
     .FilterBy{
+        margin-block: 10%;
+        margin-block-start: 18%;
         width: 100%;
-        height: 20%;
+        height: 16%;
+        min-height: 16%;
         overflow-x: auto;
     }
     .FilterBy h4{
@@ -67,9 +70,14 @@
         min-width: fit-content;
         height: 100%;
         padding-inline: 1em;
+        background-color: rgba(255, 255, 255, 0.527);
+        border-radius: 2em;
+        margin-right: 1em;
+        /* padding: 1em; */
     }
     .price-filter{
-        min-width: 65vw;
+        min-width: 65vw;        
+        padding-right: 1em;
     }
     .CheckbocFilter{
         flex-direction: row;
@@ -85,5 +93,5 @@
     }
     .FilterByTechnologiesSection{
         display: flex;
-    }
+    }    
 }

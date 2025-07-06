@@ -137,6 +137,8 @@
 @media (max-width: 680px) {
     .ProjectsList{        
         width: 98%;
+        height: 90%;
+        min-height: 83%;
         border-right: 3px solid black;
         border-top-right-radius: 2em;
     }
@@ -157,7 +159,7 @@
     }
     .ProjectItem{
         width: 80%;
-        height: 100%;
+        
     }
     .ProjectContainerofitems{        
         width: 100%;
@@ -172,5 +174,16 @@
         height: 5vh;
         max-height: 5vh;
         min-height: 5vh;
+    }
+    .PLSearchBar button{
+        min-height: 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        `
+    }
+    .PLSearchBar input{
+        min-height: 100%;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
