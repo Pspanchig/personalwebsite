@@ -148,9 +148,13 @@
     .ProjectListHeader{
         width: 100%;
         font-size: .7rem;
+        flex-direction: column;
+        /* justify-content: flex-start; */
+        align-items: flex-start;
+        margin-left: 1.5em;
     }
     .PLSearchBar{
-        width: 50%;
+        width: 70%;
         margin-right: 1em;
     }
     .ProjectsContainer{
@@ -159,7 +163,8 @@
     }
     .ProjectItem{
         width: 80%;
-        
+        min-height: fit-content;
+        height: fit-content;
     }
     .ProjectContainerofitems{        
         width: 100%;
@@ -181,8 +186,21 @@
         border-bottom-right-radius: 0;        
     }
     .PLSearchBar input{
-        min-height: 100%;
+        min-height: 89%;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+    }
+    .ProjectListHeader h1{
+        font-size: 1.7rem;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .ProjectListHeader{
+        height: 13%;        
+        margin-block: 3vh;
+    }
+    .PLSearchBar img{
+        width: 20%;
+        height: 100%;
     }
 }
