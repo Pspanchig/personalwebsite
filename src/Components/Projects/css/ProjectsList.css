@@ -178,8 +178,7 @@
     .PLSearchBar button{
         min-height: 100%;
         border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        `
+        border-bottom-right-radius: 0;        
     }
     .PLSearchBar input{
         min-height: 100%;
