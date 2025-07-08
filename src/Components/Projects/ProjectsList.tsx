@@ -47,7 +47,7 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   const [projects, setProjects] = useState<Projects[]>([])
   const [currentProject, setCurrentProject] = useState<Projects | null>(null);
   const [haveProject, setHaveProject] = useState<boolean>(false);
-  const {technologies, isLoading, error} = TechonolgiesHook()
+  const {technologies} = TechonolgiesHook()
 
   // const getTechnologies = async(): Promise<void> =>{
   //   const {data, error} = await supabase
