@@ -5,12 +5,14 @@ import supabase from '../Shared/supabase';
 import Draggable from './Draggable';
 import { DndContext, DragEndEvent } from '@dnd-kit/core';
 import ProjectInformation from './ProjectInformation';
+import TechonolgiesHook from '../Shared/TechonolgiesHook';
 
 export interface Projects {
   id?: string,
   project_name: string,
   project_date: string,
-  project_description: string  
+  project_description: string,
+  long_description?: string | null,
 }
 export interface Technologies{
   id?: string,
@@ -43,19 +45,19 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   const [isMobile] = useState<boolean>(window.innerWidth <= 680);
   const [searchbar, setSearchbar] = useState<string>('')
   const [projects, setProjects] = useState<Projects[]>([])
-  const [technologies, setTechnologies] = useState<Technologies[]>([])
   const [currentProject, setCurrentProject] = useState<Projects | null>(null);
   const [haveProject, setHaveProject] = useState<boolean>(false);
+  const {technologies, isLoading, error} = TechonolgiesHook()
 
-  const getTechnologies = async(): Promise<void> =>{
-    const {data, error} = await supabase
-    .from('Technologies')
-    .select('*')
-    if (error) {
-      console.error('Error fetching technologies:', error)      
-    }
-    setTechnologies(data!)
-  }
+  // const getTechnologies = async(): Promise<void> =>{
+  //   const {data, error} = await supabase
+  //   .from('Technologies')
+  //   .select('*')
+  //   if (error) {
+  //     console.error('Error fetching technologies:', error)      
+  //   }
+  //   setTechnologies(data!)
+  // }
 
   const getProjectsInfo = async(): Promise<void> =>{
     const { data, error } = await supabase
@@ -100,7 +102,6 @@ const ProjectsList: React.FC<TechnolgiesToUse> = ({
   
   useEffect(() =>{
     getProjectsInfo()
-    getTechnologies()
   },[])
     
   useEffect(() => {

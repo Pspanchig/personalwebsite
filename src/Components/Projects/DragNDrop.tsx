@@ -14,7 +14,7 @@ const DragNDrop: React.FC = () => {
       <h3>Show project information</h3>
       <article>
         {/* backgroundColor={isOver ? '#3498db' : '#f0f0f0'} */}
-        <div className='DropProject' style={{backgroundColor: isOver ? '#c5ff8e' : 'white'}} >
+        <div className='DropProject' style={{backgroundColor: isOver ? 'rgb(255, 253, 221)' : 'white'}} >
           {isOver ? 'Release to drop!' : 'Drop here'}
           <img
             src="https://www.svgrepo.com/show/345706/drag-drop.svg"

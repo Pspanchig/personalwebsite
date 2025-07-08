@@ -88,7 +88,7 @@ const AboutMe: React.FC = () => {
             <div className='Skill' id='skill1' onMouseEnter={() => scrollToItem('1')}>
               <div className='SkillName'>
                 <img src={reactvite} alt="React Img" />
-                <h3>React + Vite</h3>
+                <h3>React</h3>
               </div>
               <div className='subContaniner'>
                 <div className='SkillPointContainer'>
