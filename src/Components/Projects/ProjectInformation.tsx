@@ -12,6 +12,7 @@ interface ProjectLinks {
   id?: string;
   link: string;
   linked_table: string;
+  Platform: string;
 }
 const ProjectInformation: React.FC<ProjectInformationProps> = ({CurrentProject, Close}) => {
 
@@ -57,6 +58,13 @@ const ProjectInformation: React.FC<ProjectInformationProps> = ({CurrentProject, 
     }
   };
 
+  const handleLinkImages = (platform: string): string =>{
+    const github: string = 'https://www.svgrepo.com/show/439171/github.svg'
+    
+    if(platform === 'GitHub') return github;
+    else return '';
+  }
+
   return (
     <section className='ProjectInformation' ref={ProjectInformationContent}>
       <div className='ProjectInformationContent' ref={informationContainer}>
@@ -101,7 +109,20 @@ const ProjectInformation: React.FC<ProjectInformationProps> = ({CurrentProject, 
           ? (<div> <p>No links available for this project.</p> </div>) 
           : (
             <div>
-              
+              <div className='LinkProjectsContainer'>
+              {projectLinks
+                .filter(p => p.linked_table === CurrentProject?.id)
+                .map((link, index) => (
+                  <div key={index} className='LinkProject'
+                    style={{
+                      backgroundColor: link.Platform === 'GitHub' ? '#0D1117' : 'red'
+                    }}>
+                    <a href={link.link}>{link.Platform}</a>
+                    <img src={handleLinkImages(link.Platform)} alt="" />
+                  </div>
+                ))
+              }
+              </div>
             </div>
           )}
         </div>
